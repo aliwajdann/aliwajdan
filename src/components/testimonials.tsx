@@ -21,11 +21,11 @@ const Testimonials = () => {
       .then(res => res.json())
       .then(data => {
         const fakeReviews = [
-  "Ali is an incredibly skilled developer who not only delivered our project ahead of schedule, but also took the time to walk us through every detail. His commitment to clean, maintainable code and user experience really stood out. I’d highly recommend working with him on any web project.",
+  "Ali is an incredibly skilled developer who not only delivered our project ahead of schedule, but also took the time to walk us through every detail. His commitment to clean, maintainable code and user experience really stood out.",
   
-  "Working with Ali was like a breath of fresh air. He communicated clearly, responded quickly, and handled feedback like a true professional. The final product was polished, responsive, and exceeded all expectations. Our team was honestly blown away by the quality and speed of delivery.",
+  "Working with Ali was like a breath of fresh air. He communicated clearly, responded quickly, and handled feedback like a true professional. The final product was polished, responsive, and exceeded all expectations.",
 
-  "I can't speak highly enough about Ali’s work. He took the time to truly understand our needs and transformed our vague ideas into a functional, beautiful website. Every little UI/UX detail was spot on. It felt like having a full product team in one person. Absolute legend!"
+  "I can't speak highly enough about Ali’s work. Every little UI/UX detail was spot on. It felt like having a full product team in one person. Absolute legend!"
 ];
 
 
