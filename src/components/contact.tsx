@@ -16,7 +16,7 @@ export default function Contact() {
           Whether you want to build a product, a portfolio, or just say hello — I’d love to hear from you.
         </p>
         <a
-          href="mailto:aliwajdan@gmail.com"
+          href="mailto:aliwajdan.it@gmail.com"
           className="inline-block bg-white text-black font-semibold py-3 px-6 rounded-xl hover:bg-gray-200 transition"
         >
           aliwajdan.it@gmail.com
