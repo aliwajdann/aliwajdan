@@ -1,63 +1,26 @@
-// components/Hero.tsx
-'use client';
-import { motion } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
+// File: components/Hero.tsx
+"use client";
+import { motion } from "framer-motion";
 
-const Hero = () => {
-  const variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
+export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 text-white p-8">
-      <div className="max-w-6xl mx-auto text-center">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          transition={{ staggerChildren: 0.1 }}
-        >
-          <motion.p 
-            variants={variants}
-            className="text-lg md:text-xl font-medium text-cyan-400 mb-4"
-          >
-            Hello, I'm
-          </motion.p>
-          <motion.h1 
-            variants={variants}
-            className="text-4xl md:text-7xl font-bold mb-6"
-          >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
-              Ali Wajdan
-            </span>
-          </motion.h1>
-          <motion.h2 
-            variants={variants}
-            className="text-2xl md:text-4xl font-medium mb-8 text-gray-300"
-          >
-            Frontend Developer & UI Designer
-          </motion.h2>
-          <motion.p 
-            variants={variants}
-            className="text-lg md:text-xl max-w-2xl mx-auto text-gray-400 mb-12"
-          >
-            I create beautiful, responsive websites with modern technologies like React, Next.js, and Tailwind CSS.
-          </motion.p>
-          <motion.div variants={variants}>
-            <button className="px-8 py-3 bg-cyan-600 hover:bg-cyan-700 rounded-full font-medium text-white transition-all duration-300 transform hover:scale-105">
-              View My Work
-            </button>
-          </motion.div>
-          <motion.div 
-            variants={variants}
-            className="mt-24 animate-bounce"
-          >
-            <ArrowDown className="mx-auto h-8 w-8 text-gray-400" />
-          </motion.div>
-        </motion.div>
-      </div>
+    <section className="h-screen w-full flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white">
+      <motion.h1
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-4xl md:text-7xl font-extrabold"
+      >
+        Turning Ideas Into Reality
+      </motion.h1>
+      <motion.p
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.8 }}
+        className="mt-6 max-w-xl text-lg text-gray-300"
+      >
+        I’m Ali Wajdan, a creative frontend developer crafting modern web experiences with React, Next.js, and motion design.
+      </motion.p>
     </section>
   );
-};
-
-export default Hero;
+}
