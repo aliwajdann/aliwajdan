@@ -24,3 +24,46 @@ body {
   color: var(--foreground);
   font-family: Montserrat;
 }
+
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.services-gradient-text-animated {
+  background: linear-gradient(90deg, #0ea5e9, #22d3ee, #14b8a6);
+  /* background: linear-gradient(90deg, #ff6a00, #ff3c00, #ffc107); */
+
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient-x 6s ease-in-out infinite;
+}
+.gradient-text-animated {
+  /* background: linear-gradient(90deg, #ff6ec4, #7873f5, #4ade80); */
+  /* background: linear-gradient(90deg, #ff6ec4, #7873f5, #4ade80); */
+  background: linear-gradient(
+    90deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf /* #4f5bd5 */
+  );
+  /* background: linear-gradient(90deg, #0ea5e9, #22d3ee, #14b8a6); */
+
+  /* background: linear-gradient(90deg, #ff6a00, #ff3c00, #ffc107); */
+
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient-x 6s ease-in-out infinite;
+}
