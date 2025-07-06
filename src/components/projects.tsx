@@ -9,9 +9,9 @@ const projects = [
     url: "https://nexwear-seven.vercel.app/"
   },
   {
-    title: "Portfolio",
-    desc: "A unique portfolio using React Three Fiber and GSAP to showcase work in 3D.",
-    url: "https://aliwajdan.vercel.app"
+    title: "Shopify Store",
+    desc: "Crafted a responsive, high-performing Shopify store for a growing online business.",
+    url: "https://poraenco.nl/"
   },
 ];
 
@@ -32,7 +32,7 @@ export default function Projects() {
                {/* {i == 0 ? 1 : i == 1 ? 2 : undefined} */}
               <p className="text-gray-400 text-sm mt-2">Short description of what you built, tech used, and result.</p>
               <div className="flex justify-center gap-4 mt-4">
-                <a href={project.url} className="text-blue-400 underline">Live Demo</a>
+                <a href={project.url} className="font-semibold gradient-text-animated">Live Demo</a>
                 {/* <a href="#" className="text-green-400 underline">Code</a> */}
               </div>
             </motion.div>
