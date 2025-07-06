@@ -1,8 +1,3 @@
-// import Hero from '@/components/deepseek-hero'
-// import Skills from '@/components/deepseek-skills'
-// import Projects from '@/components/deepseek-projects'
-// import Contact from '@/components/deepseek-contact'
-// import Testimonials from '@/components/deepseek-testimonials'/
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/hero';
 import About from '@/components/about';
@@ -10,19 +5,21 @@ import Projects from '@/components/projects';
 import Contact from '@/components/contact';
 import Footer from '@/components/Footer';
 import Services from '@/components/services';
+import PlanetComponent from '@/components/PlanetComponent'
 
 
 
 export default function Home() {
   return (
-    <>
+    <div className='bg-black'>
       <Navbar />
       <Hero />
       <About />
       <Services />
       <Projects />   
+      <PlanetComponent/>
       <Contact />
-      <Footer></Footer>
-    </>
+      <Footer />
+    </div>
   );
 }
