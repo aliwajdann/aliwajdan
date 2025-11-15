@@ -6,7 +6,7 @@ const projects = [
   {
     title: "Ecommerce Clothing Store",
     desc: "A full-stack clothing store built using Next.js, Firebase, Redux and Framer Motion.",
-    url: "https://nexwear-seven.vercel.app/"
+    url: "https://velanoshop.store/"
   },
   {
     title: "Shopify Store",
@@ -30,7 +30,7 @@ export default function Projects() {
           >
               <h3 className="text-xl font-semibold">{project.title}</h3>
                {/* {i == 0 ? 1 : i == 1 ? 2 : undefined} */}
-              <p className="text-gray-400 text-sm mt-2">Short description of what you built, tech used, and result.</p>
+              <p className="text-gray-400 text-sm mt-2">{project.desc}</p>
               <div className="flex justify-center gap-4 mt-4">
                 <a href={project.url} className="font-semibold gradient-text-animated">Live Demo</a>
                 {/* <a href="#" className="text-green-400 underline">Code</a> */}

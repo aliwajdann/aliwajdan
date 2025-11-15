@@ -31,6 +31,7 @@ export default function Hero() {
   }, []);
   return (
     <section className=" h-screen w-full flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white">
+     {/* <section className=" h-screen w-full flex flex-col justify-center items-center text-center px-6 bg-white text-white"> */}
       <motion.h1
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}

@@ -50,14 +50,15 @@ body {
 .gradient-text-animated {
   /* background: linear-gradient(90deg, #ff6ec4, #7873f5, #4ade80); */
   /* background: linear-gradient(90deg, #ff6ec4, #7873f5, #4ade80); */
-  background: linear-gradient(
+  /* background: linear-gradient(
     90deg,
     #feda75,
     #fa7e1e,
     #d62976,
     #962fbf /* #4f5bd5 */
-  );
-  /* background: linear-gradient(90deg, #0ea5e9, #22d3ee, #14b8a6); */
+  /* );  */
+  background: linear-gradient(90deg, #2dffe6, #ff3cf2, #22d3ee);
+  /* linear-gradient(45deg, #54ebdc, #f546ff); */
 
   /* background: linear-gradient(90deg, #ff6a00, #ff3c00, #ffc107); */
 
