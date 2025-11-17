@@ -18,7 +18,7 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="py-20 px-6 bg-black text-white">
-      <h2 className="text-4xl font-bold mb-12 text-center">Projects</h2>
+      <h2 className="md:text-3xl text-xl font-bold mb-12 text-center">Projects</h2>
       <div className="grid md:grid-cols-2 gap-10">
         {projects.map((project, i) => (
           <motion.div
@@ -28,7 +28,7 @@ export default function Projects() {
             transition={{ delay: i * 0.2 }}
             className="p-6 bg-gray-800 rounded-xl shadow-lg hover:scale-[1.02] transition-transform"
           >
-              <h3 className="text-xl font-semibold">{project.title}</h3>
+              <h3 className="md:text-xl text-lg font-semibold">{project.title}</h3>
                {/* {i == 0 ? 1 : i == 1 ? 2 : undefined} */}
               <p className="text-gray-400 text-sm mt-2">{project.desc}</p>
               <div className="flex justify-center gap-4 mt-4">

@@ -11,11 +11,8 @@ export default function About() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl md:text-5xl font-bold mb-6">About Me</h2>
-        {/* <p className="text-gray-300 text-lg">
-          A self-taught developer with a deep passion for building fast, elegant web apps. I combine technical skills with a design-focused mindset to deliver next-gen UI/UX, blending motion, responsiveness, and purpose.
-        </p> */}
-        <p className="text-gray-400">
+        <h2 className="text-xl md:text-5xl font-bold mb-6">About Me</h2>
+        <p className="text-gray-400 ">
           I’m Ali, a passionate Web Developer from Pakistan. I’ve worked with startups, built eCommerce stores, and love making the web more useful, beautiful, and fast.
         </p>
       </motion.div>

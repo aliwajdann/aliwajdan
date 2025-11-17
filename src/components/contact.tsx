@@ -11,20 +11,20 @@ export default function Contact() {
         transition={{ duration: 0.7 }}
         className="max-w-xl mx-auto text-center"
       >
-        <h2 className="text-3xl font-bold mb-6">Let’s Work Together</h2>
-        <p className="text-gray-300 mb-8">
+        <h2 className="md:text-3xl text-xl font-bold mb-6">Let’s Work Together</h2>
+        <p className="text-gray-300 mb-8 text-sm">
           Whether you want to build a product, a portfolio, or just say hello. I’d love to hear from you.
         </p>
-        <div className="flex gap-2 justify-center">
+        <div className="flex gap-2 justify-center flex-col">
         <a
           href="mailto:aliwajdan.it@gmail.com"
-          className="inline-block bg-white text-black font-semibold py-3 px-6 rounded-xl hover:bg-gray-200 transition"
+          className="block bg-white text-black font-semibold py-3 px-6 rounded-xl hover:bg-gray-200 transition"
         >
           aliwajdan.it@gmail.com
         </a>
         <a
           href="https://www.linkedin.com/in/ali-wajdan/"
-          className="inline-block bg-white text-black font-semibold py-3 px-6 rounded-xl hover:bg-gray-200 transition"
+          className="block bg-white text-black font-semibold py-3 px-6 rounded-xl hover:bg-gray-200 transition"
         >
           LinkedIn
         </a>

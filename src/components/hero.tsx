@@ -13,13 +13,10 @@ import { useEffect, useState } from 'react';
   "Fast Prototypes",
 ];
 const coiny = Coiny({ 
-    weight: ['400'], // Specify the weights you need
-    subsets: ['latin'], // Specify the subsets you need
+    weight: ['400'], 
+    subsets: ['latin'], 
   });
 export default function Hero() {
-  
-  // Initialize the Poppins font with your desired configuration
-  
   
   const [currentSkill, setCurrentSkill] = useState(0);
 
@@ -31,25 +28,15 @@ export default function Hero() {
   }, []);
   return (
     <section className=" h-screen w-full flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white">
-     {/* <section className=" h-screen w-full flex flex-col justify-center items-center text-center px-6 bg-white text-white"> */}
       <motion.h1
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className={`text-4xl md:text-7xl font-extrabold ${coiny.className} gradient-text-animated`}
-        // gradient-text-animated
       >
         Turning Ideas Into Reality
       </motion.h1>
-        {/* <div className="container">
-        <div className="glow"></div>
-        <h1 className="scanning-text" data-text="SCANNING">SCANNING</h1>
-    </div> 
-      <div className="container">
-        <div className="flashing-text">AMAZING TEXT</div>
-        <div className="flashing-text-2">FLASH EFFECT</div>
-        <div className="flashing-text-3">CSS MAGIC</div>
-    </div> */}
+      
       <motion.p
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
