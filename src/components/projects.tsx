@@ -26,7 +26,7 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.2 }}
-            className="p-6 bg-gray-800 rounded-xl shadow-lg hover:scale-[1.02] transition-transform"
+            className="p-6 bg-gray-800 rounded-2xl shadow-lg hover:scale-[1.02] transition-transform"
           >
               <h3 className="md:text-xl text-lg font-semibold">{project.title}</h3>
                {/* {i == 0 ? 1 : i == 1 ? 2 : undefined} */}
