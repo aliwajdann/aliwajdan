@@ -44,9 +44,10 @@ export default function Navbar() {
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
+          ${
           isScrolled 
-            ? 'bg-slate-950/90 backdrop-blur-xl border-b border-slate-800/50 shadow-lg shadow-purple-500/5' 
+            ? 'bg-slate-950/90 backdrop-blur-xl   shadow-lg shadow-purple-500/5' 
             : 'bg-slate-950/50 backdrop-blur-sm'
         }`}
       >
@@ -198,7 +199,7 @@ export default function Navbar() {
       </div>
 
       {/* Spacer to prevent content from going under fixed header */}
-      <div className="h-16 sm:h-20" />
+      {/* <div className="h-16 sm:h-10" /> */}
     </>
   );
 }

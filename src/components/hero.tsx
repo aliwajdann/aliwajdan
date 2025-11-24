@@ -21,7 +21,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
+    <div className="relative md:pt-[2%] h-lvh flex items-center justify-center md:min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div 
@@ -45,7 +45,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 py-16 sm:py-20 flex flex-col items-center justify-center min-h-screen">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 py-16 sm:py-20 flex flex-col items-center justify-center">
         {/* Badge */}
         <div 
           className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-purple-500/10 border border-purple-500/20 backdrop-blur-sm mb-6 sm:mb-8 transition-all duration-700 ${
@@ -58,7 +58,7 @@ export default function Hero() {
 
         {/* Main heading */}
         <h1 
-          className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-center mb-4 sm:mb-6 transition-all duration-700 delay-100 ${
+          className={`text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-center mb-4 sm:mb-6 transition-all duration-700 delay-100 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
@@ -73,7 +73,7 @@ export default function Hero() {
 
         {/* Subheading */}
         <p 
-          className={`text-sm sm:text-lg md:text-xl text-slate-400 text-center max-w-2xl mb-8 sm:mb-12 px-2 sm:px-0 transition-all duration-700 delay-200 ${
+          className={`text-sm sm:text-lg md:text-lg text-slate-400 text-center max-w-2xl mb-8 sm:mb-12 px-2 sm:px-0 transition-all duration-700 delay-200 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
@@ -87,7 +87,7 @@ export default function Hero() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
-          <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-semibold text-sm sm:text-base text-white overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(168,85,247,0.4)]">
+          <button className="group relative px-4 sm:px-6 py-3 sm:py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-semibold text-sm sm:text-sm text-white overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(168,85,247,0.4)]">
             <span className="relative z-10 flex items-center justify-center gap-2">
               View My Work
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
@@ -95,7 +95,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity" />
           </button>
           
-          <button className="px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base text-white border-2 border-slate-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all hover:scale-105">
+          <button className="px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-sm text-white border-2 border-slate-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all hover:scale-105">
             Get In Touch
           </button>
         </div>
