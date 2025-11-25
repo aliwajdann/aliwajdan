@@ -156,7 +156,7 @@ export default function About() {
               </div>
 
               <div className="flex flex-wrap gap-3 pt-2">
-                <button className="group px-5 py-2.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-medium text-white text-sm flex items-center gap-2 hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-all hover:scale-105">
+                <button className="group px-5 py-2.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-medium text-white text-sm flex items-center gap-2 focus:hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] focus:hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-all hover:scale-105">
                   Let's Connect
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
