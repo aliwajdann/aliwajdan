@@ -106,14 +106,14 @@ export default function About() {
                       <p className="text-slate-400 text-sm">Your Photo Here</p> */}
                     </div>
                   </div> 
-                  <Image src={image} alt="" />
+                  <Image src={image} alt="" className='h-full object-fill'/>
                   
                   {/* Overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60" />
                 </div>
 
                 {/* Floating badge */}
-                <div className="absolute -bottom-4 -right-4 sm:bottom-4 sm:right-4 bg-slate-900 border border-slate-800 rounded-2xl p-4 backdrop-blur-xl shadow-2xl">
+                <div className="absolute -bottom-4 -right-4 sm:bottom-4 sm:right-4 bg-slate-900 border border-slate-800 rounded-2xl p-3 backdrop-blur-xl shadow-2xl">
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                     <div>
@@ -132,7 +132,7 @@ export default function About() {
           }`}>
             <div className="space-y-6">
               <h3 className="text-2xl sm:text-3xl font-bold text-white">
-                Hey there! I'm Ali Wajdan 👋
+                Hey there I am Ali Wajdan
               </h3>
               
               <div className="space-y-4 text-slate-400 text-sm sm:text-base leading-relaxed">
