@@ -106,7 +106,7 @@ export default function About() {
                       <p className="text-slate-400 text-sm">Your Photo Here</p> */}
                     </div>
                   </div> 
-                  <Image src={image} alt="" className='h-full object-fill'/>
+                  <Image src={image} alt="" className='object-fill'/>
                   
                   {/* Overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60" />
