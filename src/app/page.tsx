@@ -15,8 +15,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About /> 
-      <Services />
       <Projects />   
+      <Services />
       {/* <PlanetComponent/> */}
       <Contact />
       <Footer />

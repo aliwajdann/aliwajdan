@@ -1,6 +1,8 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
 import { Code2, Zap, Users, Award, ArrowRight } from 'lucide-react';
+import image from "../picture.jpeg"
+import Image from 'next/image';
 
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
@@ -95,15 +97,16 @@ export default function About() {
                 {/* Image */}
                 <div className="relative h-full rounded-3xl overflow-hidden border border-slate-800 bg-slate-900">
                   {/* Placeholder for your photo */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/30 via-slate-900 to-blue-600/30" />
+                   <div className="absolute inset-0 bg-gradient-to-br from-purple-600/30 via-slate-900 to-blue-600/30" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
-                      <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-6xl font-bold text-white">
+                      {/* <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-6xl font-bold text-white">
                         Y
                       </div>
-                      <p className="text-slate-400 text-sm">Your Photo Here</p>
+                      <p className="text-slate-400 text-sm">Your Photo Here</p> */}
                     </div>
-                  </div>
+                  </div> 
+                  <Image src={image} alt="" />
                   
                   {/* Overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60" />
