@@ -3,9 +3,9 @@ import Hero from '@/components/hero';
 import About from '@/components/about';
 import Projects from '@/components/projects';
 import Contact from '@/components/contact';
-import Footer from '@/components/Footer';
+// import Footer from '@/components/Footer';
 import Services from '@/components/services';
-// import PlanetComponent from '@/components/PlanetComponent'
+import Testimonials from '@/components/Testimonials';
 
 
 
@@ -17,9 +17,10 @@ export default function Home() {
       <About /> 
       <Projects />   
       <Services />
-      {/* <PlanetComponent/> */}
+      <Testimonials />
       <Contact />
-      <Footer />
+      {/* <Footer /> */}
+
     </div>
   );
 }
