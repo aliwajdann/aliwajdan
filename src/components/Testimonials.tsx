@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Star, Quote, ChevronLeft, ChevronRight, Building2, Award, TrendingUp } from 'lucide-react';
 
 export default function Testimonials() {
-  const [isVisible, setIsVisible] = useState(false);
+//   const [isVisible, setIsVisible] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -11,7 +11,7 @@ export default function Testimonials() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+        //   setIsVisible(true);
         }
       },
       { threshold: 0.1 }
@@ -109,8 +109,11 @@ export default function Testimonials() {
       <div className="relative z-10 container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className={`text-center mb-12 sm:mb-16 transition-all duration-700 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+         'opacity-100 translate-y-0' 
         }`}>
+        {/* <div className={`text-center mb-12 sm:mb-16 transition-all duration-700 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}> */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20 backdrop-blur-sm mb-4">
             <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-yellow-400" />
             <span className="text-xs sm:text-sm text-yellow-300 font-medium">Client Success Stories</span>
@@ -128,8 +131,11 @@ export default function Testimonials() {
 
         {/* Stats Bar */}
         <div className={`grid grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto mb-12 sm:mb-16 transition-all duration-700 delay-100 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          'opacity-100 translate-y-0' 
         }`}>
+        {/* <div className={`grid grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto mb-12 sm:mb-16 transition-all duration-700 delay-100 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}> */}
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
@@ -147,8 +153,11 @@ export default function Testimonials() {
 
         {/* Main Testimonial Carousel */}
         <div className={`max-w-5xl mx-auto mb-12 sm:mb-16 transition-all duration-700 delay-200 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+           'opacity-100 translate-y-0' 
         }`}>
+        {/* <div className={`max-w-5xl mx-auto mb-12 sm:mb-16 transition-all duration-700 delay-200 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}> */}
           <div className="relative">
             {/* Testimonial Card */}
             <div className="relative p-6 sm:p-10 rounded-3xl bg-slate-900/50 border border-slate-800 overflow-hidden">
@@ -243,8 +252,11 @@ export default function Testimonials() {
 
         {/* Companies Worked With */}
         <div className={`transition-all duration-700 delay-300 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+         'opacity-100 translate-y-0' 
         }`}>
+        {/* <div className={`transition-all duration-700 delay-300 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}> */}
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-slate-500" />

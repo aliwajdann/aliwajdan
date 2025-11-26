@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ExternalLink, Github, ArrowRight, Sparkles, TrendingUp, Users, Zap } from 'lucide-react';
 
 export default function Projects() {
-  const [isVisible, setIsVisible] = useState(false);
+  // const [isVisible, setIsVisible] = useState(false);
   const [activeFilter, setActiveFilter] = useState('all');
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -12,7 +12,7 @@ export default function Projects() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          // setIsVisible(true);
         }
       },
       { threshold: 0.1 }
@@ -105,8 +105,11 @@ export default function Projects() {
       <div className="relative z-10 container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className={`text-center mb-12 sm:mb-16 transition-all duration-700 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+           'opacity-100 translate-y-0' 
         }`}>
+        {/* <div className={`text-center mb-12 sm:mb-16 transition-all duration-700 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}> */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 backdrop-blur-sm mb-4">
             <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
             <span className="text-xs sm:text-sm text-blue-300 font-medium">Featured Work</span>
@@ -124,8 +127,11 @@ export default function Projects() {
 
         {/* Filter Buttons */}
         <div className={`flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 transition-all duration-700 delay-100 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+           'opacity-100 translate-y-0' 
         }`}>
+        {/* <div className={`flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 transition-all duration-700 delay-100 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}> */}
           {filters.map((filter) => (
             <button
               key={filter}
@@ -149,8 +155,11 @@ export default function Projects() {
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
               className={`group relative transition-all duration-700 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                'opacity-100 translate-y-0' 
               }`}
+              // className={`group relative transition-all duration-700 ${
+              //   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              // }`}
               style={{ transitionDelay: `${200 + index * 100}ms` }}
             >
               <div className="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all">
@@ -266,8 +275,11 @@ export default function Projects() {
 
         {/* View All Projects CTA */}
         <div className={`text-center mt-12 sm:mt-16 transition-all duration-700 delay-500 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+         'opacity-100 translate-y-0' 
         }`}>
+        {/* <div className={`text-center mt-12 sm:mt-16 transition-all duration-700 delay-500 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}> */}
           <a
             href="#"
             className="group inline-flex items-center gap-2 px-8 py-4 bg-slate-800/50 border-2 border-slate-700 rounded-full font-medium text-white hover:border-blue-500 hover:bg-blue-500/10 transition-all hover:scale-105"

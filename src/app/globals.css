@@ -18,6 +18,15 @@
     --foreground: #ededed;
   }
 }
+a {
+  cursor: pointer;
+}
+Link {
+  cursor: pointer;
+}
+button {
+  cursor: pointer;
+}
 
 body {
   background: var(--background);

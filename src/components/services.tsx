@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Code2, Palette, Database, Cloud, Smartphone, Zap, Layers, Globe } from 'lucide-react';
 
 export default function Skills() {
-  const [isVisible, setIsVisible] = useState(false);
+  // const [isVisible, setIsVisible] = useState(false);
   const [activeCategory, setActiveCategory] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -11,7 +11,7 @@ export default function Skills() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          // setIsVisible(true);
         }
       },
       { threshold: 0.1 }
@@ -104,8 +104,11 @@ export default function Skills() {
       <div className="relative z-10 container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className={`text-center mb-12 sm:mb-16 transition-all duration-700 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+           'opacity-100 translate-y-0' 
         }`}>
+        {/* <div className={`text-center mb-12 sm:mb-16 transition-all duration-700 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}> */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 backdrop-blur-sm mb-4">
             <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
             <span className="text-xs sm:text-sm text-purple-300 font-medium">Skills & Expertise</span>
@@ -123,8 +126,11 @@ export default function Skills() {
 
         {/* Category Cards */}
         <div className={`grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12 transition-all duration-700 delay-100 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+           'opacity-100 translate-y-0' 
         }`}>
+        {/* <div className={`grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12 transition-all duration-700 delay-100 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}> */}
           {skillCategories.map((category, index) => {
             const Icon = category.icon;
             return (
@@ -163,8 +169,11 @@ export default function Skills() {
 
         {/* Active Category Details */}
         <div className={`transition-all duration-700 delay-200 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+           'opacity-100 translate-y-0'
         }`}>
+        {/* <div className={`transition-all duration-700 delay-200 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}> */}
           <div className="relative p-6 sm:p-8 rounded-3xl bg-slate-900/50 border border-slate-800 overflow-hidden">
             {/* Background gradient */}
             <div className={`absolute inset-0 bg-gradient-to-br ${skillCategories[activeCategory].gradient} opacity-5 blur-3xl`} />
@@ -187,9 +196,13 @@ export default function Skills() {
                         <div 
                           className={`h-full ${skill.color} rounded-full transition-all duration-1000 ease-out`}
                           style={{ 
-                            width: isVisible ? `${skill.level}%` : '0%',
+                            width:  `${skill.level}%`,
                             transitionDelay: `${300 + index * 100}ms`
                           }}
+                          // style={{ 
+                          //   width: isVisible ? `${skill.level}%` : '0%',
+                          //   transitionDelay: `${300 + index * 100}ms`
+                          // }}
                         />
                       </div>
                     </div>
@@ -241,8 +254,11 @@ export default function Skills() {
 
         {/* Tools & Technologies */}
         <div className={`mt-12 sm:mt-16 transition-all duration-700 delay-300 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+           'opacity-100 translate-y-0' 
         }`}>
+        {/* <div className={`mt-12 sm:mt-16 transition-all duration-700 delay-300 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}> */}
           <h4 className="text-lg sm:text-xl font-bold text-white text-center mb-6">
             Tools I Use Daily
           </h4>
@@ -265,8 +281,11 @@ export default function Skills() {
 
         {/* CTA */}
         <div className={`text-center mt-12 sm:mt-16 transition-all duration-700 delay-400 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+           'opacity-100 translate-y-0' 
         }`}>
+        {/* <div className={`text-center mt-12 sm:mt-16 transition-all duration-700 delay-400 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}> */}
           <div className="inline-block p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-purple-600/10 to-blue-600/10 border border-purple-500/20">
             <p className="text-slate-300 text-sm sm:text-base mb-4">
               Got a project in mind? Let's discuss how these skills can bring your vision to life.

@@ -5,7 +5,7 @@ import image from "../picture.jpeg"
 import Image from 'next/image';
 
 export default function About() {
-  const [isVisible, setIsVisible] = useState(false);
+  // const [isVisible, setIsVisible] = useState(false);
   const [activeCard, setActiveCard] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -13,7 +13,7 @@ export default function About() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          // setIsVisible(true);
         }
       },
       { threshold: 0.1 }
@@ -66,9 +66,10 @@ export default function About() {
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className={`text-center mb-12 sm:mb-16 transition-all duration-700 ${
+        <div className={`text-center mb-12 sm:mb-16 transition-all duration-700 opacity-100 translate-y-0`}>
+        {/* <div className={`text-center mb-12 sm:mb-16 transition-all duration-700 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
+        }`}> */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 backdrop-blur-sm mb-4">
             <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
             <span className="text-xs sm:text-sm text-purple-300 font-medium">About Me</span>
@@ -84,9 +85,11 @@ export default function About() {
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16 sm:mb-20">
           {/* Left Side - Image & Visual */}
-          <div className={`transition-all duration-700 delay-100 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+          <div className={`transition-all duration-700 delay-100 ${'opacity-100 translate-x-0' 
           }`}>
+          {/* <div className={`transition-all duration-700 delay-100 ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+          }`}> */}
             <div className="relative">
               {/* Main Image Container */}
               <div className="relative aspect-square max-w-md mx-auto lg:max-w-none">
@@ -128,8 +131,11 @@ export default function About() {
 
           {/* Right Side - Content */}
           <div className={`transition-all duration-700 delay-200 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+            'opacity-100 translate-x-0' 
           }`}>
+          {/* <div className={`transition-all duration-700 delay-200 ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+          }`}> */}
             <div className="space-y-6">
               <h3 className="text-2xl sm:text-3xl font-bold text-white">
                 Hey there I am Ali Wajdan
@@ -156,7 +162,7 @@ export default function About() {
               </div>
 
               <div className="flex flex-wrap gap-3 pt-2">
-                <button className="group px-5 py-2.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-medium text-white text-sm flex items-center gap-2 focus:hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] focus:hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-all hover:scale-105">
+                <button className="group px-5 py-2.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-medium text-white text-sm flex items-center gap-2 focus:shadow-[0_0_25px_rgba(168,85,247,0.4)]  hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-all hover:scale-105">
                   Let's Connect
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -170,8 +176,11 @@ export default function About() {
 
         {/* Stats Section */}
         <div className={`grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16 transition-all duration-700 delay-300 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+           'opacity-100 translate-y-0' 
         }`}>
+        {/* <div className={`grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16 transition-all duration-700 delay-300 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}> */}
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
@@ -192,8 +201,11 @@ export default function About() {
 
         {/* Highlights Cards */}
         <div className={`grid md:grid-cols-3 gap-4 sm:gap-6 transition-all duration-700 delay-400 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          'opacity-100 translate-y-0' 
         }`}>
+        {/* <div className={`grid md:grid-cols-3 gap-4 sm:gap-6 transition-all duration-700 delay-400 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}> */}
           {highlights.map((highlight, index) => (
             <div
               key={index}

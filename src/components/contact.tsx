@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Mail, MessageSquare, Linkedin, Github, Twitter, Send, CheckCircle2, Calendar, Clock, MapPin } from 'lucide-react';
 
 export default function Contact() {
-  const [isVisible, setIsVisible] = useState(false);
+  // const [isVisible, setIsVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -19,7 +19,7 @@ export default function Contact() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          // setIsVisible(true);
         }
       },
       { threshold: 0.1 }
@@ -133,8 +133,11 @@ export default function Contact() {
       <div className="relative z-10 container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className={`text-center mb-12 sm:mb-16 transition-all duration-700 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+           'opacity-100 translate-y-0' 
         }`}>
+        {/* <div className={`text-center mb-12 sm:mb-16 transition-all duration-700 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}> */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 backdrop-blur-sm mb-4">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
             <span className="text-xs sm:text-sm text-green-300 font-medium">Let's Work Together</span>
@@ -154,8 +157,11 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto mb-12 sm:mb-16">
           {/* Left: Contact Form */}
           <div className={`transition-all duration-700 delay-100 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+           'opacity-100 translate-x-0' 
           }`}>
+          {/* <div className={`transition-all duration-700 delay-100 ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+          }`}> */}
             <div className="relative p-6 sm:p-8 rounded-3xl bg-slate-900/50 border border-slate-800 overflow-hidden">
               {/* Background gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-blue-600/5" />
@@ -255,8 +261,11 @@ export default function Contact() {
 
           {/* Right: Contact Methods & Info */}
           <div className={`space-y-6 transition-all duration-700 delay-200 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+            'opacity-100 translate-x-0' 
           }`}>
+          {/* <div className={`space-y-6 transition-all duration-700 delay-200 ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+          }`}> */}
             {/* Quick Contact Methods */}
             <div>
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">Other Ways to Connect</h3>
@@ -336,8 +345,11 @@ export default function Contact() {
 
         {/* Bottom CTA */}
         <div className={`text-center transition-all duration-700 delay-300 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+         'opacity-100 translate-y-0' 
         }`}>
+        {/* <div className={`text-center transition-all duration-700 delay-300 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}> */}
           <div className="inline-block p-8 rounded-3xl bg-gradient-to-r from-purple-600/10 to-blue-600/10 border border-purple-500/20 backdrop-blur-sm">
             <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
               Ready to Start Your Project?
