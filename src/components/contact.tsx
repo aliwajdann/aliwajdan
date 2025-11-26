@@ -4,6 +4,8 @@ import { Mail, MessageSquare, Linkedin, Github, Twitter, Send, CheckCircle2, Cal
 
 export default function Contact() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,16 +32,42 @@ export default function Contact() {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = () => {
-    if (formData.name && formData.email && formData.subject && formData.message) {
-      setIsSubmitted(true);
-      // Add your form submission logic here
-      setTimeout(() => {
-        setFormData({ name: '', email: '', subject: '', message: '' });
-        setIsSubmitted(false);
-      }, 3000);
-    }
-  };
+  const handleSubmit = async (e?: any) => {
+  e?.preventDefault();
+
+  if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+    return;
+  }
+
+  try {
+    setIsLoading(true); 
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (!res.ok) throw new Error("Failed to send email");
+
+    setIsSubmitted(true);
+
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+
+    setTimeout(() => setIsSubmitted(false), 3000);
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong. Please try again!");
+  } finally {
+    setIsLoading(false); 
+  }
+};
+
 
   const handleChange = (field: string, value: string) => {
     setFormData({
@@ -202,13 +230,23 @@ export default function Contact() {
                       />
                     </div>
 
-                    <button
-                      onClick={handleSubmit}
-                      className="group w-full px-6 py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl font-semibold text-white flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all hover:scale-[1.02] active:scale-[0.98]"
-                    >
-                      Send Message
-                      <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
+                   <button
+  onClick={handleSubmit}
+  disabled={isLoading}
+  className={`group w-full px-6 py-4 rounded-xl font-semibold text-white flex items-center justify-center gap-2 transition-all
+    ${isLoading ? "bg-gray-500 cursor-not-allowed" : "bg-gradient-to-r from-purple-600 to-blue-600 hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] hover:scale-[1.02] active:scale-[0.98]"}
+  `}
+>
+  {isLoading ? (
+    <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-white border-solid"></div>
+  ) : (
+    <>
+      Send Message
+      <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+    </>
+  )}
+</button>
+
                   </div>
                 )}
               </div>
@@ -334,7 +372,7 @@ export default function Contact() {
                 <span className="text-xl">Y</span>
               </div>
               <span className="text-xl font-bold text-white">
-                Ali<span className="text-purple-400">Wajdan</span>
+                Ali<span className="text-purple-400"> Wajdan</span>
               </span>
             </div>
             <p className="text-sm text-slate-400 mb-6">
