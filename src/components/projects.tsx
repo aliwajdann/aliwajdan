@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
 import { ExternalLink, Github, ArrowRight, Sparkles, TrendingUp, Users, Zap } from 'lucide-react';
+import { link } from 'fs';
 
 export default function Projects() {
   // const [isVisible, setIsVisible] = useState(false);
@@ -28,62 +29,67 @@ export default function Projects() {
   const filters = ['all', 'web app', 'landing page', 'e-commerce'];
 
   const projects = [
+    // {
+    //   title: 'SaaS Dashboard Platform',
+    //   category: 'web app',
+    //   description: 'A complete analytics dashboard for SaaS companies with real-time data visualization, team collaboration, and automated reporting.',
+    //   impact: [
+    //     { icon: TrendingUp, label: '40% faster insights', value: 'Performance' },
+    //     { icon: Users, label: '10k+ active users', value: 'Reach' },
+    //     { icon: Zap, label: '99.9% uptime', value: 'Reliability' }
+    //   ],
+    //   tech: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'AWS'],
+    //   image: 'project1',
+    //   gradient: 'from-purple-600 to-blue-600',
+    //   featured: true
+    // },
     {
-      title: 'SaaS Dashboard Platform',
-      category: 'web app',
-      description: 'A complete analytics dashboard for SaaS companies with real-time data visualization, team collaboration, and automated reporting.',
-      impact: [
-        { icon: TrendingUp, label: '40% faster insights', value: 'Performance' },
-        { icon: Users, label: '10k+ active users', value: 'Reach' },
-        { icon: Zap, label: '99.9% uptime', value: 'Reliability' }
-      ],
-      tech: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'AWS'],
-      image: 'project1',
-      gradient: 'from-purple-600 to-blue-600',
-      featured: true
-    },
+  title: 'Velano Clothing Store',
+  category: 'e-commerce',
+  description:
+    'A fully functional clothing e-commerce platform with product variants, cart system, checkout, and admin panel — built for real usage.',
+  impact: [
+    { icon: Zap, label: 'Real-time updates', value: 'Firestore' },
+    { icon: Users, label: 'Admin panel', value: 'Product & order management' },
+    { icon: TrendingUp, label: 'Optimized UX', value: 'Fast & responsive' }
+  ],
+  tech: ['Next.js', 'Tailwind', 'Firebase', 'Redux', 'Vercel'],
+  image: 'project1',
+  gradient: 'from-purple-600 to-pink-600',
+  featured: true,
+  link: "https://www.velanoshop.store/"
+},
+    // {
+    //   title: 'Creative Agency Website',
+    //   category: 'landing page',
+    //   description: 'Award-winning portfolio site with stunning animations, smooth transitions, and immersive storytelling.',
+    //   impact: [
+    //     { icon: TrendingUp, label: '300% more leads', value: 'Conversion' },
+    //     { icon: Users, label: '100k+ monthly views', value: 'Traffic' },
+    //     { icon: Sparkles, label: 'Awwwards nominee', value: 'Recognition' }
+    //   ],
+    //   tech: ['React', 'Three.js', 'GSAP', 'Tailwind', 'Framer'],
+    //   image: 'project3',
+    //   gradient: 'from-orange-600 to-pink-600',
+    //   featured: false
+    // },
     {
-      title: 'AI-Powered E-Commerce',
-      category: 'e-commerce',
-      description: 'Next-gen online store with AI product recommendations, smart search, and seamless checkout experience.',
-      impact: [
-        { icon: TrendingUp, label: '250% sales increase', value: 'Revenue' },
-        { icon: Users, label: '50k+ customers', value: 'Growth' },
-        { icon: Zap, label: '<2s load time', value: 'Speed' }
-      ],
-      tech: ['Next.js', 'Stripe', 'MongoDB', 'TensorFlow', 'Vercel'],
-      image: 'project2',
-      gradient: 'from-blue-600 to-cyan-600',
-      featured: true
-    },
-    {
-      title: 'Creative Agency Website',
-      category: 'landing page',
-      description: 'Award-winning portfolio site with stunning animations, smooth transitions, and immersive storytelling.',
-      impact: [
-        { icon: TrendingUp, label: '300% more leads', value: 'Conversion' },
-        { icon: Users, label: '100k+ monthly views', value: 'Traffic' },
-        { icon: Sparkles, label: 'Awwwards nominee', value: 'Recognition' }
-      ],
-      tech: ['React', 'Three.js', 'GSAP', 'Tailwind', 'Framer'],
-      image: 'project3',
-      gradient: 'from-orange-600 to-pink-600',
-      featured: false
-    },
-    {
-      title: 'Fitness Tracking App',
-      category: 'web app',
-      description: 'Social fitness platform connecting trainers and clients with workout plans, progress tracking, and community features.',
-      impact: [
-        { icon: Users, label: '25k+ downloads', value: 'Adoption' },
-        { icon: TrendingUp, label: '4.8★ rating', value: 'Satisfaction' },
-        { icon: Zap, label: 'Real-time sync', value: 'Technology' }
-      ],
-      tech: ['React Native', 'Firebase', 'GraphQL', 'Stripe'],
-      image: 'project4',
-      gradient: 'from-green-600 to-emerald-600',
-      featured: false
-    }
+  title: 'Personal Portfolio',
+  category: 'portfolio',
+  description:
+    'A modern, animated portfolio showcasing my projects, skills, and experience. Built with smooth UX, GSAP animations, and optimized performance.',
+  impact: [
+    { icon: Zap, label: 'Smooth animations', value: 'GSAP + Framer' },
+    { icon: TrendingUp, label: 'Optimized', value: 'Lightweight & fast' },
+    { icon: Users, label: 'Responsive', value: 'Across all devices' }
+  ],
+  tech: ['Next.js', 'Tailwind', 'GSAP', 'Framer Motion', 'React Three Fiber'],
+  image: 'project2',
+  gradient: 'from-blue-600 to-cyan-600',
+  featured: true,
+  link: "https://aliwajdan.vercel.app/"
+}
+
   ];
 
   const filteredProjects = activeFilter === 'all' 
@@ -258,7 +264,7 @@ export default function Projects() {
 
                   {/* View Details Link */}
                   <a
-                    href="#"
+                    href={project.link} target='_blank'
                     className="group/link inline-flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-blue-300 transition-all"
                   >
                     View Case Study
@@ -274,12 +280,12 @@ export default function Projects() {
         </div>
 
         {/* View All Projects CTA */}
-        <div className={`text-center mt-12 sm:mt-16 transition-all duration-700 delay-500 ${
+        {/* <div className={`text-center mt-12 sm:mt-16 transition-all duration-700 delay-500 ${
          'opacity-100 translate-y-0' 
         }`}>
-        {/* <div className={`text-center mt-12 sm:mt-16 transition-all duration-700 delay-500 ${
+        <div className={`text-center mt-12 sm:mt-16 transition-all duration-700 delay-500 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}> */}
+        }`}>
           <a
             href="#"
             className="group inline-flex items-center gap-2 px-8 py-4 bg-slate-800/50 border-2 border-slate-700 rounded-full font-medium text-white hover:border-blue-500 hover:bg-blue-500/10 transition-all hover:scale-105"
@@ -287,7 +293,7 @@ export default function Projects() {
             View All Projects
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

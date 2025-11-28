@@ -107,33 +107,33 @@ export default function Hero() {
           }`}
         >
           <a 
-            href="#" 
+            href="https://github.com/aliwajdann" 
             className="p-2.5 sm:p-3 rounded-full bg-slate-800/50 border border-slate-700 text-slate-400 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 transition-all hover:scale-110"
             aria-label="GitHub"
           >
             <Github className="w-4 h-4 sm:w-5 sm:h-5" />
           </a>
           <a 
-            href="#" 
+            href="https://www.linkedin.com/in/ali-wajdan/" 
             className="p-2.5 sm:p-3 rounded-full bg-slate-800/50 border border-slate-700 text-slate-400 hover:text-white hover:border-blue-500 hover:bg-blue-500/10 transition-all hover:scale-110"
             aria-label="LinkedIn"
           >
             <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
           </a>
           <a 
-            href="#" 
+            href="aliwajdan.it@gmail.com" 
             className="p-2.5 sm:p-3 rounded-full bg-slate-800/50 border border-slate-700 text-slate-400 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 transition-all hover:scale-110"
             aria-label="Email"
           >
             <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
           </a>
-          <a 
+          {/* <a 
             href="#" 
             className="p-2.5 sm:p-3 rounded-full bg-slate-800/50 border border-slate-700 text-slate-400 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 transition-all hover:scale-110"
             aria-label="Portfolio"
           >
             <Code2 className="w-4 h-4 sm:w-5 sm:h-5" />
-          </a>
+          </a> */}
         </div>
 
         {/* Scroll indicator */}

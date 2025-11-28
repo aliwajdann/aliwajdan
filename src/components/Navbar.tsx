@@ -96,15 +96,15 @@ export default function Navbar() {
             </div>
 
             {/* CTA Button (Desktop) */}
-            <div className="hidden md:block">
+            <a href='/aliwajdan-cv.pdf' download className="hidden md:block">
               <button className="group relative px-6 py-2.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-medium text-white text-sm overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]">
                 <span className="relative z-10 flex items-center gap-2">
-                  <Download className="w-4 h-4" />
+                  <Download className="w-4 h-4"/>
                   Resume
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity" />
               </button>
-            </div>
+            </a>
 
             {/* Mobile Menu Button */}
             <button
@@ -170,7 +170,7 @@ export default function Navbar() {
           <div className="my-6 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
 
           {/* Resume Button */}
-          <button 
+          <a href='/aliwajdan-cv.pdf' download
             className="w-full px-6 py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl font-medium text-white text-sm flex items-center justify-center gap-2 hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] transition-all hover:scale-[1.02] active:scale-[0.98]"
             style={{
               transitionDelay: isMobileMenuOpen ? '250ms' : '0ms',
@@ -180,7 +180,7 @@ export default function Navbar() {
           >
             <Download className="w-4 h-4" />
             Download Resume
-          </button>
+          </a>
 
           {/* Decorative Element */}
           <div className="mt-auto">

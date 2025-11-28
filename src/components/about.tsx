@@ -166,9 +166,9 @@ export default function About() {
                   Let's Connect
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="px-5 py-2.5 rounded-lg font-medium text-white text-sm border-2 border-slate-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all hover:scale-105">
+                <a href='/aliwajdan-cv.pdf' target='_blank'rel='noopener noreferrer'  className="px-5 py-2.5 rounded-lg font-medium text-white text-sm border-2 border-slate-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all hover:scale-105">
                   View Resume
-                </button>
+                </a>
               </div>
             </div>
           </div>

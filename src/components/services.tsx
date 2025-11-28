@@ -24,69 +24,93 @@ export default function Skills() {
     return () => observer.disconnect();
   }, []);
 
-  const skillCategories = [
-    {
-      icon: Code2,
-      title: 'Frontend Development',
-      gradient: 'from-purple-600 to-pink-600',
-      description: 'Building responsive, interactive user interfaces',
-      skills: [
-        { name: 'React & Next.js', level: 95, color: 'bg-cyan-500' },
-        { name: 'TypeScript', level: 90, color: 'bg-blue-500' },
-        { name: 'Tailwind CSS', level: 95, color: 'bg-teal-500' },
-        { name: 'Vue.js', level: 80, color: 'bg-green-500' }
-      ],
-      capabilities: ['Single Page Applications', 'Progressive Web Apps', 'Server-Side Rendering', 'State Management']
-    },
-    {
-      icon: Database,
-      title: 'Backend Development',
-      gradient: 'from-blue-600 to-cyan-600',
-      description: 'Crafting scalable, secure server architectures',
-      skills: [
-        { name: 'Node.js & Express', level: 90, color: 'bg-green-500' },
-        { name: 'Python & Django', level: 85, color: 'bg-yellow-500' },
-        { name: 'PostgreSQL', level: 88, color: 'bg-blue-500' },
-        { name: 'MongoDB', level: 85, color: 'bg-green-500' }
-      ],
-      capabilities: ['RESTful APIs', 'GraphQL', 'Microservices', 'Database Design']
-    },
-    {
-      icon: Cloud,
-      title: 'Cloud & DevOps',
-      gradient: 'from-orange-600 to-red-600',
-      description: 'Deploying and maintaining production systems',
-      skills: [
-        { name: 'AWS Services', level: 85, color: 'bg-orange-500' },
-        { name: 'Docker', level: 88, color: 'bg-blue-500' },
-        { name: 'CI/CD Pipelines', level: 82, color: 'bg-purple-500' },
-        { name: 'Vercel & Netlify', level: 92, color: 'bg-gray-500' }
-      ],
-      capabilities: ['Infrastructure as Code', 'Container Orchestration', 'Automated Testing', 'Performance Monitoring']
-    },
-    {
-      icon: Palette,
-      title: 'UI/UX Design',
-      gradient: 'from-pink-600 to-purple-600',
-      description: 'Designing beautiful, intuitive experiences',
-      skills: [
-        { name: 'Figma', level: 90, color: 'bg-purple-500' },
-        { name: 'Adobe XD', level: 80, color: 'bg-pink-500' },
-        { name: 'Framer', level: 85, color: 'bg-blue-500' },
-        { name: 'Responsive Design', level: 95, color: 'bg-green-500' }
-      ],
-      capabilities: ['Wireframing & Prototyping', 'Design Systems', 'User Research', 'Interaction Design']
-    }
-  ];
+ const skillCategories = [
+  {
+    icon: Code2,
+    title: 'Frontend Development',
+    gradient: 'from-purple-600 to-pink-600',
+    description: 'Building fast, modern, and responsive user interfaces',
+    skills: [
+      { name: 'React & Next.js', level: 95, color: 'bg-cyan-500' },
+      { name: 'TypeScript', level: 90, color: 'bg-blue-500' },
+      { name: 'Tailwind CSS', level: 95, color: 'bg-teal-500' },
+      { name: 'GSAP & Framer Motion', level: 85, color: 'bg-green-500' }
+    ],
+    capabilities: [
+      'Reusable Components',
+      'State Management (Redux)',
+      'SSR & App Router',
+      'Animations & 3D UI'
+    ]
+  },
 
-  const tools = [
-    { name: 'Git & GitHub', icon: '🔧' },
-    { name: 'VS Code', icon: '💻' },
-    { name: 'Postman', icon: '📬' },
-    { name: 'Figma', icon: '🎨' },
-    { name: 'Jira', icon: '📋' },
-    { name: 'Slack', icon: '💬' }
-  ];
+  {
+    icon: Database,
+    title: 'Backend & Databases',
+    gradient: 'from-blue-600 to-cyan-600',
+    description: 'Building secure, scalable backend systems',
+    skills: [
+      { name: 'Node.js (Basics)', level: 70, color: 'bg-green-500' },
+      { name: 'Firebase / Firestore', level: 90, color: 'bg-yellow-500' },
+      { name: 'Authentication (Clerk)', level: 85, color: 'bg-blue-500' },
+      { name: 'REST APIs', level: 80, color: 'bg-green-500' }
+    ],
+    capabilities: [
+      'Firestore Database Modeling',
+      'Secure Auth',
+      'API Integration',
+      'Server Actions'
+    ]
+  },
+
+  {
+    icon: Cloud,
+    title: 'Deployment & DevOps',
+    gradient: 'from-orange-600 to-red-600',
+    description: 'Shipping production-ready applications',
+    skills: [
+      { name: 'Vercel Deployment', level: 95, color: 'bg-gray-500' },
+      { name: 'Git & GitHub', level: 90, color: 'bg-blue-500' },
+      { name: 'CI/CD (GitHub Actions)', level: 75, color: 'bg-purple-500' },
+      { name: 'Performance Optimization', level: 85, color: 'bg-orange-500' }
+    ],
+    capabilities: [
+      'Build Optimization',
+      'Zero-Downtime Deployments',
+      'Version Control',
+      'Automated Builds'
+    ]
+  },
+
+  {
+    icon: Palette,
+    title: 'UI / UX & Branding',
+    gradient: 'from-pink-600 to-purple-600',
+    description: 'Creating clean, modern, visually appealing designs',
+    skills: [
+      { name: 'Figma', level: 90, color: 'bg-purple-500' },
+      { name: 'Photoshop (Basic)', level: 75, color: 'bg-pink-500' },
+      { name: 'Framer UI', level: 80, color: 'bg-blue-500' },
+      { name: 'Responsive Design', level: 95, color: 'bg-green-500' }
+    ],
+    capabilities: [
+      'Landing Page Design',
+      'Brand Visuals',
+      'Wireframing',
+      'Interaction Design'
+    ]
+  }
+];
+
+ const tools = [
+  { name: 'Git & GitHub', icon: '🔧' },
+  { name: 'VS Code', icon: '💻' },
+  { name: 'Vercel', icon: '🚀' },
+  { name: 'Firebase Console', icon: '🔥' },
+  { name: 'Figma', icon: '🎨' },
+  { name: 'Postman', icon: '📬' }
+];
+
 
   return (
     <section 
