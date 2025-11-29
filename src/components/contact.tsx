@@ -181,7 +181,7 @@ export default function Contact() {
                 ) : (
                   <div className="space-y-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
+                      <label htmlFor="name" className="text-left block text-sm font-medium text-slate-300 mb-2">
                         Your Name *
                       </label>
                       <input
@@ -195,7 +195,7 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
+                      <label htmlFor="email" className="text-left block text-sm font-medium text-slate-300 mb-2">
                         Your Email *
                       </label>
                       <input
@@ -209,7 +209,7 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-slate-300 mb-2">
+                      <label htmlFor="subject" className="text-left block text-sm font-medium text-slate-300 mb-2">
                         Subject *
                       </label>
                       <input
@@ -223,7 +223,7 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
+                      <label htmlFor="message" className="text-left block text-sm font-medium text-slate-300 mb-2">
                         Message *
                       </label>
                       <textarea
@@ -311,8 +311,8 @@ export default function Contact() {
                         <Icon className="w-4 h-4 text-purple-400" />
                       </div>
                       <div>
-                        <div className="text-sm font-medium text-slate-300">{item.label}</div>
-                        <div className="text-xs text-slate-500">{item.value}</div>
+                        <div className="text-left text-sm font-medium text-slate-300">{item.label}</div>
+                        <div className="text-left text-xs text-slate-500">{item.value}</div>
                       </div>
                     </div>
                   );

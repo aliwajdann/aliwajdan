@@ -73,9 +73,9 @@ export default function Testimonials() {
 
 
  const stats = [
-  { icon: Star, value: '5.0', label: 'Average Rating', color: 'text-yellow-400' },
-  { icon: Award, value: '100%', label: 'Client Satisfaction', color: 'text-purple-400' },
-  { icon: TrendingUp, value: '15+', label: 'Projects Delivered', color: 'text-blue-400' }
+  { icon: Star, value: '4.5', label: 'Average Rating', color: 'text-yellow-400' },
+  { icon: Award, value: '98%', label: 'Client Satisfaction', color: 'text-purple-400' },
+  { icon: TrendingUp, value: '10+', label: 'Projects Delivered', color: 'text-blue-400' }
 ];
 
   const companies = [

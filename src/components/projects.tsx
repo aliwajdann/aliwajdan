@@ -1,7 +1,8 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
 import { ExternalLink, Github, ArrowRight, Sparkles, TrendingUp, Users, Zap } from 'lucide-react';
-import { link } from 'fs';
+// import { link } from 'fs';
+import Link from 'next/link';
 
 export default function Projects() {
   // const [isVisible, setIsVisible] = useState(false);
@@ -202,13 +203,13 @@ export default function Projects() {
                     >
                       <ExternalLink className="w-5 h-5" />
                     </a> */}
-                    <a
+                    <Link
                       href={project.github}
                       className="p-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white hover:bg-white/20 transition-all hover:scale-110"
                       aria-label="View Code"
                     >
                       <Github className="w-5 h-5" />
-                    </a>
+                    </Link>
                   </div>
 
                   {/* Featured Badge */}

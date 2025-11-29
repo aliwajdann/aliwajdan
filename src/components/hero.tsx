@@ -88,16 +88,16 @@ export default function Hero() {
           }`}
         >
           <button className="group relative px-4 sm:px-6 py-3 sm:py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-semibold text-sm sm:text-sm text-white overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(168,85,247,0.4)]">
-            <span className="relative z-10 flex items-center justify-center gap-2">
+            <a href='#work' className="relative z-10 flex items-center justify-center gap-2">
               View My Work
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-            </span>
+            </a>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity" />
           </button>
           
-          <button className="px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-sm text-white border-2 border-slate-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all hover:scale-105">
+          <a href='#contact' className="px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-sm text-white border-2 border-slate-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all hover:scale-105">
             Get In Touch
-          </button>
+          </a>
         </div>
 
         {/* Social Links */}
@@ -123,7 +123,7 @@ export default function Hero() {
           <a 
             href="aliwajdan.it@gmail.com" 
             className="p-2.5 sm:p-3 rounded-full bg-slate-800/50 border border-slate-700 text-slate-400 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 transition-all hover:scale-110"
-            aria-label="Email"
+            aria-label="Email" 
           >
             <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
           </a>
