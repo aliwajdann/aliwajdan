@@ -108,7 +108,7 @@ export default function Skills() {
   { name: 'Vercel', icon: '🚀' },
   { name: 'Firebase Console', icon: '🔥' },
   { name: 'Figma', icon: '🎨' },
-  { name: 'Postman', icon: '📬' }
+  { name: 'Photoshop', icon: '📬' }
 ];
 
 
@@ -259,11 +259,11 @@ export default function Skills() {
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-slate-800">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-white mb-1">5+</div>
+                    <div className="text-2xl font-bold text-white mb-1">3+</div>
                     <div className="text-xs text-slate-400">Years Exp</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-white mb-1">50+</div>
+                    <div className="text-2xl font-bold text-white mb-1">12+</div>
                     <div className="text-xs text-slate-400">Projects</div>
                   </div>
                   <div className="text-center">

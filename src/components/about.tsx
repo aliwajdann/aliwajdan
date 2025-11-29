@@ -26,30 +26,31 @@ export default function About() {
     return () => observer.disconnect();
   }, []);
 
-  const stats = [
-    { number: '50+', label: 'Projects Completed', icon: Code2 },
-    { number: '3+', label: 'Years Experience', icon: Zap },
-    { number: '30+', label: 'Happy Clients', icon: Users },
-    { number: '15+', label: 'Technologies', icon: Award }
-  ];
+ const stats = [
+  { number: '10+', label: 'Projects Built', icon: Code2 },
+  { number: '1.5+', label: 'Years Experience', icon: Zap },
+  { number: '8+', label: 'Clients Served', icon: Users },
+  { number: '12+', label: 'Technologies Used', icon: Award }
+];
 
-  const highlights = [
-    {
-      title: 'Clean Code Advocate',
-      description: 'Writing maintainable, scalable code that your future self will thank you for.',
-      gradient: 'from-purple-500 to-pink-500'
-    },
-    {
-      title: 'Performance Obsessed',
-      description: 'Every millisecond matters. I optimize for speed without compromising quality.',
-      gradient: 'from-blue-500 to-cyan-500'
-    },
-    {
-      title: 'User-First Mindset',
-      description: 'Beautiful interfaces mean nothing if users can\'t accomplish their goals effortlessly.',
-      gradient: 'from-orange-500 to-yellow-500'
-    }
-  ];
+
+ const highlights = [
+  {
+    title: 'Detail-Oriented Developer',
+    description: 'I focus on building clean, stable features that work reliably in real-world use.',
+    gradient: 'from-purple-500 to-pink-500'
+  },
+  {
+    title: 'Performance & UX Focused',
+    description: 'Fast load times and smooth interactions are always a priority in my builds.',
+    gradient: 'from-blue-500 to-cyan-500'
+  },
+  {
+    title: 'Practical Problem Solver',
+    description: 'I approach development with a clear goal: make things simple, usable, and efficient.',
+    gradient: 'from-orange-500 to-yellow-500'
+  }
+];
 
   return (
     <section 
