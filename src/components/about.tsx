@@ -28,7 +28,7 @@ export default function About() {
 
  const stats = [
   { number: '10+', label: 'Projects Built', icon: Code2 },
-  { number: '1.5+', label: 'Years Experience', icon: Zap },
+  { number: '2+', label: 'Years Experience', icon: Zap },
   { number: '8+', label: 'Clients Served', icon: Users },
   { number: '12+', label: 'Technologies Used', icon: Award }
 ];
@@ -137,41 +137,48 @@ export default function About() {
           {/* <div className={`transition-all duration-700 delay-200 ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
           }`}> */}
-            <div className="space-y-6">
-              <h3 className="text-2xl sm:text-3xl font-bold text-white">
-                Hey there I am Ali Wajdan
-              </h3>
-              
-              <div className="space-y-4 text-slate-400 text-sm sm:text-base leading-relaxed">
-                <p>
-                  I'm a full-stack developer who loves building digital products that people actually enjoy using. 
-                  Whether it's a sleek landing page or a complex web application, I'm all about creating experiences 
-                  that look great and work even better.
-                </p>
-                
-                <p>
-                  My journey started with a simple "Hello World" and evolved into a passion for crafting pixel-perfect 
-                  interfaces and robust backend systems. I believe great software is where beautiful design meets 
-                  clean code.
-                </p>
+           <div className="space-y-6">
+  <h3 className="text-2xl sm:text-3xl font-bold text-white">
+    Hey, I’m Ali Wajdan
+  </h3>
 
-                <p>
-                  When I'm not coding, you'll find me exploring new technologies, contributing to open-source, 
-                  or helping other developers level up their skills. I'm always excited to collaborate on projects 
-                  that push boundaries and solve real problems.
-                </p>
-              </div>
+  <div className="space-y-4 text-slate-400 text-sm sm:text-base leading-relaxed">
+    <p>
+      I’m a full-stack developer who enjoys building clean, fast, and user-friendly
+      digital experiences. From e-commerce stores to modern portfolios, I focus on
+      making products that look great and work flawlessly.
+    </p>
 
-              <div className="flex flex-wrap gap-3 pt-2">
-                <button className="group px-5 py-2.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-medium text-white text-sm flex items-center gap-2 focus:shadow-[0_0_25px_rgba(168,85,247,0.4)]  hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-all hover:scale-105">
-                  Let's Connect
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <a href='/aliwajdan-cv.pdf' target='_blank'rel='noopener noreferrer'  className="px-5 py-2.5 rounded-lg font-medium text-white text-sm border-2 border-slate-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all hover:scale-105">
-                  View Resume
-                </a>
-              </div>
-            </div>
+    <p>
+      My journey started with experimenting in HTML and CSS, and over time it grew
+      into a passion for building full applications with real functionality. I love
+      combining strong UI with solid engineering to create meaningful experiences.
+    </p>
+
+    <p>
+      Outside of coding, I’m usually learning new tools, improving my skills, or studying
+      how real businesses use technology. I’m always open to collaborations where I can
+      bring ideas to life and solve real problems.
+    </p>
+  </div>
+
+  <div className="flex flex-wrap gap-3 pt-2">
+    <button className="group px-5 py-2.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-medium text-white text-sm flex items-center gap-2 focus:shadow-[0_0_25px_rgba(168,85,247,0.4)] hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-all hover:scale-105">
+      Let’s Connect
+      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+    </button>
+
+    <a
+      href="/aliwajdan-cv.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="px-5 py-2.5 rounded-lg font-medium text-white text-sm border-2 border-slate-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all hover:scale-105"
+    >
+      View Resume
+    </a>
+  </div>
+</div>
+
           </div>
         </div>
 

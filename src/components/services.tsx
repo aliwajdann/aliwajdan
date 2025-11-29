@@ -259,15 +259,15 @@ export default function Skills() {
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-slate-800">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-white mb-1">3+</div>
+                    <div className="text-2xl font-bold text-white mb-1">2+</div>
                     <div className="text-xs text-slate-400">Years Exp</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-white mb-1">12+</div>
+                    <div className="text-2xl font-bold text-white mb-1">10+</div>
                     <div className="text-xs text-slate-400">Projects</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-white mb-1">15+</div>
+                    <div className="text-2xl font-bold text-white mb-1">12+</div>
                     <div className="text-xs text-slate-400">Technologies</div>
                   </div>
                 </div>

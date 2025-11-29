@@ -57,7 +57,9 @@ export default function Projects() {
   image: 'project1',
   gradient: 'from-purple-600 to-pink-600',
   featured: true,
-  link: "https://www.velanoshop.store/"
+  link: "https://www.velanoshop.store/",
+  page: "/velano",
+  github: "https://github.com/aliwajdann/nexwear"
 },
     // {
     //   title: 'Creative Agency Website',
@@ -87,7 +89,9 @@ export default function Projects() {
   image: 'project2',
   gradient: 'from-blue-600 to-cyan-600',
   featured: true,
-  link: "https://aliwajdan.vercel.app/"
+  link: "https://aliwajdan.vercel.app/",
+  page: "/portfolio",
+  github: "https://github.com/aliwajdann/aliwajdan"
 }
 
   ];
@@ -156,8 +160,9 @@ export default function Projects() {
         {/* Projects Grid */}
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
           {filteredProjects.map((project, index) => (
-            <div
-              key={index}
+            <a 
+              key={index} 
+              href={project.link}
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
               className={`group relative transition-all duration-700 ${
@@ -181,7 +186,7 @@ export default function Projects() {
                       <div className={`w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
                         <Sparkles className="w-10 h-10 text-white" />
                       </div>
-                      <p className="text-slate-400 text-sm">Project Screenshot</p>
+                      {/* <p className="text-slate-400 text-sm">Project Screenshot</p> */}
                     </div>
                   </div>
 
@@ -190,15 +195,15 @@ export default function Projects() {
                   
                   {/* Action Buttons */}
                   <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <a
+                    {/* <a
                       href="#"
                       className="p-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white hover:bg-white/20 transition-all hover:scale-110"
                       aria-label="View Live Demo"
                     >
                       <ExternalLink className="w-5 h-5" />
-                    </a>
+                    </a> */}
                     <a
-                      href="#"
+                      href={project.github}
                       className="p-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white hover:bg-white/20 transition-all hover:scale-110"
                       aria-label="View Code"
                     >
@@ -264,7 +269,7 @@ export default function Projects() {
 
                   {/* View Details Link */}
                   <a
-                    href={project.link} target='_blank'
+                    href={project.page} target='_blank'
                     className="group/link inline-flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-blue-300 transition-all"
                   >
                     View Case Study
@@ -275,7 +280,7 @@ export default function Projects() {
                 {/* Glow effect */}
                 <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 blur-xl transition-opacity pointer-events-none`} />
               </div>
-            </div>
+            </a>
           ))}
         </div>
 

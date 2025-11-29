@@ -25,66 +25,68 @@ export default function Testimonials() {
   }, []);
 
   const testimonials = [
-    {
-      name: 'Sarah Johnson',
-      role: 'CEO',
-      company: 'TechFlow Inc',
-      image: '👩‍💼',
-      rating: 5,
-      text: 'Working with Ali was an absolute game-changer for our business. He took our complex requirements and delivered a solution that exceeded all expectations. The attention to detail and commitment to quality is unmatched.',
-      project: 'SaaS Dashboard',
-      result: '40% increase in user engagement',
-      gradient: 'from-purple-600 to-pink-600'
-    },
-    {
-      name: 'Michael Chen',
-      role: 'Product Manager',
-      company: 'StartupXYZ',
-      image: '👨‍💻',
-      rating: 5,
-      text: 'Ali transformed our vision into reality with incredible speed and precision. His technical expertise combined with creative problem-solving made him an invaluable partner. Highly recommend!',
-      project: 'E-commerce Platform',
-      result: '250% revenue growth',
-      gradient: 'from-blue-600 to-cyan-600'
-    },
-    {
-      name: 'Emily Rodriguez',
-      role: 'Marketing Director',
-      company: 'Creative Agency Co',
-      image: '👩‍🎨',
-      rating: 5,
-      text: 'The website Ali built for us is not just beautiful—it converts. We\'ve seen a massive uptick in leads and client inquiries. His understanding of both design and business goals is exceptional.',
-      project: 'Agency Website',
-      result: '300% more qualified leads',
-      gradient: 'from-orange-600 to-red-600'
-    },
-    {
-      name: 'David Park',
-      role: 'Founder',
-      company: 'FitLife App',
-      image: '👨‍🏫',
-      rating: 5,
-      text: 'From concept to launch, Ali was with us every step of the way. His ability to understand our users and translate that into a seamless experience is what made our app successful.',
-      project: 'Fitness Mobile App',
-      result: '25k+ downloads in 3 months',
-      gradient: 'from-green-600 to-emerald-600'
-    }
-  ];
+  {
+    name: 'Sarah Ahmed',
+    role: 'Store Owner',
+    company: 'Velano Shop',
+    image: '👩‍💼',
+    rating: 5,
+    text: 'Ali revamped my entire store’s frontend and checkout experience. The product pages became much cleaner and the admin panel he built helped me manage inventory easily. Smooth communication and fast delivery.',
+    project: 'E-Commerce Store (Velano)',
+    result: 'Reduced cart issues & easier product management',
+    gradient: 'from-purple-600 to-pink-600'
+  },
+  {
+    name: 'Michael Khan',
+    role: 'Founder',
+    company: 'MK Digital Solutions',
+    image: '👨‍💻',
+    rating: 5,
+    text: 'Ali built a fully responsive business website for us using Next.js. It loads super fast and represents our brand exactly the way we wanted. His attention to detail and clear explanations really stood out.',
+    project: 'Business Website',
+    result: 'Faster load times & stronger online presence',
+    gradient: 'from-blue-600 to-cyan-600'
+  },
+  {
+    name: 'Emily Rodriguez',
+    role: 'Creative Director',
+    company: 'Spark Agency',
+    image: '👩‍🎨',
+    rating: 5,
+    text: 'Ali helped us convert our Figma designs into pixel-perfect React components. The animations were smooth, and he handled last-minute changes professionally. Would definitely collaborate again.',
+    project: 'UI to React Conversion',
+    result: 'Improved UI consistency across pages',
+    gradient: 'from-orange-600 to-red-600'
+  },
+  {
+    name: 'David Park',
+    role: 'Startup Owner',
+    company: 'TaskFlow',
+    image: '👨‍🏫',
+    rating: 5,
+    text: 'Great experience working with Ali. He developed a clean and functional landing page for our product launch. The layout was modern, and the page performed well even under high traffic.',
+    project: 'Product Landing Page',
+    result: 'Higher signup rate during launch week',
+    gradient: 'from-green-600 to-emerald-600'
+  }
+];
 
-  const stats = [
-    { icon: Star, value: '5.0', label: 'Average Rating', color: 'text-yellow-400' },
-    { icon: Award, value: '100%', label: 'Client Satisfaction', color: 'text-purple-400' },
-    { icon: TrendingUp, value: '50+', label: 'Projects Delivered', color: 'text-blue-400' }
-  ];
+
+ const stats = [
+  { icon: Star, value: '5.0', label: 'Average Rating', color: 'text-yellow-400' },
+  { icon: Award, value: '100%', label: 'Client Satisfaction', color: 'text-purple-400' },
+  { icon: TrendingUp, value: '15+', label: 'Projects Delivered', color: 'text-blue-400' }
+];
 
   const companies = [
-    { name: 'TechFlow', icon: '🚀' },
-    { name: 'StartupXYZ', icon: '⚡' },
-    { name: 'Creative Co', icon: '🎨' },
-    { name: 'FitLife', icon: '💪' },
-    { name: 'DataSync', icon: '📊' },
-    { name: 'CloudBase', icon: '☁️' }
-  ];
+  { name: 'Velano Shop', icon: '🛍️' },
+  // { name: 'MK Digital', icon: '⚡' },
+  // { name: 'Spark Agency', icon: '🎨' },
+  // { name: 'TaskFlow', icon: '🗂️' },
+  { name: 'Local Businesses', icon: '🏪' },
+  { name: 'Freelance Clients', icon: '🌍' }
+];
+
 
   const nextTestimonial = () => {
     setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
