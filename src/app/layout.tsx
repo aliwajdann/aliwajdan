@@ -32,6 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="stylesheet" href="https://use.typekit.net/ccp5mmz.css" precedence="default"></link>
       <body
         className={`${montserrat.variable}`}
       >

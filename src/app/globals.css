@@ -24,10 +24,26 @@ a {
 Link {
   cursor: pointer;
 }
-button {
+button,
+a,
+li {
   cursor: pointer;
+  font-family: "inter-variable", sans-serif;
+  font-variation-settings: "slnt" 0, "wght" 400;
 }
-
+h1,
+h2,
+h3 {
+  font-family: "warbler-banner", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+}
+p,
+span {
+  font-family: "inter-variable", sans-serif;
+  font-variation-settings: "slnt" 0, "wght" 400;
+}
 body {
   background: var(--background);
   color: var(--foreground);

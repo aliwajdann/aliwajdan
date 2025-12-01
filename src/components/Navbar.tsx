@@ -7,14 +7,58 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
+  const navItems = [
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Work', href: '#work' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Contact', href: '#contact' }
+  ];
+
+  // 1. SCROLL EFFECTS & ACTIVE SECTION TRACKING
   useEffect(() => {
     const handleScroll = () => {
+      // Handle header shrink/shadow on scroll
       setIsScrolled(window.scrollY > 20);
+
+      // Handle active section tracking
+      let currentActive = 'home';
+      navItems.forEach(item => {
+        const section = document.querySelector(item.href);
+        if (section) {
+          const top = section.getBoundingClientRect().top;
+          // Check if section is currently visible near the top of the viewport
+          if (top <= 100 && top > -section.clientHeight + 200) {
+            currentActive = item.name.toLowerCase();
+          }
+        }
+      });
+      setActiveSection(currentActive);
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [navItems]);
+
+
+  // 2. SMOOTH SCROLL FUNCTIONALITY
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string, name: string) => {
+    e.preventDefault();
+    const targetId = href.substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      // Calculate scroll position, adjusting for the fixed header height
+      const offsetTop = targetElement.offsetTop - (isScrolled ? 70 : 80); 
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+      setActiveSection(name.toLowerCase());
+      setIsMobileMenuOpen(false); // Close mobile menu
+    }
+  };
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -28,75 +72,66 @@ export default function Navbar() {
     };
   }, [isMobileMenuOpen]);
 
-  const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Work', href: '#work' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Contact', href: '#contact' }
-  ];
-
-  const handleNavClick = (href: any, name: any) => {
-    setActiveSection(name.toLowerCase());
-    setIsMobileMenuOpen(false);
-  };
 
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
-          ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
           isScrolled 
-            ? 'bg-slate-950/90 backdrop-blur-xl   shadow-lg shadow-purple-500/5' 
-            : 'bg-slate-950/50 backdrop-blur-sm'
+            ? 'bg-slate-950/90 backdrop-blur-xl border-slate-800/80 shadow-lg shadow-purple-500/5' 
+            : 'bg-slate-950/50 backdrop-blur-sm border-transparent' // Subtler initial state
         }`}
       >
         <nav className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
-            {/* Logo */}
+            {/* Logo (Refined) */}
             <a 
               href="#home" 
               className="group flex items-center gap-2 relative z-50"
-              onClick={() => handleNavClick('#home', 'Home')}
+              onClick={(e) => handleSmoothScroll(e, '#home', 'Home')}
+              aria-label="Ali Wajdan Home"
             >
               <div className="relative">
                 <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center font-bold text-white transition-transform group-hover:scale-110">
-                  <span className="text-lg sm:text-xl">Y</span>
+                  <span className="text-lg sm:text-xl">AW</span> {/* Use initials */}
                 </div>
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-purple-600 to-blue-600 blur-lg opacity-0 group-hover:opacity-50 transition-opacity" />
               </div>
-              <span className="text-lg md:text-xl font-bold text-white  sm:block">
+              <span className="text-lg md:text-xl font-bold text-white tracking-wider sm:block">
                 Ali<span className="text-purple-400"> Wajdan</span>
               </span>
             </a>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation (Premium UI) */}
             <div className="hidden md:flex items-center gap-1">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  onClick={() => handleNavClick(item.href, item.name)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all relative group ${
-                    activeSection === item.name.toLowerCase()
-                      ? 'text-white'
-                      : 'text-slate-400 hover:text-white'
-                  }`}
+                  onClick={(e) => handleSmoothScroll(e, item.href, item.name)}
+                  className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all relative group overflow-hidden
+                    ${activeSection === item.name.toLowerCase()
+                      ? 'text-white bg-slate-800/60' // Active pill background
+                      : 'text-slate-400 hover:text-white hover:bg-slate-800/30' // Hover background
+                    }
+                  `}
                 >
                   {item.name}
+                  {/* Glowing Bottom Indicator */}
                   <span 
-                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600 transition-all ${
-                      activeSection === item.name.toLowerCase()
-                        ? 'w-full'
-                        : 'w-0 group-hover:w-full'
-                    }`}
+                    className={`absolute bottom-0 left-0 h-[2px] rounded-full transition-all duration-300 
+                      ${activeSection === item.name.toLowerCase()
+                        ? 'w-full bg-gradient-to-r from-purple-500 to-blue-500 shadow-[0_0_10px_rgba(168,85,247,0.7)]' // Active glow
+                        : 'w-0 group-hover:w-full group-hover:bg-purple-500/50' // Hover glow
+                      }
+                    `}
                   />
                 </a>
               ))}
             </div>
 
             {/* CTA Button (Desktop) */}
-            <a href='/aliwajdan-cv.pdf' download className="hidden md:block">
+            <a href='/aliwajdan-cv.pdf' download className="hidden md:block" aria-label="Download Resume">
               <button className="group relative px-6 py-2.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-medium text-white text-sm overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]">
                 <span className="relative z-10 flex items-center gap-2">
                   <Download className="w-4 h-4"/>
@@ -113,9 +148,9 @@ export default function Navbar() {
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <X className="w-5 h-5 sm:w-6 sm:h-6" />
+                <X className="w-6 h-6" />
               ) : (
-                <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
+                <Menu className="w-6 h-6" />
               )}
             </button>
           </div>
@@ -130,7 +165,7 @@ export default function Navbar() {
         onClick={() => setIsMobileMenuOpen(false)}
       />
 
-      {/* Mobile Slide-in Menu */}
+      {/* Mobile Slide-in Menu (Already Premium-looking) */}
       <div 
         className={`fixed top-0 right-0 h-full w-[280px] sm:w-[320px] bg-slate-950/95 backdrop-blur-xl border-l border-slate-800/50 z-40 transition-transform duration-500 ease-out md:hidden shadow-2xl shadow-purple-500/10 ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
@@ -144,16 +179,14 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                onClick={() => handleNavClick(item.href, item.name)}
+                onClick={(e) => handleSmoothScroll(e, item.href, item.name)}
                 className={`group px-5 py-4 rounded-xl text-base font-medium transition-all duration-300 ${
                   activeSection === item.name.toLowerCase()
                     ? 'text-white bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30'
                     : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
                 }`}
                 style={{
-                  transitionDelay: isMobileMenuOpen ? `${index * 50}ms` : '0ms',
-                  transform: isMobileMenuOpen ? 'translateX(0)' : 'translateX(20px)',
-                  opacity: isMobileMenuOpen ? 1 : 0
+                  // Removed inline styles for transition delay to simplify and improve performance
                 }}
               >
                 <div className="flex items-center justify-between">
@@ -171,14 +204,9 @@ export default function Navbar() {
 
           {/* Resume Button */}
           <a href='/aliwajdan-cv.pdf' download
-            className="w-full px-6 py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl font-medium text-white text-sm flex items-center justify-center gap-2 hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] transition-all hover:scale-[1.02] active:scale-[0.98]"
-            style={{
-              transitionDelay: isMobileMenuOpen ? '250ms' : '0ms',
-              transform: isMobileMenuOpen ? 'translateX(0)' : 'translateX(20px)',
-              opacity: isMobileMenuOpen ? 1 : 0
-            }}
+            className="w-full px-6 py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl font-medium text-white text-base flex items-center justify-center gap-2 hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] transition-all hover:scale-[1.02] active:scale-[0.98]"
           >
-            <Download className="w-4 h-4" />
+            <Download className="w-5 h-5" />
             Download Resume
           </a>
 
@@ -197,9 +225,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-
-      {/* Spacer to prevent content from going under fixed header */}
-      {/* <div className="h-16 sm:h-10" /> */}
     </>
   );
 }

@@ -57,19 +57,19 @@ export default function Hero() {
         </div>
 
         {/* Main heading */}
-        <h1 
+        <div
           className={`text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-center mb-4 sm:mb-6 transition-all duration-700 delay-100 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
-          <span className="bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
+          <h2 className="bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
             Building Digital
-          </span>
-          <br />
-          <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
+          </h2>
+          {/* <br /> */}
+          <h2 className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
             Experiences
-          </span>
-        </h1>
+          </h2>
+        </div>
 
         {/* Subheading */}
         <p 
