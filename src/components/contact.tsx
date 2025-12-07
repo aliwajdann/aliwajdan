@@ -15,22 +15,22 @@ export default function Contact() {
 
   // Removed unused isVisible logic
   // useEffect logic retained for potential future use (e.g., animations)
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          // Placeholder for future animations or tracking
-        }
-      },
-      { threshold: 0.1 }
-    );
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         // Placeholder for future animations or tracking
+  //       }
+  //     },
+  //     { threshold: 0.1 }
+  //   );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+  //   if (sectionRef.current) {
+  //     observer.observe(sectionRef.current);
+  //   }
 
-    return () => observer.disconnect();
-  }, []);
+  //   return () => observer.disconnect();
+  // }, []);
 
   const handleSubmit = async (e?: any) => {
   e?.preventDefault();
@@ -143,8 +143,8 @@ export default function Contact() {
           </div>
           {/* Title size slightly reduced on mobile */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-            Got a Project?
-            <span className="block bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            Got a Project
+          <span>?</span>  <span className="block bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
               Let's Talk!
             </span>
           </h2>

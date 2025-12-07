@@ -33,11 +33,12 @@ li {
 }
 h1,
 h2,
-h3 {
-  font-family: "warbler-banner", sans-serif;
+h3,
+.main-heading {
+  font-family: "futura-100", sans-serif;
   font-weight: 400;
   font-style: normal;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 p,
 span {

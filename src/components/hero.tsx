@@ -6,19 +6,19 @@ export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    setIsVisible(true);
+  // useEffect(() => {
+  //   setIsVisible(true);
     
-    const handleMouseMove = (e: any) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth) * 20 - 10,
-        y: (e.clientY / window.innerHeight) * 20 - 10
-      });
-    };
+  //   const handleMouseMove = (e: any) => {
+  //     setMousePosition({
+  //       x: (e.clientX / window.innerWidth) * 20 - 10,
+  //       y: (e.clientY / window.innerHeight) * 20 - 10
+  //     });
+  //   };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  //   window.addEventListener('mousemove', handleMouseMove);
+  //   return () => window.removeEventListener('mousemove', handleMouseMove);
+  // }, []);
 
   return (
     <div className="relative md:pt-[2%] h-lvh flex items-center justify-center md:min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
@@ -58,7 +58,7 @@ export default function Hero() {
 
         {/* Main heading */}
         <div
-          className={`text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-center mb-4 sm:mb-6 transition-all duration-700 delay-100 ${
+          className={`main-heading text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-center mb-4 sm:mb-6 transition-all duration-700 delay-100 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
