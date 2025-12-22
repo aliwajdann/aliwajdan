@@ -101,7 +101,7 @@ export default function Testimonials() {
     <section 
       ref={sectionRef}
       id="testimonials" 
-      className="relative py-20 sm:py-32 bg-gradient-to-b from-slate-900 to-slate-950 overflow-hidden"
+      className="relative py-16 bg-gradient-to-b from-slate-900 to-slate-950 overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">

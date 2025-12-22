@@ -125,7 +125,7 @@ export default function Contact() {
       ref={sectionRef}
       id="contact" 
       // Adjusted padding for better vertical rhythm
-      className="relative py-16 sm:py-24 bg-slate-950 overflow-hidden"
+      className="relative py-6 bg-slate-950 overflow-hidden"
     >
       {/* Background Elements (Kept the same) */}
       <div className="absolute inset-0 overflow-hidden">
@@ -158,7 +158,7 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto mb-14 sm:mb-16">
           {/* Left: Contact Form */}
           <div className={`transition-all duration-700 delay-100 opacity-100 translate-x-0`}>
-            <div className="relative p-6 sm:p-8 rounded-3xl bg-slate-900/50 border border-slate-800 overflow-hidden">
+            <div className="relative p-3 sm:p-8 rounded-3xl bg-slate-900/50 border border-slate-800 overflow-hidden">
               {/* Background gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-blue-600/5" />
               
@@ -247,7 +247,7 @@ export default function Contact() {
             <div>
               {/* Heading size slightly reduced on mobile */}
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">Other Ways to Connect</h3>
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 {contactMethods.map((method, index) => {
                   const Icon = method.icon;
                   return (

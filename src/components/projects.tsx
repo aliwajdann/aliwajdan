@@ -76,7 +76,7 @@ export default function Projects() {
       ref={sectionRef}
       id="work"
       // Adjusted padding for better rhythm
-      className="relative pt-16 pb-16 sm:pt-24 sm:pb-32 bg-gradient-to-b from-slate-950 to-slate-900 overflow-hidden"
+      className="relative py-16 bg-gradient-to-b from-slate-950 to-slate-900 overflow-hidden"
     >
       {/* Background Elements (Kept the same) */}
       <div className="absolute inset-0 overflow-hidden">

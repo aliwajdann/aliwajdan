@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { ArrowRight, Github, Linkedin, Mail, Sparkles } from "lucide-react";
 
 export default function Hero() {
@@ -44,7 +43,7 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 sm:mb-16 w-full sm:w-auto px-4 sm:px-0">
-          <button className="group relative px-4 sm:px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-semibold text-sm text-white overflow-hidden hover:scale-105 transition-all">
+          <button className="group relative px-4 sm:px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-semibold text-sm text-white overflow-hidden focus:hover:scale-105 hover:scale-105 transition-all">
             <a href="#work" className="relative z-10 flex items-center justify-center gap-2">
               View My Work
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />

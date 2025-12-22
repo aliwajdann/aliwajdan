@@ -117,7 +117,7 @@ export default function Skills() {
       ref={sectionRef}
       id="skills" 
       // Adjusted padding for better flow
-      className="relative py-20 sm:py-32 bg-slate-950 overflow-hidden"
+      className="relative py-16 bg-slate-950 overflow-hidden"
     >
       {/* Background Elements (Kept the same) */}
       <div className="absolute inset-0 overflow-hidden">

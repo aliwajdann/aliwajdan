@@ -95,7 +95,7 @@ export default function About() {
       ref={sectionRef}
       id="about"
       // Added scroll-smooth to enable in-page smooth scrolling for button links
-      className="relative py-16 sm:py-24 bg-slate-950 overflow-hidden scroll-smooth"
+      className="relative py-16 bg-slate-950 overflow-hidden scroll-smooth"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
