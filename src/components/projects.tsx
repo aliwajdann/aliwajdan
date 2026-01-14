@@ -25,7 +25,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 bg-white overflow-hidden">
+    <section id="projects" className="py-10 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Header - Simple Fade In */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
@@ -59,7 +59,7 @@ const Projects = () => {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.4 }}
               // Removed 'backdrop-blur' and 'hover:shadow-2xl' which are heavy on mobile
-              className={`group relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center rounded-[2.5rem] p-6 md:p-8 transition-colors duration-300 ${project.color} border border-slate-100`}
+              className={`group relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center rounded-[2.5rem] p-4 md:p-8 transition-colors duration-300 ${project.color} border border-slate-100`}
             >
               {/* Placeholder for Image - use a simple colored div to test lag */}
               <div className="relative overflow-hidden rounded-[2rem] aspect-[16/10] bg-slate-200/50 shadow-md">

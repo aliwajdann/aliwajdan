@@ -27,7 +27,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-24 bg-slate-50/50 relative overflow-hidden">
+    <section className="py-10 bg-slate-50/50 relative overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-16">
@@ -62,7 +62,7 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="relative bg-white p-8 rounded-[2.5rem] border border-slate-200 shadow-sm hover:shadow-xl hover:shadow-blue-100/30 transition-all group"
+              className="relative bg-white p-6 rounded-[2.5rem] border border-slate-200 shadow-sm hover:shadow-xl hover:shadow-blue-100/30 transition-all group"
             >
               {/* Quote Icon */}
               <div className="absolute top-8 right-8 text-blue-50/50 group-hover:text-blue-100 transition-colors">

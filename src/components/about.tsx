@@ -13,7 +13,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-24 bg-slate-50/50">
+    <section id="about" className="py-10 bg-slate-50/50">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="mb-16">
@@ -35,7 +35,7 @@ const About = () => {
           {/* Main Bio Card */}
           <motion.div
             {...fadeIn}
-            className="md:col-span-2 bg-white p-8 md:p-10 rounded-[2rem] border border-slate-200 shadow-sm flex flex-col justify-between"
+            className="md:col-span-2 bg-white p-4 md:p-10 rounded-[2rem] border border-slate-200 shadow-sm flex flex-col justify-between"
           >
             <div>
               <p className="text-xl text-slate-700 leading-relaxed mb-6">

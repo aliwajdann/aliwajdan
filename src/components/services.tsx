@@ -27,7 +27,7 @@ const services = [
 
 const Skills = () => {
   return (
-    <section id="services" className="py-24 bg-white relative overflow-hidden">
+    <section id="services" className="py-10 bg-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50" />
 
@@ -71,7 +71,7 @@ const Skills = () => {
         </div>
 
         {/* Expertise / Tech Tags */}
-        <div className="bg-slate-900 rounded-[3rem] p-10 md:p-16 overflow-hidden relative">
+        <div className="bg-slate-900 rounded-[3rem] p-4 md:p-16 overflow-hidden relative">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
             <div className="max-w-sm">
               <h3 className="text-2xl font-bold text-white mb-4">My Tech Stack</h3>

@@ -24,18 +24,39 @@ export default function Contact() {
 
     try {
       setIsLoading(true);
-      // Simulating your API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      // const data = await res.json();
+
+      // if (!res.ok || !data.success) {
+      //   throw new Error("Email failed");
+      // }
+
       setIsSubmitted(true);
       setFormData({ name: "", email: "", subject: "", message: "" });
       setTimeout(() => setIsSubmitted(false), 5000);
-    } catch (err) {
-      console.error(err);
-      alert("Something went wrong!");
-    } finally {
-      setIsLoading(false);
+    } catch (error: any) {
+      console.error("MAIL ERROR:", error);
+
+      return Response.json(
+        {
+          success: false,
+          message: error?.message || "Mail failed",
+        },
+        { status: 500 }
+      );
     }
-  };
+  }
+
+
+
 
   const contactMethods = [
     { icon: Mail, label: 'Email', value: 'aliwajdan.it@gmail.com', link: 'mailto:aliwajdan.it@gmail.com', color: 'bg-blue-50 text-blue-600' },
@@ -44,7 +65,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-white relative">
+    <section id="contact" className="py-10 bg-white relative">
       <div className="container mx-auto px-6 max-w-7xl">
 
         {/* Header */}
@@ -72,7 +93,7 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="lg:col-span-7 bg-slate-50 border border-slate-200 p-8 md:p-12 rounded-[2.5rem] relative overflow-hidden"
+            className="lg:col-span-7 bg-slate-50 border border-slate-200 p-4 md:p-12 rounded-[2.5rem] relative overflow-hidden"
           >
             <AnimatePresence mode="wait">
               {isSubmitted ? (
@@ -91,8 +112,8 @@ export default function Contact() {
               ) : (
                 <motion.form key="form" onSubmit={handleSubmit} className="space-y-6 relative z-10">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-sm font-bold text-slate-700 ml-1">Your Name</label>
+                    <div className="space-y-2 text-left">
+                      <label className="align-left text-sm font-bold text-slate-700 ml-1">Your Name</label>
                       <input
                         required
                         type="text"
@@ -102,7 +123,7 @@ export default function Contact() {
                         placeholder="John Doe"
                       />
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-2 text-left">
                       <label className="text-sm font-bold text-slate-700 ml-1">Email Address</label>
                       <input
                         required
@@ -114,7 +135,7 @@ export default function Contact() {
                       />
                     </div>
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-2 text-left">
                     <label className="text-sm font-bold text-slate-700 ml-1">Subject</label>
                     <input
                       required
@@ -125,7 +146,7 @@ export default function Contact() {
                       placeholder="Project Inquiry"
                     />
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-2 text-left">
                     <label className="text-sm font-bold text-slate-700 ml-1">Message</label>
                     <textarea
                       required
