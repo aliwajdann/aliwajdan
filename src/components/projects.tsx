@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Layout, ArrowUpRight } from "lucide-react";
 
@@ -11,7 +10,8 @@ const projects = [
     tech: ["Next.js 14", "Stripe", "PostgreSQL", "Tailwind"],
     link: "#",
     github: "#",
-    image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=60&w=800", // Optimized width/quality
+    image: "",
+    // image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=60&w=800", // Optimized width/quality
     color: "bg-emerald-50"
   },
   {
@@ -20,7 +20,8 @@ const projects = [
     tech: ["TypeScript", "Recharts", "Prisma", "Auth.js"],
     link: "#",
     github: "#",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=60&w=800", // Optimized width/quality
+    image: "",
+    // image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=60&w=800", // Optimized width/quality
     color: "bg-blue-50"
   }
 ];
