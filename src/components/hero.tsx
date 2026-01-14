@@ -1,102 +1,98 @@
 "use client";
-import { ArrowRight, Github, Linkedin, Mail, Sparkles } from "lucide-react";
 
-export default function Hero() {
+import React from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, Github, Linkedin, Terminal, Sparkles } from "lucide-react";
+
+const Hero = () => {
   return (
-    <div className="relative md:pt-[2%] h-lvh flex items-center justify-center md:min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
-
-      {/* Animated background elements (lighter for mobile) */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse [animation-delay:1s]" />
-
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,black,transparent)]" />
+    <section className="relative pt-32 pb-16 md:pt-48 md:pb-32 overflow-hidden">
+      {/* Background Decorative Elements */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-50/50 blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-50/50 blur-[120px]" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 py-16 sm:py-20 flex flex-col items-center justify-center">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
 
-        {/* Badge */}
-        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-purple-500/10 border border-purple-500/20 backdrop-blur-sm mb-6 sm:mb-8">
-          <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
-          <span className="text-xs sm:text-sm text-purple-300 font-medium">
-            Available for freelance work
-          </span>
-        </div>
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-bold uppercase tracking-wider mb-6"
+          >
+            <Sparkles size={14} />
+            <span>Available for new projects</span>
+          </motion.div>
 
-        {/* Main heading */}
-        <div className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-center mb-4 sm:mb-6">
-          <h2 className="bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
-            Building Digital
-          </h2>
-          <h2 className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
-            Experiences
-          </h2>
-        </div>
+          {/* Main Title */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6"
+          >
+            Building <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">Scalable Apps</span> with Precision.
+          </motion.h1>
 
-        {/* Subheading */}
-        <p className="text-sm sm:text-lg md:text-lg text-slate-400 text-center max-w-2xl mb-8 sm:mb-12 px-2 sm:px-0">
-          Full-stack developer crafting beautiful, performant web applications
-          with modern technologies. Turning complex problems into elegant
-          solutions.
-        </p>
+          {/* Subtext */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl leading-relaxed"
+          >
+            I'm a Senior Web Developer specializing in Next.js and TypeScript. I help businesses turn complex ideas into high-performance digital products.
+          </motion.p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 sm:mb-16 w-full sm:w-auto px-4 sm:px-0">
-          <button className="group relative px-4 sm:px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-semibold text-sm text-white overflow-hidden focus:hover:scale-105 hover:scale-105 transition-all">
-            <a href="#work" className="relative z-10 flex items-center justify-center gap-2">
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex flex-col sm:flex-row items-center gap-4 mb-16"
+          >
+            <button className="group relative px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold flex items-center gap-2 overflow-hidden transition-all hover:bg-blue-600 active:scale-95 shadow-xl shadow-slate-200">
               View My Work
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity" />
-          </button>
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </button>
 
-          <a
-            href="#contact"
-            className="px-6 sm:px-8 py-3 rounded-full font-semibold text-sm text-white border-2 border-slate-700 hover:border-purple-500 hover:bg-purple-500/10 hover:scale-105 transition-all"
-          >
-            Get In Touch
-          </a>
-        </div>
+            <div className="flex items-center gap-3">
+              <a href="#" className="p-4 rounded-2xl bg-white border border-slate-200 text-slate-600 hover:text-blue-600 hover:border-blue-200 transition-all shadow-sm">
+                <Github size={20} />
+              </a>
+              <a href="#" className="p-4 rounded-2xl bg-white border border-slate-200 text-slate-600 hover:text-blue-600 hover:border-blue-200 transition-all shadow-sm">
+                <Linkedin size={20} />
+              </a>
+            </div>
+          </motion.div>
 
-        {/* Social Links */}
-        <div className="flex items-center gap-4 sm:gap-6">
-          <a
-            href="https://github.com/aliwajdann"
-            className="p-2.5 sm:p-3 rounded-full bg-slate-800/50 border border-slate-700 text-slate-400 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 hover:scale-110 transition-all"
+          {/* Trust Bar / Tech Stack */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="w-full pt-12 border-t border-slate-100 flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all"
           >
-            <Github className="w-4 h-4 sm:w-5 sm:h-5" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/ali-wajdan/"
-            className="p-2.5 sm:p-3 rounded-full bg-slate-800/50 border border-slate-700 text-slate-400 hover:text-white hover:border-blue-500 hover:bg-blue-500/10 hover:scale-110 transition-all"
-          >
-            <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
-          </a>
-          <a
-            href="mailto:aliwajdan.it@gmail.com"
-            className="p-2.5 sm:p-3 rounded-full bg-slate-800/50 border border-slate-700 text-slate-400 hover:text-white hover:border-purple-500 hover:bg-purple-500/10 hover:scale-110 transition-all"
-          >
-            <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
-          </a>
+            <TechIcon name="Next.js" />
+            <TechIcon name="TypeScript" />
+            <TechIcon name="Tailwind" />
+            <TechIcon name="Node.js" />
+            <TechIcon name="PostgreSQL" />
+          </motion.div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes gradient {
-          0%, 100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-        }
-        .animate-gradient {
-          background-size: 200% auto;
-          animation: gradient 3s ease infinite;
-        }
-      `}</style>
-
-    </div>
+    </section>
   );
-}
+};
+
+const TechIcon = ({ name }: { name: string }) => (
+  <div className="flex items-center gap-2">
+    <div className="w-2 h-2 rounded-full bg-slate-300" />
+    <span className="text-sm font-bold text-slate-900">{name}</span>
+  </div>
+);
+
+export default Hero;

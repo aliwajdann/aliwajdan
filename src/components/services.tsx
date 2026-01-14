@@ -1,302 +1,103 @@
-"use client"
-import React, { useState, useEffect, useRef } from 'react';
-// Imported Icons
-import { Code2, Palette, Database, Cloud, Zap, Layers, Globe, CheckCircle } from 'lucide-react';
+"use client";
 
-export default function Skills() {
-  const [activeCategory, setActiveCategory] = useState(0);
-  const sectionRef = useRef<HTMLDivElement>(null);
+import React from "react";
+import { motion } from "framer-motion";
+import { Code2, Smartphone, Zap, ShieldCheck, BarChart3, Globe } from "lucide-react";
 
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       if (entry.isIntersecting) {
-  //         // Placeholder for future animations or tracking
-  //       }
-  //     },
-  //     { threshold: 0.1 }
-  //   );
+const services = [
+  {
+    title: "Full-stack Development",
+    description: "Building robust, scalable web applications using the T3 stack (Next.js, TypeScript, Prisma, tRPC).",
+    icon: <Code2 className="text-blue-600" size={24} />,
+    color: "bg-blue-50"
+  },
+  {
+    title: "Performance Optimization",
+    description: "Specializing in Core Web Vitals, reducing TTI, and ensuring your app runs at 100/100 Lighthouse scores.",
+    icon: <Zap className="text-amber-600" size={24} />,
+    color: "bg-amber-50"
+  },
+  {
+    title: "UI/UX Implementation",
+    description: "Pixel-perfect conversion from Figma to code with smooth Framer Motion animations and responsive CSS.",
+    icon: <Smartphone className="text-purple-600" size={24} />,
+    color: "bg-purple-50"
+  }
+];
 
-  //   if (sectionRef.current) {
-  //     observer.observe(sectionRef.current);
-  //   }
-
-  //   return () => observer.disconnect();
-  // }, []);
-
-  const skillCategories = [
-    {
-      icon: Code2,
-      title: 'Frontend Development',
-      gradient: 'from-purple-600 to-pink-600',
-      description: 'Building fast, modern, and responsive user interfaces',
-      skills: [
-        { name: 'React & Next.js', level: 95, color: 'bg-cyan-500' },
-        { name: 'TypeScript', level: 90, color: 'bg-blue-500' },
-        { name: 'Tailwind CSS', level: 95, color: 'bg-teal-500' },
-        { name: 'GSAP & Framer Motion', level: 85, color: 'bg-green-500' }
-      ],
-      capabilities: [
-        'Reusable Components',
-        'State Management (Redux)',
-        'SSR & App Router',
-        'Animations & 3D UI'
-      ]
-    },
-
-    {
-      icon: Database,
-      title: 'Backend & Databases',
-      gradient: 'from-blue-600 to-cyan-600',
-      description: 'Building secure, scalable backend systems',
-      skills: [
-        { name: 'Node.js (Basics)', level: 70, color: 'bg-green-500' },
-        { name: 'Firebase / Firestore', level: 90, color: 'bg-yellow-500' },
-        { name: 'Authentication (Clerk)', level: 85, color: 'bg-blue-500' },
-        { name: 'REST APIs', level: 80, color: 'bg-green-500' }
-      ],
-      capabilities: [
-        'Firestore Database Modeling',
-        'Secure Auth',
-        'API Integration',
-        'Server Actions'
-      ]
-    },
-
-    {
-      icon: Cloud,
-      title: 'Deployment & DevOps',
-      gradient: 'from-orange-600 to-red-600',
-      description: 'Shipping production-ready applications',
-      skills: [
-        { name: 'Vercel Deployment', level: 95, color: 'bg-gray-500' },
-        { name: 'Git & GitHub', level: 90, color: 'bg-blue-500' },
-        { name: 'CI/CD (GitHub Actions)', level: 75, color: 'bg-purple-500' },
-        { name: 'Performance Optimization', level: 85, color: 'bg-orange-500' }
-      ],
-      capabilities: [
-        'Build Optimization',
-        'Zero-Downtime Deployments',
-        'Version Control',
-        'Automated Builds'
-      ]
-    },
-
-    {
-      icon: Palette,
-      title: 'UI / UX & Branding',
-      gradient: 'from-pink-600 to-purple-600',
-      description: 'Creating clean, modern, visually appealing designs',
-      skills: [
-        { name: 'Figma', level: 90, color: 'bg-purple-500' },
-        { name: 'Photoshop (Basic)', level: 75, color: 'bg-pink-500' },
-        { name: 'Framer UI', level: 80, color: 'bg-blue-500' },
-        { name: 'Responsive Design', level: 95, color: 'bg-green-500' }
-      ],
-      capabilities: [
-        'Landing Page Design',
-        'Brand Visuals',
-        'Wireframing',
-        'Interaction Design'
-      ]
-    }
-  ];
-
-  const tools = [
-    { name: 'Git & GitHub', icon: '🔧' },
-    { name: 'VS Code', icon: '💻' },
-    { name: 'Vercel', icon: '🚀' },
-    { name: 'Firebase Console', icon: '🔥' },
-    { name: 'Figma', icon: '🎨' },
-    { name: 'Photoshop', icon: '🖼️' } // Corrected icon for Photoshop/visuals
-  ];
-
-
+const Skills = () => {
   return (
-    <section 
-      ref={sectionRef}
-      id="skills" 
-      // Adjusted padding for better flow
-      className="relative py-16 bg-slate-950 overflow-hidden"
-    >
-      {/* Background Elements (Kept the same) */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/3 -right-48 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/3 -left-48 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,black,transparent)]" />
-      </div>
+    <section id="services" className="py-24 bg-white relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50" />
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6">
-        {/* Section Header */}
-        <div className={`text-center mb-12 sm:mb-16 transition-all duration-700 opacity-100 translate-y-0`}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 backdrop-blur-sm mb-4">
-            <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400" />
-            <span className="text-xs sm:text-sm text-purple-300 font-medium">Skills & Expertise</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-            What I Bring to
-            <span className="block bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-              The Table
-            </span>
-          </h2>
-          <p className="text-slate-400 text-sm max-w-2xl mx-auto">
-            A full-stack toolkit to turn your ideas into polished, production-ready applications.
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-slate-900 mb-6"
+          >
+            Solutions that drive <span className="text-blue-600 font-serif italic">results.</span>
+          </motion.h2>
+          <p className="text-slate-600 text-lg">
+            I don't just write code. I build digital assets that help businesses grow,
+            scale, and outperform their competition.
           </p>
         </div>
 
-        {/* Category Cards */}
-        {/* Adjusted grid to 2 columns on small screens, 4 on large screens */}
-        <div className={`grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-12 transition-all duration-700 delay-100 opacity-100 translate-y-0`}>
-          {skillCategories.map((category, index) => {
-            const Icon = category.icon;
-            const isActive = activeCategory === index;
-            return (
-              <button
-                key={index}
-                onClick={() => setActiveCategory(index)}
-                className={`group relative p-4 sm:p-6 rounded-2xl border transition-all duration-300 text-left 
-                  ${isActive
-                    ? 'bg-slate-900 border-purple-600 scale-[1.03] shadow-lg shadow-purple-500/10' // Stronger active state
-                    : 'bg-slate-900/30 border-slate-800 hover:border-slate-700 hover:bg-slate-900/50'
-                  }`}
-              >
-                {/* Gradient overlay */}
-                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${category.gradient} opacity-0 ${isActive ? 'opacity-10' : 'group-hover:opacity-5'} transition-opacity blur-xl duration-500`} />
-                
-                <div className="relative">
-                  <div className={`inline-flex p-2 sm:p-3 rounded-xl bg-gradient-to-br ${category.gradient} mb-2 sm:mb-3 
-                    ${isActive ? 'scale-105' : 'group-hover:scale-110'} transition-transform duration-300`}>
-                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                  </div>
-                  <h3 className="text-sm sm:text-lg font-bold text-white mb-1">
-                    {category.title}
-                  </h3>
-                  <p className="text-[10px] sm:text-xs text-slate-400">
-                    {category.description}
-                  </p>
-                </div>
-
-                {/* Active indicator */}
-                {isActive && (
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
-                )}
-              </button>
-            );
-          })}
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+              className="p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-blue-50 transition-all group"
+            >
+              <div className={`w-14 h-14 ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                {service.icon}
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-4">{service.title}</h3>
+              <p className="text-slate-600 leading-relaxed text-sm">
+                {service.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
 
-        {/* Active Category Details */}
-        <div className={`transition-all duration-700 delay-200 opacity-100 translate-y-0`}>
-          <div className="relative p-6 sm:p-8 rounded-3xl bg-slate-900/50 border border-slate-800 overflow-hidden">
-            {/* Background gradient */}
-            <div className={`absolute inset-0 bg-gradient-to-br ${skillCategories[activeCategory].gradient} opacity-5 blur-3xl`} />
-            
-            {/* Adjusted grid to stack on mobile, side-by-side on large screens */}
-            <div className="relative grid lg:grid-cols-2 gap-8">
-              
-              {/* Left: Skills with Progress Bars */}
-              <div>
-                <h4 className="text-lg sm:text-xl font-bold text-white mb-5 flex items-center gap-2">
-                  <Layers className="w-5 h-5 text-purple-400" />
-                  Technical Skills
-                </h4>
-                <div className="space-y-4 sm:space-y-5">
-                  {skillCategories[activeCategory].skills.map((skill, index) => (
-                    <div key={index}>
-                      <div className="flex justify-between items-center mb-1.5">
-                        <span className="text-sm font-medium text-white">{skill.name}</span>
-                        <span className="text-xs text-slate-400">{skill.level}%</span>
-                      </div>
-                      <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
-                        <div 
-                          className={`h-full ${skill.color} rounded-full transition-all duration-1000 ease-out`}
-                          style={{ 
-                            width:  `${skill.level}%`,
-                            transitionDelay: `${300 + index * 100}ms`
-                          }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+        {/* Expertise / Tech Tags */}
+        <div className="bg-slate-900 rounded-[3rem] p-10 md:p-16 overflow-hidden relative">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+            <div className="max-w-sm">
+              <h3 className="text-2xl font-bold text-white mb-4">My Tech Stack</h3>
+              <p className="text-slate-400 text-sm">
+                I stay at the forefront of the industry by using the most reliable and modern technologies available.
+              </p>
+            </div>
 
-              {/* Right: Capabilities & Stats */}
-              <div>
-                <h4 className="text-lg sm:text-xl font-bold text-white mb-5 flex items-center gap-2">
-                  <Globe className="w-5 h-5 text-blue-400" />
-                  What I Can Build
-                </h4>
-                <div className="grid grid-cols-2 gap-3">
-                  {skillCategories[activeCategory].capabilities.map((capability, index) => (
-                    <div
-                      key={index}
-                      className="group p-3 rounded-xl bg-slate-800/30 border border-slate-700 hover:border-purple-500/50 transition-all hover:scale-[1.02] cursor-default"
-                    >
-                      <div className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-purple-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-xs sm:text-sm text-slate-300 leading-tight">
-                          {capability}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Stats */}
-                <div className="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-slate-800">
-                  <div className="text-center">
-                    <div className="text-xl sm:text-2xl font-bold text-white mb-1">2+</div>
-                    <div className="text-xs text-slate-400">Years Exp</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-xl sm:text-2xl font-bold text-white mb-1">10+</div>
-                    <div className="text-xs text-slate-400">Projects</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-xl sm:text-2xl font-bold text-white mb-1">12+</div>
-                    <div className="text-xs text-slate-400">Technologies</div>
-                  </div>
-                </div>
-              </div>
+            <div className="flex flex-wrap justify-center md:justify-end gap-3 max-w-xl">
+              {["Next.js 14", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL", "Prisma", "Framer Motion", "Docker", "AWS", "Redux Toolkit", "TanStack Query", "Zustand"].map((skill) => (
+                <span
+                  key={skill}
+                  className="px-5 py-2 bg-white/5 border border-white/10 rounded-full text-white text-xs font-medium hover:bg-white/10 transition-colors cursor-default"
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
-        </div>
 
-        {/* Tools & Technologies */}
-        <div className={`mt-12 sm:mt-16 transition-all duration-700 delay-300 opacity-100 translate-y-0`}>
-          <h4 className="text-lg sm:text-xl font-bold text-white text-center mb-6">
-            Tools I Use Daily
-          </h4>
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-            {tools.map((tool, index) => (
-              <div
-                key={index}
-                className="group px-4 sm:px-6 py-3 sm:py-4 bg-slate-900/50 border border-slate-800 rounded-xl hover:border-purple-500/50 hover:bg-slate-900 transition-all hover:scale-105 duration-200 cursor-default"
-              >
-                <div className="flex items-center gap-2 sm:gap-3">
-                  <span className="text-xl sm:text-2xl">{tool.icon}</span>
-                  <span className="text-xs sm:text-sm font-medium text-slate-300 group-hover:text-white transition-colors">
-                    {tool.name}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA */}
-        <div className={`text-center mt-12 sm:mt-16 transition-all duration-700 delay-400 opacity-100 translate-y-0`}>
-          <div className="inline-block p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-purple-600/10 to-blue-600/10 border border-purple-500/20">
-            <p className="text-slate-300 text-sm sm:text-base mb-4">
-              Got a project in mind? Let's discuss how these skills can bring your vision to life.
-            </p>
-            <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-medium text-white text-sm sm:text-base hover:shadow-[0_0_40px_rgba(168,85,247,0.6)] transition-all hover:scale-[1.02] duration-300">
-              Start a Conversation
-            </button>
-          </div>
+          {/* Subtle background glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-600/10 blur-[100px]" />
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Skills;

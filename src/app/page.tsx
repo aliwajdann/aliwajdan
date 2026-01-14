@@ -11,11 +11,11 @@ import Testimonials from '@/components/Testimonials';
 
 export default function Home() {
   return (
-    <div className='bg-black'>
+    <div className=''>
       <Navbar />
       <Hero />
-      <About /> 
-      <Projects />   
+      <About />
+      <Projects />
       <Services />
       <Testimonials />
       <Contact />
