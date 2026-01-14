@@ -11,7 +11,7 @@ const projects = [
     tech: ["Next.js 14", "Stripe", "PostgreSQL", "Tailwind"],
     link: "#",
     github: "#",
-    image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=80&w=1000",
+    image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=60&w=800", // Optimized width/quality
     color: "bg-emerald-50"
   },
   {
@@ -20,14 +20,14 @@ const projects = [
     tech: ["TypeScript", "Recharts", "Prisma", "Auth.js"],
     link: "#",
     github: "#",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=60&w=800", // Optimized width/quality
     color: "bg-blue-50"
   }
 ];
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 bg-white">
+    <section id="projects" className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
@@ -55,18 +55,19 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }} // Reduced y distance for smoother feel
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className={`group relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center rounded-[2.5rem] p-4 md:p-8 transition-all hover:shadow-2xl hover:shadow-blue-100/50 ${project.color} border border-transparent hover:border-white`}
+              viewport={{ once: true, margin: "-10% 0px -10% 0px" }} // Triggers slightly before/after entering screen
+              transition={{ duration: 0.5, delay: index * 0.05 }} // Faster transition
+              className={`group relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center rounded-[2.5rem] p-4 md:p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-100/50 ${project.color} border border-transparent hover:border-white will-change-transform`}
             >
-              {/* Image Side */}
-              <div className="relative overflow-hidden rounded-[2rem] aspect-[16/10] shadow-2xl">
+              {/* Image Side - Optimized for performance */}
+              <div className="relative overflow-hidden rounded-[2rem] aspect-[16/10] shadow-2xl bg-slate-200">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy" // Native lazy loading
+                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 motion-safe:transform-gpu"
                 />
                 <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors" />
               </div>
