@@ -1,35 +1,36 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
+import { image } from "framer-motion/client";
 import { ExternalLink, Github, Layout, ArrowUpRight } from "lucide-react";
+import { Oooh_Baby } from "next/font/google";
 
 const projects = [
   {
     title: "Eco-Commerce Platform",
-    description: "A high-performance e-commerce engine focused on sustainability and fast load times.",
-    tech: ["Next.js 14", "Stripe", "PostgreSQL"], // Trimmed for mobile space
-    link: "#",
-    github: "#",
-    color: "bg-emerald-50"
+    description: "A high-performance e-commerce engine focused on sustainability and fast load times. With Dashboard features.",
+    tech: ["Next.js", "Firebase", "Typescript"],
+    link: "#https://www.velanoshop.store/",
+    github: "#https://github.com/aliwajdann/nexwear",
+    color: "bg-emerald-50",
+    image: "https://cdn.velanoshop.store/banners//velano.png"
   },
   {
-    title: "SaaS Analytics Dashboard",
-    description: "Real-time data visualization platform for B2B startups to track user metrics.",
-    tech: ["TypeScript", "Recharts", "Prisma"],
+    title: "Personal Portfolio Website",
+    description: "A responsive portfolio site built with modern web technologies.",
+    tech: ["Framer-motion", "TypeScript", "Next.js"],
     link: "#",
-    github: "#",
-    color: "bg-blue-50"
+    github: "#https://github.com/aliwajdann/aliwajdan",
+    color: "bg-blue-50",
+    image: "https://cdn.velanoshop.store/banners//portfolio.png"
   }
 ];
 
 const Projects = () => {
   return (
-    // Reduced py-10 to py-16 (consistent with About section)
     <section id="projects" className="py-16 md:py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
 
-        {/* Header - Optimized spacing */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-16 gap-4">
           <div className="max-w-xl">
             <motion.div
@@ -50,7 +51,6 @@ const Projects = () => {
           </button>
         </div>
 
-        {/* Project List - Reduced gap-8 for mobile */}
         <div className="grid grid-cols-1 gap-8 md:gap-12">
           {projects.map((project, index) => (
             <motion.div
@@ -59,17 +59,14 @@ const Projects = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.4 }}
-              // Reduced p-4 (mobile) and rounding from 2.5rem to 1.5rem
               className={`group relative grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center rounded-[1.5rem] md:rounded-[2.5rem] p-4 md:p-8 transition-colors duration-300 ${project.color} border border-slate-100`}
             >
-              {/* Image Placeholder - Tightened aspect ratio for mobile */}
               <div className="relative overflow-hidden rounded-[1.25rem] md:rounded-[2rem] aspect-[16/9] md:aspect-[16/10] bg-slate-200/50 shadow-sm">
-                <div className="w-full h-full flex items-center justify-center text-slate-400 text-sm font-medium">
-                  Project Preview
-                </div>
+                <img src={project.image} className="w-full h-full flex items-center justify-center text-slate-400 text-sm font-medium" />
+                {/* <img  alt="" /> */}
+                {/* </div> */}
               </div>
 
-              {/* Content Side - Reduced px */}
               <div className="px-1 md:px-8">
                 <div className="flex flex-wrap gap-1.5 mb-4 md:mb-6">
                   {project.tech.map((t) => (

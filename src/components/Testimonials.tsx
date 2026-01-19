@@ -55,24 +55,20 @@ const Testimonials = () => {
           </p>
         </div>
 
-        {/* Testimonials Grid - Tightened gap */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
           {testimonials.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 15 }} // Reduced Y offset for smoother mobile feel
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              // Reduced p-6 and rounding to 1.5rem for mobile
               className="relative bg-white p-5 md:p-8 rounded-[1.5rem] md:rounded-[2.5rem] border border-slate-200 shadow-sm hover:shadow-lg transition-all group"
             >
-              {/* Quote Icon - Scaled down */}
               <div className="absolute top-6 right-6 text-blue-50/50">
                 <Quote size={32} className="md:w-10 md:h-10" fill="currentColor" />
               </div>
 
-              {/* Rating - Smaller star gap */}
               <div className="flex gap-0.5 mb-4 md:mb-6">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} size={14} className="fill-amber-400 text-amber-400" />
@@ -101,7 +97,6 @@ const Testimonials = () => {
           ))}
         </div>
 
-        {/* Bottom Trust Bar - Scaled for mobile */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

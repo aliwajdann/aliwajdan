@@ -1,6 +1,4 @@
 "use client";
-
-import React from "react";
 import { motion } from "framer-motion";
 import { User, Code, Rocket, Coffee, Globe2, Cpu } from "lucide-react";
 
@@ -13,10 +11,8 @@ const About = () => {
   };
 
   return (
-    // Reduced vertical padding: py-16 on mobile
     <section id="about" className="py-16 md:py-24 bg-slate-50/50">
       <div className="container mx-auto px-6">
-        {/* Section Header - Reduced mb-10 for mobile */}
         <div className="mb-10 md:mb-16">
           <motion.div {...fadeIn} className="flex items-center gap-2 text-blue-600 font-bold tracking-wider uppercase text-xs md:text-sm mb-3">
             <User size={14} />
@@ -24,42 +20,38 @@ const About = () => {
           </motion.div>
           <motion.h2
             {...fadeIn}
-            // Scaled text: text-3xl on mobile
             className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 md:mb-6"
           >
             Engineering with <span className="text-blue-600">Purpose.</span>
           </motion.h2>
         </div>
 
-        {/* Bento Grid - Tightened gap-4 for mobile */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
 
           {/* Main Bio Card */}
           <motion.div
             {...fadeIn}
-            // Reduced mobile padding to p-6, smaller rounded corners for mobile
             className="md:col-span-2 bg-white p-6 md:p-10 rounded-[1.5rem] md:rounded-[2rem] border border-slate-200 shadow-sm flex flex-col justify-between"
           >
             <div>
               {/* Reduced text size to text-lg on mobile */}
               <p className="text-lg md:text-xl text-slate-700 leading-relaxed mb-4 md:mb-6">
                 I’m a developer who lives at the intersection of <span className="font-bold text-slate-900 underline decoration-blue-200 decoration-4">design and logic</span>.
-                With over 4 years of experience, I build digital experiences that are fast and accessible.
+                With over 2 years of experience, I build digital experiences that are fast and accessible.
               </p>
               <p className="text-sm md:text-base text-slate-600 leading-relaxed">
                 My philosophy is simple: tech should be invisible. Whether I'm architecting a Next.js dashboard or styling a landing page, my goal is to make the user's journey frictionless.
               </p>
             </div>
 
-            {/* Stats section - compacted for mobile */}
             <div className="mt-8 md:mt-10 flex gap-6">
               <div className="flex flex-col">
-                <span className="text-2xl md:text-3xl font-bold text-slate-900">20+</span>
+                <span className="text-2xl md:text-3xl font-bold text-slate-900">3+</span>
                 <span className="text-[10px] md:text-sm text-slate-500 font-medium uppercase tracking-tight">Projects Done</span>
               </div>
               <div className="w-[1px] bg-slate-200" />
               <div className="flex flex-col">
-                <span className="text-2xl md:text-3xl font-bold text-slate-900">4+</span>
+                <span className="text-2xl md:text-3xl font-bold text-slate-900">2+</span>
                 <span className="text-[10px] md:text-sm text-slate-500 font-medium uppercase tracking-tight">Years Exp.</span>
               </div>
             </div>
@@ -75,7 +67,7 @@ const About = () => {
               <Globe2 size={28} className="md:w-8 md:h-8" />
             </div>
             <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2">Remote Work</h3>
-            <p className="text-blue-100 text-xs md:text-sm">Based in Europe, working with clients worldwide.</p>
+            <p className="text-blue-100 text-xs md:text-sm">Based in Asia, working with clients worldwide.</p>
           </motion.div>
 
           {/* Technical Approach Card */}

@@ -41,7 +41,7 @@ export default function Contact() {
     <section id="contact" className="py-16 md:py-24 bg-white relative">
       <div className="container mx-auto px-6 max-w-7xl">
 
-        {/* Header - Tightened for mobile */}
+        {/* Header */}
         <div className="mb-10 md:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -62,7 +62,7 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
 
-          {/* Form Side - Reduced mobile padding to p-6 */}
+          {/* Form Side */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -85,8 +85,8 @@ export default function Contact() {
               ) : (
                 <motion.form key="form" onSubmit={handleSubmit} className="space-y-4 md:space-y-6 relative z-10">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-700 ml-1">Your Name</label>
+                    <div className="space-y-1.5 text-left">
+                      <label className="text-xs font-bold text-slate-700 ml-1 ">Your Name</label>
                       <input
                         required
                         type="text"
@@ -96,7 +96,7 @@ export default function Contact() {
                         placeholder="John Doe"
                       />
                     </div>
-                    <div className="space-y-1.5">
+                    <div className="space-y-1.5 text-left">
                       <label className="text-xs font-bold text-slate-700 ml-1">Email Address</label>
                       <input
                         required
@@ -108,7 +108,7 @@ export default function Contact() {
                       />
                     </div>
                   </div>
-                  <div className="space-y-1.5">
+                  <div className="space-y-1.5 text-left">
                     <label className="text-xs font-bold text-slate-700 ml-1">Subject</label>
                     <input
                       required
@@ -119,7 +119,7 @@ export default function Contact() {
                       placeholder="Project Inquiry"
                     />
                   </div>
-                  <div className="space-y-1.5">
+                  <div className="space-y-1.5 text-left">
                     <label className="text-xs font-bold text-slate-700 ml-1">Message</label>
                     <textarea
                       required
@@ -161,7 +161,7 @@ export default function Contact() {
                         <item.icon size={18} />
                       </div>
                       <div>
-                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">{item.label}</p>
+                        <p className="text-[10px] text-left font-bold text-slate-400 uppercase tracking-tighter">{item.label}</p>
                         <p className="text-xs md:text-sm text-slate-900 font-medium">{item.value}</p>
                       </div>
                     </div>

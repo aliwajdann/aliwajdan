@@ -1,19 +1,17 @@
 "use client";
-
-import React from "react";
 import { motion } from "framer-motion";
 import { Code2, Smartphone, Zap, ShieldCheck, BarChart3, Globe } from "lucide-react";
 
 const services = [
   {
-    title: "Full-stack Development",
-    description: "Building robust, scalable web applications using the T3 stack (Next.js, TypeScript, Prisma, tRPC).",
+    title: "Frontend Development",
+    description: "Building robust, scalable web applications using the T3 stack (Next.js, TypeScript, React.js.",
     icon: <Code2 className="text-blue-600" size={24} />,
     color: "bg-blue-50"
   },
   {
     title: "Performance Optimization",
-    description: "Specializing in Core Web Vitals, reducing TTI, and ensuring your app runs at 100/100 Lighthouse scores.",
+    description: "Specializing in Core Web Vitals, and ensuring your app runs at 100/100 Lighthouse scores.",
     icon: <Zap className="text-amber-600" size={24} />,
     color: "bg-amber-50"
   },
@@ -28,7 +26,6 @@ const services = [
 const Skills = () => {
   return (
     <section id="services" className="py-10 bg-white relative overflow-hidden">
-      {/* Background decoration */}
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50" />
 
       <div className="container mx-auto px-6 relative z-10">
@@ -81,7 +78,7 @@ const Skills = () => {
             </div>
 
             <div className="flex flex-wrap justify-center md:justify-end gap-3 max-w-xl">
-              {["Next.js 14", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL", "Prisma", "Framer Motion", "Docker", "AWS", "Redux Toolkit", "TanStack Query", "Zustand"].map((skill) => (
+              {["Next.js 14", "TypeScript", "Tailwind CSS", "Node.js", "Framer Motion", "Redux Toolkit", "React.js", "Javascript"].map((skill) => (
                 <span
                   key={skill}
                   className="px-5 py-2 bg-white/5 border border-white/10 rounded-full text-white text-xs font-medium hover:bg-white/10 transition-colors cursor-default"
@@ -92,7 +89,6 @@ const Skills = () => {
             </div>
           </div>
 
-          {/* Subtle background glow */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-600/10 blur-[100px]" />
         </div>
       </div>

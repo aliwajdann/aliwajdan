@@ -44,10 +44,10 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <button className="flex items-center gap-2 bg-slate-900 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-blue-600 transition-all active:scale-95 shadow-lg shadow-blue-200/20">
+          <Link key={"contact"} href="#contact" className="flex items-center gap-2 bg-slate-900 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-blue-600 transition-all active:scale-95 shadow-lg shadow-blue-200/20">
             Let's Talk
             <Send size={14} />
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
