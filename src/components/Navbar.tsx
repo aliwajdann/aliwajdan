@@ -78,9 +78,10 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <button className="w-full bg-blue-600 text-white py-4 rounded-2xl font-bold">
+
+            <Link href="#contact" className="w-full text-center bg-blue-600 text-white py-4 rounded-2xl font-bold">
               Hire Me
-            </button>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

@@ -2,110 +2,101 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Star, Quote, CheckCircle2 } from "lucide-react";
+import { Star, CheckCircle2, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Alex Rivera",
-    role: "CEO at TechFlow",
-    content: "Working with this dev was a game-changer. Our site speed increased by 40%. Truly a Next.js wizard.",
-    avatar: "https://i.pravatar.cc/150?u=alex",
+    name: "Momin",
+    role: "Marketing Strategist",
+    content: "Building Velano with Ali was seamless. The custom e-commerce dashboard he built allows me to manage products and edit customer reviews instantly without touching code. The site performance is top-tier.",
+    avatar: "https://ui-avatars.com/api/?name=Momin&background=0D8ABC&color=fff",
+    project: "Velano E-commerce"
   },
   {
-    name: "Sarah Chen",
-    role: "Product Manager",
-    content: "The attention to detail in the UI is incredible. It's rare to find a dev who truly understands both design and logic.",
-    avatar: "https://i.pravatar.cc/150?u=sarah",
+    name: "Volpea Solutions",
+    role: "Internal Feedback",
+    content: "A developer with a rare eye for UI consistency. During his time here, Ali consistently delivered pixel-perfect interfaces that required zero design revisions. His work on our internal tools was exceptional.",
+    avatar: "https://ui-avatars.com/api/?name=Volpea+Solutions&background=6366f1&color=fff",
+    project: "Software Agency"
   },
   {
-    name: "James Wilson",
-    role: "Startup Founder",
-    content: "Delivered a complex SaaS dashboard 2 weeks ahead of schedule. The code is clean and easy to maintain.",
-    avatar: "https://i.pravatar.cc/150?u=james",
+    name: "Gemini",
+    role: "AI Thought Partner",
+    content: "Ali's ability to bridge the gap between complex backend logic and sleek, responsive frontend design is impressive. He doesn't just write code; he architects scalable digital experiences.",
+    avatar: "https://ui-avatars.com/api/?name=Gemini&background=f59e0b&color=fff",
+    project: "Portfolio Collaboration"
   }
 ];
 
 const Testimonials = () => {
   return (
-    // Reduced vertical padding for mobile
-    <section className="py-16 md:py-24 bg-slate-50/50 relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-6">
 
-        {/* Header - Scaled down for mobile */}
-        <div className="flex flex-col items-center text-center mb-10 md:mb-16">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+        {/* Header - Left Aligned for a more "Modern Agency" look */}
+        <div className="max-w-2xl mb-12 md:mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-4 md:mb-6"
+            className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight"
           >
-            <div className="flex -space-x-1.5 md:-space-x-2">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-slate-200 border-2 border-white" />
-              ))}
-            </div>
-            <span className="text-[10px] md:text-sm font-bold text-slate-700 uppercase tracking-tight">Trusted by 20+ clients</span>
-          </motion.div>
-
-          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-3 md:mb-4 px-2">
-            Don't take my word for it.
-          </h2>
-          <p className="text-sm md:text-base text-slate-600 max-w-xl">
-            Hear from the founders and managers I've collaborated with.
-          </p>
+            What people say about <br />
+            <span className="text-blue-600">working with me.</span>
+          </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+        {/* Improved Bento-Style Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="relative bg-white p-5 md:p-8 rounded-[1.5rem] md:rounded-[2.5rem] border border-slate-200 shadow-sm hover:shadow-lg transition-all group"
+              className="group relative flex flex-col justify-between p-6 md:p-8 bg-slate-50 border border-slate-200/60 rounded-3xl hover:bg-white hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300"
             >
-              <div className="absolute top-6 right-6 text-blue-50/50">
-                <Quote size={32} className="md:w-10 md:h-10" fill="currentColor" />
+              {/* Decorative Quote Icon */}
+              <Quote className="absolute top-6 right-6 text-slate-200 group-hover:text-blue-100 transition-colors" size={40} />
+
+              <div className="relative z-10">
+                {/* Project Tag */}
+                <span className="inline-block px-2 py-1 rounded-md bg-white border border-slate-200 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">
+                  {item.project}
+                </span>
+
+                <div className="flex gap-0.5 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={14} className="fill-blue-500 text-blue-500" />
+                  ))}
+                </div>
+
+                <p className="text-sm md:text-base text-slate-700 leading-relaxed font-medium mb-8">
+                  "{item.content}"
+                </p>
               </div>
 
-              <div className="flex gap-0.5 mb-4 md:mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} className="fill-amber-400 text-amber-400" />
-                ))}
-              </div>
-
-              <p className="text-sm md:text-base text-slate-700 leading-relaxed mb-6 md:mb-8 relative z-10 italic">
-                "{item.content}"
-              </p>
-
-              <div className="flex items-center gap-3 border-t border-slate-50 pt-5">
-                <img
-                  src={item.avatar}
-                  alt={item.name}
-                  className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 object-cover"
-                />
-                <div>
-                  <div className="flex items-center gap-1">
-                    <h4 className="font-bold text-slate-900 text-sm md:text-base leading-none">{item.name}</h4>
-                    <CheckCircle2 size={12} className="text-blue-500" />
+              {/* User Profile */}
+              <div className="flex items-center gap-3">
+                <div className="relative">
+                  <img
+                    src={item.avatar}
+                    alt={item.name}
+                    className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white shadow-sm"
+                  />
+                  <div className="absolute -bottom-1 -right-1 bg-blue-500 rounded-full p-0.5 border-2 border-white">
+                    <CheckCircle2 size={10} className="text-white" />
                   </div>
-                  <p className="text-[11px] md:text-sm text-slate-500 mt-1">{item.role}</p>
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 text-sm md:text-base">{item.name}</h4>
+                  <p className="text-[11px] md:text-xs text-slate-500 font-medium">{item.role}</p>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="mt-12 md:mt-16 flex flex-wrap justify-center items-center gap-6 md:gap-12 opacity-30 grayscale"
-        >
-          <span className="font-black text-lg md:text-2xl tracking-tighter text-slate-900">COMPANY_A</span>
-          <span className="font-black text-lg md:text-2xl tracking-tighter text-slate-900">STARTUP_X</span>
-          <span className="font-black text-lg md:text-2xl tracking-tighter text-slate-900">GLOBAL_INC</span>
-        </motion.div>
       </div>
     </section>
   );

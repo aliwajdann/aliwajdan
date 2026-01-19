@@ -10,8 +10,8 @@ const projects = [
     title: "Eco-Commerce Platform",
     description: "A high-performance e-commerce engine focused on sustainability and fast load times. With Dashboard features.",
     tech: ["Next.js", "Firebase", "Typescript"],
-    link: "#https://www.velanoshop.store/",
-    github: "#https://github.com/aliwajdann/nexwear",
+    link: "https://www.velanoshop.store/",
+    github: "https://github.com/aliwajdann/nexwear",
     color: "bg-emerald-50",
     image: "https://cdn.velanoshop.store/banners//velano.png"
   },
@@ -20,7 +20,7 @@ const projects = [
     description: "A responsive portfolio site built with modern web technologies.",
     tech: ["Framer-motion", "TypeScript", "Next.js"],
     link: "#",
-    github: "#https://github.com/aliwajdann/aliwajdan",
+    github: "https://github.com/aliwajdann/aliwajdan",
     color: "bg-blue-50",
     image: "https://cdn.velanoshop.store/banners//portfolio.png"
   }
@@ -46,9 +46,9 @@ const Projects = () => {
               Crafting products with <span className="text-slate-400">clean code.</span>
             </h2>
           </div>
-          <button className="text-blue-600 font-bold text-sm md:text-base flex items-center gap-1.5 self-start md:self-auto">
+          {/* <button className="text-blue-600 font-bold text-sm md:text-base flex items-center gap-1.5 self-start md:self-auto">
             View All Projects <ArrowUpRight size={18} />
-          </button>
+          </button> */}
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:gap-12">
