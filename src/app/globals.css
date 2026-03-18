@@ -1,245 +1,153 @@
 @import "tailwindcss";
 
-
-a {
-  cursor: pointer;
+:root {
+  --background: #050816;
+  --background-soft: #0a1020;
+  --surface: rgba(10, 16, 32, 0.72);
+  --border: rgba(148, 163, 184, 0.16);
+  --text-primary: #f8fafc;
+  --text-secondary: rgba(226, 232, 240, 0.74);
+  --accent: #5eead4;
+  --accent-strong: #38bdf8;
 }
 
-Link {
-  cursor: pointer;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-button,
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 26%),
+    radial-gradient(circle at 80% 10%, rgba(94, 234, 212, 0.08), transparent 22%),
+    linear-gradient(180deg, #07101f 0%, #050816 36%, #03050d 100%);
+  color: var(--text-primary);
+  font-family: var(--font-body), sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 a,
-li {
+button {
   cursor: pointer;
-  font-family: "inter-variable", sans-serif;
-  font-variation-settings: "slnt" 0, "wght" 400;
 }
 
 h1,
 h2,
 h3,
-.main-heading {
-  font-family: "futura-100", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.5;
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), sans-serif;
 }
 
-p,
-span {
-  font-family: "inter-variable", sans-serif;
-  font-variation-settings: "slnt" 0, "wght" 400;
+::selection {
+  background: rgba(94, 234, 212, 0.3);
+  color: #f8fafc;
 }
 
-body {
-  /* background: var(--background); */
-  /* color: var(--foreground); */
-  font-family: Montserrat;
+.site-shell {
+  position: relative;
+  overflow: clip;
 }
 
-/* @keyframes gradient-x {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-} */
-
-/* 
-
-*/
-.gradient-text-animated {
-  /* background: linear-gradient(90deg, #ff6ec4, #7873f5, #4ade80); */
-  /* background: linear-gradient(90deg, #ff6ec4, #7873f5, #4ade80); */
-  /* background: linear-gradient(
-    90deg,
-    #feda75,
-    #fa7e1e,
-    #d62976,
-    #962fbf /* #4f5bd5 */
-  /* );  */
-  background: linear-gradient(90deg, #2dffe6, #ff3cf2, #22d3ee);
-  /* linear-gradient(45deg, #54ebdc, #f546ff); */
-
-  /* background: linear-gradient(90deg, #ff6a00, #ff3c00, #ffc107); */
-
-  background-size: 200% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: gradient-x 6s ease-in-out infinite;
-  line-height: 1.2;
+.site-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 88%);
+  opacity: 0.42;
+  z-index: 0;
 }
 
-.container {
-  text-align: center;
-  width: 100%;
+.site-shell::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 0.7px, transparent 0.7px);
+  background-size: 18px 18px;
+  opacity: 0.045;
+  mix-blend-mode: soft-light;
+  z-index: 0;
 }
 
-.flashing-text {
-  font-size: 4rem;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 0 0 20px #00ff88, 0 0 40px #00ff88, 0 0 60px #00ff88;
-  animation: flashMove 2s infinite ease-in-out;
-  letter-spacing: 0.2em;
+.section-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.glass-panel {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: 0 24px 80px rgba(2, 6, 23, 0.42);
+  backdrop-filter: blur(24px);
+}
+
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.7rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
+  color: rgba(186, 230, 253, 0.88);
 }
 
-.flashing-text-2 {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #ff6b6b;
-  text-shadow: 0 0 15px #ff6b6b, 0 0 30px #ff6b6b, 0 0 45px #ff6b6b;
-  animation: flashMoveAlt 1.5s infinite ease-in-out;
-  letter-spacing: 0.15em;
-  margin-top: 2rem;
-  text-transform: uppercase;
+.section-kicker::before {
+  content: "";
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.55);
 }
 
-.flashing-text-3 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #ffd93d;
-  text-shadow: 0 0 10px #ffd93d, 0 0 20px #ffd93d, 0 0 30px #ffd93d;
-  animation: flashBounce 1.8s infinite ease-in-out;
-  letter-spacing: 0.1em;
-  margin-top: 2rem;
-  text-transform: uppercase;
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
 }
 
-/* Main flashing and moving animation */
-@keyframes flashMove {
-  0% {
-    opacity: 1;
-    transform: translateX(-50px) scale(1);
-    text-shadow: 0 0 20px #00ff88, 0 0 40px #00ff88, 0 0 60px #00ff88;
-  }
-
-  25% {
-    opacity: 0.3;
-    transform: translateX(25px) scale(1.1);
-    text-shadow: 0 0 5px #00ff88;
-  }
-
-  50% {
-    opacity: 1;
-    transform: translateX(50px) scale(0.9);
-    text-shadow: 0 0 30px #00ff88, 0 0 50px #00ff88, 0 0 80px #00ff88;
-  }
-
-  75% {
-    opacity: 0.2;
-    transform: translateX(25px) scale(1.2);
-    text-shadow: 0 0 10px #00ff88;
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(-50px) scale(1);
-    text-shadow: 0 0 20px #00ff88, 0 0 40px #00ff88, 0 0 60px #00ff88;
-  }
+.section-copy {
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  line-height: 1.85;
+  color: var(--text-secondary);
 }
 
-/* Alternative flashing pattern */
-@keyframes flashMoveAlt {
-  0% {
-    opacity: 0.8;
-    transform: translateY(-30px) rotateZ(-2deg);
-    text-shadow: 0 0 15px #ff6b6b, 0 0 30px #ff6b6b;
-  }
-
-  33% {
-    opacity: 0.1;
-    transform: translateY(15px) rotateZ(1deg);
-    text-shadow: 0 0 5px #ff6b6b;
-  }
-
-  66% {
-    opacity: 1;
-    transform: translateY(30px) rotateZ(-1deg);
-    text-shadow: 0 0 25px #ff6b6b, 0 0 50px #ff6b6b, 0 0 75px #ff6b6b;
-  }
-
-  100% {
-    opacity: 0.8;
-    transform: translateY(-30px) rotateZ(-2deg);
-    text-shadow: 0 0 15px #ff6b6b, 0 0 30px #ff6b6b;
-  }
+.interactive-card {
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease,
+    box-shadow 220ms ease;
 }
 
-/* Bouncing flash animation */
-@keyframes flashBounce {
-  0% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    text-shadow: 0 0 10px #ffd93d, 0 0 20px #ffd93d;
-  }
-
-  20% {
-    opacity: 0.4;
-    transform: translateY(-20px) scale(1.05);
-    text-shadow: 0 0 5px #ffd93d;
-  }
-
-  40% {
-    opacity: 1;
-    transform: translateY(-40px) scale(0.95);
-    text-shadow: 0 0 20px #ffd93d, 0 0 40px #ffd93d, 0 0 60px #ffd93d;
-  }
-
-  60% {
-    opacity: 0.3;
-    transform: translateY(-20px) scale(1.1);
-    text-shadow: 0 0 8px #ffd93d;
-  }
-
-  80% {
-    opacity: 0.8;
-    transform: translateY(10px) scale(0.98);
-    text-shadow: 0 0 15px #ffd93d, 0 0 25px #ffd93d;
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    text-shadow: 0 0 10px #ffd93d, 0 0 20px #ffd93d;
-  }
+.interactive-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(94, 234, 212, 0.26);
+  box-shadow: 0 24px 90px rgba(2, 6, 23, 0.5);
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
-  .flashing-text {
-    font-size: 2.5rem;
-  }
-
-  .flashing-text-2 {
-    font-size: 2rem;
-  }
-
-  .flashing-text-3 {
-    font-size: 1.5rem;
+  .site-shell::before {
+    background-size: 52px 52px;
   }
 }
-
-.custom-background {
-  background: linear-gradient(to bottom, rgb(95, 169, 199));
-}
-
-/* .css-noise {
-  background-image: repeating-radial-gradient(
-    circle at 1px 1px,
-    #000000 1px,
-    transparent 0
-  );
-  background-size: 3px 3px;
-  mix-blend-mode: overlay;
-} */

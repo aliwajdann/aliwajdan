@@ -1,24 +1,17 @@
 import type { Metadata } from "next";
-// import { Geist, Geist_Mono } from "next/font/google";
-import { Montserrat } from 'next/font/google';
-
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
 
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
-const montserrat = Montserrat({
-  weight: ['300', '400', '500', '700'], // Specify the weights you want to use
-  subsets: ['latin'], // Specify the subsets you need
-  variable: '--font-montserrat', // Optional: Use a CSS variable for easier application
-  display: 'swap', // Preload the font for better performance
-  fallback: ['Arial', 'sans-serif'], // Optional: Specify fallback fonts
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  display: "swap",
 });
 export const metadata: Metadata = {
   title: "Ali Wajdan",
@@ -32,11 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link rel="stylesheet" href="https://use.typekit.net/ccp5mmz.css" precedence="default"></link>
-      <body
-        className={`${montserrat.variable}`}
-      >
-
+      <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
         {children}
       </body>
     </html>

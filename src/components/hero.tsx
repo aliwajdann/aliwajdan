@@ -1,91 +1,242 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Sparkles } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ArrowUpRight, Mail } from "lucide-react";
+import { Inter } from "next/font/google";
 import Link from "next/link";
 
-const Hero = () => {
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const METRICS = [
+  { value: "React", label: "UI systems" },
+  { value: "Next.js", label: "App architecture" },
+  { value: "GSAP", label: "Motion design" },
+];
+
+export default function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.set(
+        [".hero-heading", ".hero-copy", ".hero-cta", ".hero-visual"],
+        { willChange: "transform, opacity" }
+      );
+
+      gsap
+        .timeline({ defaults: { ease: "power3.out" } })
+        .from(".hero-kicker", {
+          opacity: 0,
+          y: 18,
+          duration: 0.45,
+        })
+        .from(
+          ".hero-heading-line",
+          {
+            opacity: 0,
+            y: 36,
+            duration: 0.7,
+            stagger: 0.1,
+          },
+          "-=0.15"
+        )
+        .from(
+          ".hero-copy",
+          {
+            opacity: 0,
+            y: 22,
+            duration: 0.55,
+          },
+          "-=0.35"
+        )
+        .from(
+          ".hero-cta",
+          {
+            opacity: 0,
+            y: 18,
+            duration: 0.45,
+            stagger: 0.1,
+          },
+          "-=0.25"
+        )
+        .from(
+          ".hero-metric",
+          {
+            opacity: 0,
+            y: 16,
+            duration: 0.4,
+            stagger: 0.08,
+          },
+          "-=0.2"
+        )
+        .from(
+          ".hero-visual",
+          {
+            opacity: 0,
+            y: 28,
+            scale: 0.98,
+            duration: 0.7,
+          },
+          "-=0.55"
+        );
+
+      gsap.to(".hero-orb-primary", {
+        y: -18,
+        x: 16,
+        duration: 7,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+
+      gsap.to(".hero-orb-secondary", {
+        y: 16,
+        x: -12,
+        duration: 8,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+
+      gsap.to(".hero-grid", {
+        rotate: 360,
+        duration: 42,
+        repeat: -1,
+        ease: "none",
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="relative pt-32 pb-12 md:pt-48 md:pb-32 overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-50/50 blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-50/50 blur-[120px]" />
-      </div>
+    <section
+      ref={sectionRef}
+      className={`${inter.className} relative isolate flex min-h-screen items-center overflow-hidden bg-[#050816] px-6 pb-14 pt-28 text-white sm:px-8 lg:px-12`}
+    >
+      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.12),transparent_28%),radial-gradient(circle_at_80%_22%,rgba(96,165,250,0.18),transparent_24%),linear-gradient(180deg,#07101f_0%,#050816_55%,#04060f_100%)]" />
+      <div className="hero-orb-primary absolute left-[-8rem] top-[12%] -z-10 h-72 w-72 rounded-full bg-cyan-400/15 blur-[110px]" />
+      <div className="hero-orb-secondary absolute right-[-5rem] top-[20%] -z-10 h-80 w-80 rounded-full bg-blue-500/20 blur-[120px]" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-[#050816] to-transparent" />
 
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+      <div className="mx-auto grid w-full max-w-7xl items-center gap-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(340px,0.95fr)] lg:gap-12">
+        <div className="max-w-2xl">
+          <div className="hero-kicker inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-cyan-200/80 backdrop-blur-md">
+            <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(103,232,249,0.9)]" />
+            Frontend Developer
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] md:text-xs font-bold uppercase tracking-wider mb-4"
-          >
-            <Sparkles size={12} className="md:w-3.5 md:h-3.5" />
-            <span>Available for new projects</span>
-          </motion.div>
+          <div className="hero-heading mt-8 space-y-3 sm:space-y-4">
+            <h1 className="hero-heading-line text-balance text-5xl font-semibold leading-[0.95] tracking-[-0.06em] text-white sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
+              Designing interfaces
+            </h1>
+            <h1 className="hero-heading-line text-balance text-5xl font-semibold leading-[0.95] tracking-[-0.06em] text-white/92 sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
+              that feel sharp,
+            </h1>
+            <h1 className="hero-heading-line bg-gradient-to-r from-cyan-300 via-blue-300 to-sky-500 bg-clip-text text-balance text-5xl font-semibold leading-[0.95] tracking-[-0.06em] text-transparent sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
+              fast, and premium.
+            </h1>
+          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl md:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.15] md:leading-[1.1] mb-4"
-          >
-            Building <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">Scalable Apps</span> with Precision.
-          </motion.h1>
+          <p className="hero-copy mt-8 max-w-xl text-pretty text-base leading-8 text-slate-300 sm:text-lg">
+            I build polished frontend experiences with React, Next.js, and
+            motion that feels deliberate. Clean systems, strong visual
+            hierarchy, and smooth interactions are the baseline.
+          </p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-base md:text-xl text-slate-600 mb-8 max-w-2xl leading-relaxed px-2 md:px-0"
-          >
-            I'm a Front End Developer specializing in Next.js and TypeScript. I help businesses turn complex ideas into high-performance digital products.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center gap-3 mb-12 md:mb-16"
-          >
-            <Link key={"work-button"} href="#projects" className="w-full sm:w-auto group relative px-7 py-3.5 md:px-8 md:py-4 bg-slate-900 text-white rounded-xl md:rounded-2xl font-bold flex items-center justify-center gap-2 overflow-hidden transition-all hover:bg-blue-600 active:scale-95 shadow-lg shadow-slate-200">
-              View My Work
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <Link
+              href="#projects"
+              className="hero-cta inline-flex min-h-13 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_0_35px_rgba(56,189,248,0.28)] transition duration-200 hover:scale-[1.02] hover:shadow-[0_0_48px_rgba(56,189,248,0.38)] active:scale-[0.98]"
+            >
+              View Projects
+              <ArrowUpRight size={17} />
             </Link>
 
-            <div className="flex items-center gap-3">
-              <a href="https://github.com/aliwajdann" className="p-3.5 md:p-4 rounded-xl md:rounded-2xl bg-white border border-slate-200 text-slate-600 hover:text-blue-600 hover:border-blue-200 transition-all shadow-sm">
-                <Github size={20} />
-              </a>
-              <a href="https://www.linkedin.com/in/ali-wajdan/" className="p-3.5 md:p-4 rounded-xl md:rounded-2xl bg-white border border-slate-200 text-slate-600 hover:text-blue-600 hover:border-blue-200 transition-all shadow-sm">
-                <Linkedin size={20} />
-              </a>
-            </div>
-          </motion.div>
+            <a
+              href="#contact"
+              className="hero-cta inline-flex min-h-13 items-center justify-center gap-2 rounded-2xl border border-white/12 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur-md transition duration-200 hover:scale-[1.02] hover:border-cyan-300/35 hover:bg-cyan-300/10 hover:text-cyan-100 active:scale-[0.98]"
+            >
+              Contact Me
+              <Mail size={16} />
+            </a>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="w-full pt-8 md:pt-12 border-t border-slate-100 flex flex-wrap justify-center gap-6 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all"
-          >
-            <TechIcon name="Next.js" />
-            <TechIcon name="TypeScript" />
-            <TechIcon name="Tailwind" />
-            <TechIcon name="React.js" />
-          </motion.div>
+          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {METRICS.map((item) => (
+              <div
+                key={item.value}
+                className="hero-metric rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-4 backdrop-blur-sm"
+              >
+                <p className="text-sm font-semibold text-white">{item.value}</p>
+                <p className="mt-1 text-sm text-slate-400">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="hero-visual relative mx-auto flex w-full max-w-[32rem] justify-center lg:justify-end">
+          <div className="relative aspect-[0.94] w-full max-w-[30rem] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-5 shadow-[0_24px_90px_rgba(3,7,18,0.65)] backdrop-blur-xl">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.18),transparent_34%),linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))]" />
+            <div className="absolute left-1/2 top-1/2 h-[82%] w-[82%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-300/15" />
+            <div className="hero-grid absolute left-1/2 top-1/2 h-[72%] w-[72%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10">
+              <div className="absolute inset-[14%] rounded-full border border-cyan-300/20" />
+              <div className="absolute inset-[28%] rounded-full border border-blue-300/15" />
+              <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-cyan-300/35 to-transparent" />
+              <div className="absolute top-1/2 h-px w-full -translate-y-1/2 bg-gradient-to-r from-transparent via-cyan-300/35 to-transparent" />
+            </div>
+
+            <div className="relative flex h-full flex-col justify-between rounded-[1.6rem] border border-white/8 bg-[linear-gradient(180deg,rgba(7,14,28,0.76),rgba(7,14,28,0.32))] p-6 sm:p-7">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
+                    Selected Stack
+                  </p>
+                  <p className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white">
+                    Modern frontend,
+                    <br />
+                    refined motion.
+                  </p>
+                </div>
+                <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs font-medium text-cyan-100">
+                  Available
+                </div>
+              </div>
+
+              <div className="grid gap-3">
+                {[
+                  "Responsive layouts with strong visual rhythm",
+                  "Interactive React and Next.js experiences",
+                  "GSAP-led motion with lightweight polish",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-4 text-sm leading-6 text-slate-300"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex items-end justify-between gap-4">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
+                    Focus
+                  </p>
+                  <p className="mt-2 text-lg font-medium text-white">
+                    Premium UI systems with performance in mind.
+                  </p>
+                </div>
+                <div className="h-20 w-20 rounded-full bg-[radial-gradient(circle,rgba(103,232,249,0.85)_0%,rgba(59,130,246,0.22)_42%,transparent_72%)] blur-sm" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
-};
-
-const TechIcon = ({ name }: { name: string }) => (
-  <div className="flex items-center gap-2">
-    <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-slate-300" />
-    <span className="text-[12px] md:text-sm font-bold text-slate-900">{name}</span>
-  </div>
-);
-
-export default Hero;
+}

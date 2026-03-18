@@ -1,99 +1,155 @@
 "use client";
-import { motion } from "framer-motion";
-import { Code2, Smartphone, Zap, ShieldCheck, BarChart3, Globe } from "lucide-react";
+
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ArrowUpRight, Code2, Layers3, Palette, Rocket, Zap } from "lucide-react";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const services = [
   {
+    icon: Code2,
     title: "Frontend Development",
-    description: "Building robust, scalable web applications using the T3 stack (Next.js, TypeScript, React.js.",
-    icon: <Code2 className="text-blue-600" size={24} />,
-    color: "bg-blue-50"
+    description:
+      "Responsive React and Next.js builds with cleaner structure, stronger hierarchy, and production-ready implementation.",
+    features: ["Next.js", "React", "TypeScript", "Tailwind"],
   },
   {
-    title: "Performance Optimization",
-    description: "Specializing in Core Web Vitals, and ensuring your app runs at 100/100 Lighthouse scores.",
-    icon: <Zap className="text-amber-600" size={24} />,
-    color: "bg-amber-50"
+    icon: Palette,
+    title: "UI Direction",
+    description:
+      "Modern interfaces with deliberate spacing, typography systems, and visuals shaped around the product rather than trends.",
+    features: ["Design systems", "Responsive UI", "Visual polish", "Accessibility"],
   },
   {
-    title: "UI/UX Implementation",
-    description: "Pixel-perfect conversion from Figma to code with smooth Framer Motion animations and responsive CSS.",
-    icon: <Smartphone className="text-purple-600" size={24} />,
-    color: "bg-purple-50"
-  }
+    icon: Zap,
+    title: "Motion and Performance",
+    description:
+      "GSAP-powered transitions and interactive detail that stay smooth, light, and aligned with performance goals.",
+    features: ["GSAP", "Core Web Vitals", "Interaction states", "Optimization"],
+  },
+  {
+    icon: Layers3,
+    title: "Product Integration",
+    description:
+      "Connecting frontend work to APIs, CMS flows, and dashboards while keeping the experience cohesive and maintainable.",
+    features: ["REST APIs", "Firebase", "Dashboards", "Content flows"],
+  },
 ];
 
-const Skills = () => {
-  return (
-    <section id="services" className="py-10 bg-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50" />
+export default function Services() {
+  const sectionRef = useRef<HTMLElement>(null);
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-slate-900 mb-6"
-          >
-            Solutions that drive <span className="text-blue-600 font-serif italic">results.</span>
-          </motion.h2>
-          <p className="text-slate-600 text-lg">
-            I don't just write code. I build digital assets that help businesses grow,
-            scale, and outperform their competition.
-          </p>
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(".services-intro", {
+        scrollTrigger: { trigger: ".services-intro", start: "top 80%" },
+        opacity: 0,
+        y: 30,
+        duration: 0.75,
+        ease: "power3.out",
+      });
+
+      gsap.from(".service-card", {
+        scrollTrigger: { trigger: ".services-grid", start: "top 80%" },
+        opacity: 0,
+        y: 34,
+        duration: 0.6,
+        stagger: 0.12,
+        ease: "power3.out",
+      });
+
+      gsap.from(".services-cta", {
+        scrollTrigger: { trigger: ".services-cta", start: "top 88%" },
+        opacity: 0,
+        y: 24,
+        duration: 0.55,
+        ease: "power2.out",
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      id="services"
+      className="section-shell px-6 py-20 sm:px-8 lg:px-12 lg:py-28"
+    >
+      <div className="services-intro mx-auto flex w-full max-w-7xl flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="max-w-3xl">
+          <span className="section-kicker">Services</span>
+          <h2 className="section-title mt-6 text-white">
+            Focused frontend services built around product quality, not noise.
+          </h2>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-blue-50 transition-all group"
+      </div>
+
+      <div className="services-grid mx-auto mt-12 grid max-w-7xl gap-6 md:grid-cols-2">
+        {services.map((service) => {
+          const Icon = service.icon;
+
+          return (
+            <article
+              key={service.title}
+              className="service-card interactive-card glass-panel rounded-[2rem] p-6 sm:p-7"
             >
-              <div className={`w-14 h-14 ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                {service.icon}
+              <div className="flex items-start justify-between gap-4">
+                <div className="rounded-2xl border border-cyan-300/14 bg-cyan-300/10 p-3 text-cyan-200">
+                  <Icon size={22} />
+                </div>
+                <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-slate-400">
+                  Service
+                </span>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4">{service.title}</h3>
-              <p className="text-slate-600 leading-relaxed text-sm">
+
+              <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] text-white">
+                {service.title}
+              </h3>
+              <p className="mt-4 text-sm leading-7 text-slate-400">
                 {service.description}
               </p>
-            </motion.div>
-          ))}
-        </div>
 
-        {/* Expertise / Tech Tags */}
-        <div className="bg-slate-900 rounded-[3rem] p-4 md:p-16 overflow-hidden relative">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
-            <div className="max-w-sm">
-              <h3 className="text-2xl font-bold text-white mb-4">My Tech Stack</h3>
-              <p className="text-slate-400 text-sm">
-                I stay at the forefront of the industry by using the most reliable and modern technologies available.
-              </p>
-            </div>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {service.features.map((feature) => (
+                  <span
+                    key={feature}
+                    className="rounded-full border border-cyan-300/12 bg-cyan-300/[0.08] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.15em] text-cyan-100"
+                  >
+                    {feature}
+                  </span>
+                ))}
+              </div>
+            </article>
+          );
+        })}
+      </div>
 
-            <div className="flex flex-wrap justify-center md:justify-end gap-3 max-w-xl">
-              {["Next.js 14", "TypeScript", "Tailwind CSS", "Node.js", "Framer Motion", "Redux Toolkit", "React.js", "Javascript"].map((skill) => (
-                <span
-                  key={skill}
-                  className="px-5 py-2 bg-white/5 border border-white/10 rounded-full text-white text-xs font-medium hover:bg-white/10 transition-colors cursor-default"
-                >
-                  {skill}
-                </span>
-              ))}
+      <div className="services-cta mx-auto mt-12 max-w-7xl">
+        <div className="glass-panel flex flex-col items-start justify-between gap-6 rounded-[2rem] p-6 sm:p-8 lg:flex-row lg:items-center">
+          <div className="max-w-2xl">
+            <div className="inline-flex rounded-full border border-cyan-300/16 bg-cyan-300/10 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-cyan-100">
+              Open for projects
             </div>
+            <h3 className="mt-5 text-3xl font-semibold tracking-[-0.05em] text-white">
+              Need a sharper interface, a cleaner frontend, or a better first impression?
+            </h3>
           </div>
 
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-600/10 blur-[100px]" />
+          <a
+            href="#contact"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-300 to-sky-400 px-5 py-3 text-sm font-semibold text-slate-950 transition duration-200 hover:scale-[1.02] active:scale-[0.98]"
+          >
+            Let&apos;s Talk
+            <ArrowUpRight size={16} />
+          </a>
         </div>
       </div>
     </section>
   );
-};
-
-export default Skills;
+}
