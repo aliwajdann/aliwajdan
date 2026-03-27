@@ -13,6 +13,7 @@ import {
   MapPin,
   Send,
 } from "lucide-react";
+import { shouldReduceMotion } from "@/app/lib/motion";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -52,6 +53,11 @@ export default function Contact() {
   });
 
   useEffect(() => {
+    const reducedMotion = shouldReduceMotion();
+    if (reducedMotion) {
+      return;
+    }
+
     const ctx = gsap.context(() => {
       gsap.from(".contact-intro", {
         scrollTrigger: { trigger: ".contact-intro", start: "top 80%" },
@@ -115,7 +121,7 @@ export default function Contact() {
     <section
       ref={sectionRef}
       id="contact"
-      className="section-shell px-6 pb-16 pt-20 sm:px-8 lg:px-12 lg:pb-20 lg:pt-28"
+      className="section-shell px-4 pb-16 pt-16 sm:px-8 lg:px-12 lg:pb-20 lg:pt-28"
     >
       <div className="contact-intro mx-auto max-w-7xl">
         <span className="section-kicker">Contact</span>
@@ -153,7 +159,7 @@ export default function Contact() {
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-sm text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05]"
+                    className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-[0.9rem] text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05] sm:text-sm"
                     placeholder="Your name"
                   />
                 </label>
@@ -168,7 +174,7 @@ export default function Contact() {
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
-                    className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-sm text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05]"
+                    className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-[0.9rem] text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05] sm:text-sm"
                     placeholder="you@example.com"
                   />
                 </label>
@@ -185,7 +191,7 @@ export default function Contact() {
                   onChange={(e) =>
                     setFormData({ ...formData, subject: e.target.value })
                   }
-                  className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-sm text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05]"
+                  className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-[0.9rem] text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05] sm:text-sm"
                   placeholder="Project inquiry"
                 />
               </label>
@@ -201,7 +207,7 @@ export default function Contact() {
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  className="w-full resize-none rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-sm text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05]"
+                  className="w-full resize-none rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-[0.9rem] text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05] sm:text-sm"
                   placeholder="Tell me about the product, goals, and timeline."
                 />
               </label>

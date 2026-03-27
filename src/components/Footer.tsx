@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { shouldReduceMotion } from "@/app/lib/motion";
 
 const links = [
   { label: "Work", href: "#projects" },
@@ -33,6 +34,11 @@ export default function Footer() {
   const footerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const reducedMotion = shouldReduceMotion();
+    if (reducedMotion) {
+      return;
+    }
+
     const ctx = gsap.context(() => {
       gsap.from(".footer-block", {
         opacity: 0,
@@ -49,9 +55,9 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="section-shell px-6 pb-10 sm:px-8 lg:px-12 lg:pb-12"
+      className="section-shell px-4 pb-10 sm:px-8 lg:px-12 lg:pb-12"
     >
-      <div className="glass-panel mx-auto flex max-w-7xl flex-col gap-8 rounded-[2rem] px-6 py-8 sm:px-8 lg:flex-row lg:items-end lg:justify-between">
+      <div className="glass-panel mx-auto flex max-w-7xl flex-col gap-8 rounded-[2rem] px-5 py-8 sm:px-8 lg:flex-row lg:items-end lg:justify-between">
         <div className="footer-block max-w-lg">
           <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-slate-500">
             Ali Wajdan

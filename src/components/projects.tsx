@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
+import { shouldReduceMotion } from "@/app/lib/motion";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -34,6 +35,11 @@ export default function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const reducedMotion = shouldReduceMotion();
+    if (reducedMotion) {
+      return;
+    }
+
     const ctx = gsap.context(() => {
       gsap.from(".projects-intro", {
         scrollTrigger: { trigger: ".projects-intro", start: "top 78%" },
@@ -68,7 +74,7 @@ export default function Projects() {
     <section
       ref={sectionRef}
       id="projects"
-      className="section-shell px-6 py-20 sm:px-8 lg:px-12 lg:py-28"
+      className="section-shell px-4 py-16 sm:px-8 lg:px-12 lg:py-28"
     >
       <div className="projects-intro mx-auto flex w-full max-w-7xl flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-3xl">
@@ -80,13 +86,16 @@ export default function Projects() {
       </div>
 
       <div className="projects-grid mx-auto mt-12 grid w-full max-w-7xl gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_320px]">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <article
             key={project.title}
             className="project-card interactive-card glass-panel group overflow-hidden rounded-[2rem]"
           >
             <div className="relative h-64 overflow-hidden sm:h-72">
               <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#050816] via-[#050816]/35 to-transparent" />
+              <div className="absolute left-5 top-5 z-20 inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-slate-950/65 text-xs font-semibold text-cyan-100">
+                0{index + 1}
+              </div>
               <img
                 src={project.image}
                 alt={project.title}
@@ -107,10 +116,10 @@ export default function Projects() {
                 ))}
               </div>
 
-              <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] text-white transition duration-200 group-hover:text-cyan-200">
+              <h3 className="mt-6 text-[1.35rem] font-semibold tracking-[-0.035em] text-white transition duration-200 group-hover:text-cyan-200 sm:text-2xl sm:tracking-[-0.04em]">
                 {project.title}
               </h3>
-              <p className="mt-4 text-sm leading-7 text-slate-400 sm:text-[0.96rem]">
+              <p className="mt-4 text-[0.9rem] leading-6 text-slate-400 sm:text-[0.96rem] sm:leading-7">
                 {project.description}
               </p>
 

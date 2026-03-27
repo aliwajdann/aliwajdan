@@ -3,7 +3,8 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowUpRight, Code2, Layers3, Palette, Rocket, Zap } from "lucide-react";
+import { ArrowUpRight, Code2, Layers3, Palette, Zap } from "lucide-react";
+import { shouldReduceMotion } from "@/app/lib/motion";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -44,6 +45,11 @@ export default function Services() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const reducedMotion = shouldReduceMotion();
+    if (reducedMotion) {
+      return;
+    }
+
     const ctx = gsap.context(() => {
       gsap.from(".services-intro", {
         scrollTrigger: { trigger: ".services-intro", start: "top 80%" },
@@ -78,7 +84,7 @@ export default function Services() {
     <section
       ref={sectionRef}
       id="services"
-      className="section-shell px-6 py-20 sm:px-8 lg:px-12 lg:py-28"
+      className="section-shell px-4 py-16 sm:px-8 lg:px-12 lg:py-28"
     >
       <div className="services-intro mx-auto flex w-full max-w-7xl flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-3xl">
@@ -108,10 +114,10 @@ export default function Services() {
                 </span>
               </div>
 
-              <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] text-white">
+              <h3 className="mt-6 text-[1.3rem] font-semibold tracking-[-0.035em] text-white sm:text-2xl sm:tracking-[-0.04em]">
                 {service.title}
               </h3>
-              <p className="mt-4 text-sm leading-7 text-slate-400">
+              <p className="mt-4 text-[0.9rem] leading-6 text-slate-400 sm:text-sm sm:leading-7">
                 {service.description}
               </p>
 

@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Code2, Menu, Send, X } from "lucide-react";
 import Link from "next/link";
+import { shouldReduceMotion } from "@/app/lib/motion";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -23,7 +24,12 @@ const Navbar = () => {
   const progressRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const reducedMotion = shouldReduceMotion();
     const ctx = gsap.context(() => {
+      if (reducedMotion) {
+        return;
+      }
+
       gsap.from(".nav-shell", {
         y: -24,
         opacity: 0,
@@ -56,7 +62,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="fixed inset-x-0 top-0 z-[70] h-1 overflow-hidden bg-white/[0.03] backdrop-blur-sm">
+      <div className="fixed inset-x-0 top-0 z-[70] hidden h-1 overflow-hidden bg-white/[0.03] backdrop-blur-sm md:block">
         <div
           ref={progressRef}
           className="h-full origin-left scale-x-0 bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 shadow-[0_0_24px_rgba(56,189,248,0.6)]"
@@ -65,18 +71,19 @@ const Navbar = () => {
 
       <nav
         ref={navRef}
-        className="fixed inset-x-0 top-0 z-[60] px-4 pt-5 sm:px-6 lg:px-10"
+        className="fixed inset-x-0 top-0 z-[60] px-3 pt-4 sm:px-6 lg:px-10"
       >
-        <div className="nav-shell mx-auto flex w-full max-w-7xl items-center justify-between rounded-[1.6rem] border border-white/10 bg-slate-950/55 px-5 py-3.5 shadow-[0_18px_70px_rgba(2,6,23,0.35)] backdrop-blur-xl transition-all duration-300 sm:px-6">
+        <div className="nav-shell mx-auto flex w-full max-w-7xl items-center justify-between rounded-[1.4rem] border border-white/10 bg-slate-950/92 px-4 py-3 shadow-[0_10px_30px_rgba(2,6,23,0.28)] transition-all duration-300 sm:rounded-[1.6rem] sm:px-6 sm:py-3.5 md:bg-slate-950/55 md:shadow-[0_18px_70px_rgba(2,6,23,0.35)] md:backdrop-blur-xl">
           <Link href="/" className="group flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 transition duration-200 group-hover:scale-[1.05] group-hover:border-cyan-300/35 group-hover:bg-cyan-300/16">
-              <Code2 size={20} className="text-cyan-200" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 transition duration-200 group-hover:scale-[1.05] group-hover:border-cyan-300/35 group-hover:bg-cyan-300/16 sm:h-11 sm:w-11">
+              <Code2 size={18} className="text-cyan-200 sm:hidden" />
+              <Code2 size={20} className="hidden text-cyan-200 sm:block" />
             </div>
             <div>
               <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-slate-500">
                 Portfolio
               </p>
-              <p className="text-base font-semibold tracking-[-0.04em] text-white">
+              <p className="text-[0.92rem] font-semibold tracking-[-0.03em] text-white sm:text-base sm:tracking-[-0.04em]">
                 Ali Wajdan
               </p>
             </div>
@@ -114,7 +121,7 @@ const Navbar = () => {
         </div>
 
         {isOpen && (
-          <div className="mx-auto mt-3 w-full max-w-7xl rounded-[1.8rem] border border-white/10 bg-slate-950/92 p-4 shadow-[0_24px_90px_rgba(2,6,23,0.5)] backdrop-blur-xl lg:hidden">
+          <div className="mx-auto mt-3 w-full max-w-7xl rounded-[1.5rem] border border-white/10 bg-slate-950/95 p-3.5 shadow-[0_16px_50px_rgba(2,6,23,0.35)] lg:hidden">
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link

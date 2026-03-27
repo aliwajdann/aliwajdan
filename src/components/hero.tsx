@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ArrowUpRight, Mail } from "lucide-react";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import { shouldReduceMotion } from "@/app/lib/motion";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,6 +22,11 @@ export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const reducedMotion = shouldReduceMotion();
+    if (reducedMotion) {
+      return;
+    }
+
     const ctx = gsap.context(() => {
       gsap.set(
         [".hero-heading", ".hero-copy", ".hero-cta", ".hero-visual"],
@@ -116,11 +122,11 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className={`${inter.className} relative isolate flex min-h-screen items-center overflow-hidden bg-[#050816] px-6 pb-14 pt-28 text-white sm:px-8 lg:px-12`}
+      className={`${inter.className} relative isolate flex min-h-screen items-center overflow-hidden bg-[#050816] px-4 pb-14 pt-24 text-white sm:px-8 lg:px-12`}
     >
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.12),transparent_28%),radial-gradient(circle_at_80%_22%,rgba(96,165,250,0.18),transparent_24%),linear-gradient(180deg,#07101f_0%,#050816_55%,#04060f_100%)]" />
-      <div className="hero-orb-primary absolute left-[-8rem] top-[12%] -z-10 h-72 w-72 rounded-full bg-cyan-400/15 blur-[110px]" />
-      <div className="hero-orb-secondary absolute right-[-5rem] top-[20%] -z-10 h-80 w-80 rounded-full bg-blue-500/20 blur-[120px]" />
+      <div className="hero-orb-primary absolute left-[-8rem] top-[12%] -z-10 hidden h-72 w-72 rounded-full bg-cyan-400/15 blur-[110px] md:block" />
+      <div className="hero-orb-secondary absolute right-[-5rem] top-[20%] -z-10 hidden h-80 w-80 rounded-full bg-blue-500/20 blur-[120px] md:block" />
       <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-[#050816] to-transparent" />
 
       <div className="mx-auto grid w-full max-w-7xl items-center gap-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(340px,0.95fr)] lg:gap-12">
@@ -131,27 +137,38 @@ export default function Hero() {
           </div>
 
           <div className="hero-heading mt-8 space-y-3 sm:space-y-4">
-            <h1 className="hero-heading-line text-balance text-5xl font-semibold leading-[0.95] tracking-[-0.06em] text-white sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
+            <h1 className="hero-heading-line text-balance text-[2.35rem] font-semibold leading-[0.96] tracking-[-0.055em] text-white sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
               Designing interfaces
             </h1>
-            <h1 className="hero-heading-line text-balance text-5xl font-semibold leading-[0.95] tracking-[-0.06em] text-white/92 sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
+            <h1 className="hero-heading-line text-balance text-[2.35rem] font-semibold leading-[0.96] tracking-[-0.055em] text-white/92 sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
               that feel sharp,
             </h1>
-            <h1 className="hero-heading-line bg-gradient-to-r from-cyan-300 via-blue-300 to-sky-500 bg-clip-text text-balance text-5xl font-semibold leading-[0.95] tracking-[-0.06em] text-transparent sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
+            <h1 className="hero-heading-line bg-gradient-to-r from-cyan-300 via-blue-300 to-sky-500 bg-clip-text text-balance text-[2.35rem] font-semibold leading-[0.96] tracking-[-0.055em] text-transparent sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
               fast, and premium.
             </h1>
           </div>
 
-          <p className="hero-copy mt-8 max-w-xl text-pretty text-base leading-8 text-slate-300 sm:text-lg">
+          <p className="hero-copy mt-7 max-w-xl text-pretty text-[0.94rem] leading-7 text-slate-300 sm:text-lg sm:leading-8">
             I build polished frontend experiences with React, Next.js, and
             motion that feels deliberate. Clean systems, strong visual
             hierarchy, and smooth interactions are the baseline.
           </p>
 
+          <div className="mt-8 flex flex-wrap gap-2.5">
+            {["Mobile-first performance", "Visual hierarchy", "Conversion-focused UI"].map((pill) => (
+              <span
+                key={pill}
+                className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-100/90"
+              >
+                {pill}
+              </span>
+            ))}
+          </div>
+
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link
               href="#projects"
-              className="hero-cta inline-flex min-h-13 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_0_35px_rgba(56,189,248,0.28)] transition duration-200 hover:scale-[1.02] hover:shadow-[0_0_48px_rgba(56,189,248,0.38)] active:scale-[0.98]"
+              className="hero-cta inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 px-5 py-2.5 text-[0.82rem] font-semibold text-slate-950 shadow-[0_0_24px_rgba(56,189,248,0.24)] transition duration-200 hover:scale-[1.02] hover:shadow-[0_0_36px_rgba(56,189,248,0.34)] active:scale-[0.98] sm:min-h-13 sm:px-6 sm:py-3 sm:text-sm"
             >
               View Projects
               <ArrowUpRight size={17} />
@@ -159,7 +176,7 @@ export default function Hero() {
 
             <a
               href="#contact"
-              className="hero-cta inline-flex min-h-13 items-center justify-center gap-2 rounded-2xl border border-white/12 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur-md transition duration-200 hover:scale-[1.02] hover:border-cyan-300/35 hover:bg-cyan-300/10 hover:text-cyan-100 active:scale-[0.98]"
+              className="hero-cta inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl border border-white/12 bg-white/[0.04] px-5 py-2.5 text-[0.82rem] font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur-md transition duration-200 hover:scale-[1.02] hover:border-cyan-300/35 hover:bg-cyan-300/10 hover:text-cyan-100 active:scale-[0.98] sm:min-h-13 sm:px-6 sm:py-3 sm:text-sm"
             >
               Contact Me
               <Mail size={16} />
@@ -172,8 +189,8 @@ export default function Hero() {
                 key={item.value}
                 className="hero-metric rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-4 backdrop-blur-sm"
               >
-                <p className="text-sm font-semibold text-white">{item.value}</p>
-                <p className="mt-1 text-sm text-slate-400">{item.label}</p>
+                <p className="text-[0.84rem] font-semibold text-white sm:text-sm">{item.value}</p>
+                <p className="mt-1 text-[0.8rem] text-slate-400 sm:text-sm">{item.label}</p>
               </div>
             ))}
           </div>
