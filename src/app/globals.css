@@ -87,6 +87,7 @@ h6 {
 .section-shell {
   position: relative;
   z-index: 1;
+  padding-inline: 0.75rem;
 }
 
 .glass-panel {
@@ -179,14 +180,14 @@ h6 {
   }
 
   .section-title {
-    font-size: clamp(1.85rem, 7.2vw, 2.35rem);
+    font-size: clamp(1.7rem, 6.7vw, 2.1rem);
     line-height: 1.04;
     letter-spacing: -0.04em;
   }
 
   .section-copy {
-    font-size: 0.94rem;
-    line-height: 1.72;
+    font-size: 0.9rem;
+    line-height: 1.66;
   }
 
   .interactive-card:hover {
@@ -196,5 +197,17 @@ h6 {
 
   .site-shell::before {
     background-size: 52px 52px;
+  }
+}
+
+@media (min-width: 640px) {
+  .section-shell {
+    padding-inline: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-shell {
+    padding-inline: 2rem;
   }
 }

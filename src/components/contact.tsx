@@ -121,7 +121,7 @@ export default function Contact() {
     <section
       ref={sectionRef}
       id="contact"
-      className="section-shell px-4 pb-16 pt-16 sm:px-8 lg:px-12 lg:pb-20 lg:pt-28"
+      className="section-shell pb-16 pt-16 lg:pb-20 lg:pt-28"
     >
       <div className="contact-intro mx-auto max-w-7xl">
         <span className="section-kicker">Contact</span>
@@ -131,13 +131,13 @@ export default function Contact() {
       </div>
 
       <div className="contact-grid mx-auto mt-12 grid max-w-7xl gap-6 lg:grid-cols-[minmax(0,1.1fr)_360px]">
-        <div className="contact-panel glass-panel rounded-[2rem] p-6 sm:p-8 lg:p-10">
+        <div className="contact-panel glass-panel rounded-[2rem] p-5 sm:p-7 lg:p-10">
           {isSubmitted ? (
             <div className="flex min-h-[420px] flex-col items-center justify-center text-center">
               <div className="flex h-18 w-18 items-center justify-center rounded-full bg-cyan-300/14 text-cyan-200">
                 <CheckCircle2 size={34} />
               </div>
-              <h3 className="mt-6 text-3xl font-semibold tracking-[-0.04em] text-white">
+              <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
                 Message sent.
               </h3>
               <p className="mt-3 max-w-md text-sm leading-7 text-slate-400">
@@ -159,7 +159,7 @@ export default function Contact() {
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-[0.9rem] text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05] sm:text-sm"
+                    className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-3.5 py-3 text-[0.86rem] text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05] sm:px-4 sm:py-3.5 sm:text-sm"
                     placeholder="Your name"
                   />
                 </label>
@@ -174,7 +174,7 @@ export default function Contact() {
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
-                    className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-[0.9rem] text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05] sm:text-sm"
+                    className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-3.5 py-3 text-[0.86rem] text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05] sm:px-4 sm:py-3.5 sm:text-sm"
                     placeholder="you@example.com"
                   />
                 </label>
@@ -191,7 +191,7 @@ export default function Contact() {
                   onChange={(e) =>
                     setFormData({ ...formData, subject: e.target.value })
                   }
-                  className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-[0.9rem] text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05] sm:text-sm"
+                  className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-3.5 py-3 text-[0.86rem] text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05] sm:px-4 sm:py-3.5 sm:text-sm"
                   placeholder="Project inquiry"
                 />
               </label>
@@ -207,7 +207,7 @@ export default function Contact() {
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  className="w-full resize-none rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-[0.9rem] text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05] sm:text-sm"
+                  className="w-full resize-none rounded-2xl border border-white/10 bg-white/[0.04] px-3.5 py-3 text-[0.86rem] text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05] sm:px-4 sm:py-3.5 sm:text-sm"
                   placeholder="Tell me about the product, goals, and timeline."
                 />
               </label>
@@ -228,7 +228,7 @@ export default function Contact() {
         </div>
 
         <div className="contact-panel flex flex-col gap-6">
-          <div className="glass-panel rounded-[2rem] p-6 sm:p-7">
+          <div className="glass-panel rounded-[2rem] p-5 sm:p-7">
             <h3 className="text-2xl font-semibold tracking-[-0.04em] text-white">
               Connect directly
             </h3>
@@ -259,19 +259,19 @@ export default function Contact() {
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
-            <div className="glass-panel rounded-[2rem] p-6">
+            <div className="glass-panel rounded-[2rem] p-5 sm:p-6">
               <Clock3 className="text-cyan-200" size={22} />
               <p className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
                 Response Time
               </p>
-              <p className="mt-2 text-lg font-semibold text-white">Usually under 12 hours</p>
+              <p className="mt-2 text-base font-semibold text-white sm:text-lg">Usually under 12 hours</p>
             </div>
-            <div className="glass-panel rounded-[2rem] p-6">
+            <div className="glass-panel rounded-[2rem] p-5 sm:p-6">
               <MapPin className="text-cyan-200" size={22} />
               <p className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
                 Location
               </p>
-              <p className="mt-2 text-lg font-semibold text-white">Pakistan, remote worldwide</p>
+              <p className="mt-2 text-base font-semibold text-white sm:text-lg">Pakistan, remote worldwide</p>
             </div>
           </div>
         </div>

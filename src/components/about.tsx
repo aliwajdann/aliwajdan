@@ -93,7 +93,7 @@ export default function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="section-shell px-4 py-16 sm:px-8 lg:px-12 lg:py-28"
+      className="section-shell py-16 lg:py-28"
     >
       <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start">
         <div className="about-intro max-w-xl">
@@ -103,7 +103,7 @@ export default function About() {
           </h2>
         </div>
 
-        <div className="about-copy-wrap glass-panel rounded-[2rem] p-6 sm:p-8 lg:p-10">
+        <div className="about-copy-wrap glass-panel rounded-[2rem] p-5 sm:p-7 lg:p-10">
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="about-copy section-copy">
@@ -126,7 +126,7 @@ export default function About() {
           <div className="about-stats mt-8 grid gap-4 border-t border-white/8 pt-6 sm:grid-cols-3">
             {stats.map((item) => (
               <div key={item.label} className="about-stat">
-                <p className="text-3xl font-semibold tracking-[-0.05em] text-white">
+                <p className="text-2xl font-semibold tracking-[-0.05em] text-white sm:text-3xl">
                   {item.value}
                 </p>
                 <p className="mt-2 text-sm text-slate-400">{item.label}</p>
@@ -138,7 +138,7 @@ export default function About() {
             {highlights.map((item) => (
               <div
                 key={item.text}
-                className="rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-3"
+                className="rounded-2xl border border-white/8 bg-white/[0.03] px-3 py-2.5 sm:px-4 sm:py-3"
               >
                 <item.icon size={16} className="text-cyan-200" />
                 <p className="mt-2 text-xs font-medium uppercase tracking-[0.13em] text-slate-300">
@@ -164,7 +164,7 @@ export default function About() {
               <h3 className="mt-6 text-[1.35rem] font-semibold tracking-[-0.035em] text-white sm:text-2xl sm:tracking-[-0.04em]">
                 {card.title}
               </h3>
-              <p className="mt-4 text-[0.9rem] leading-6 text-slate-400 sm:text-sm sm:leading-7">
+              <p className="mt-4 text-[0.86rem] leading-6 text-slate-400 sm:text-sm sm:leading-7">
                 {card.copy}
               </p>
             </article>

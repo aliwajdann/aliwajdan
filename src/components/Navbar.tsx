@@ -71,9 +71,9 @@ const Navbar = () => {
 
       <nav
         ref={navRef}
-        className="fixed inset-x-0 top-0 z-[60] px-3 pt-4 sm:px-6 lg:px-10"
+        className="fixed inset-x-0 top-0 z-[60] px-2.5 pt-4 sm:px-5 lg:px-8"
       >
-        <div className="nav-shell mx-auto flex w-full max-w-7xl items-center justify-between rounded-[1.4rem] border border-white/10 bg-slate-950/92 px-4 py-3 shadow-[0_10px_30px_rgba(2,6,23,0.28)] transition-all duration-300 sm:rounded-[1.6rem] sm:px-6 sm:py-3.5 md:bg-slate-950/55 md:shadow-[0_18px_70px_rgba(2,6,23,0.35)] md:backdrop-blur-xl">
+        <div className="nav-shell mx-auto flex w-full max-w-7xl items-center justify-between rounded-[1.4rem] border border-white/10 bg-slate-950/92 px-3 py-3 shadow-[0_10px_30px_rgba(2,6,23,0.28)] transition-all duration-300 sm:rounded-[1.6rem] sm:px-5 sm:py-3.5 md:bg-slate-950/55 md:shadow-[0_18px_70px_rgba(2,6,23,0.35)] md:backdrop-blur-xl">
           <Link href="/" className="group flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 transition duration-200 group-hover:scale-[1.05] group-hover:border-cyan-300/35 group-hover:bg-cyan-300/16 sm:h-11 sm:w-11">
               <Code2 size={18} className="text-cyan-200 sm:hidden" />
@@ -83,7 +83,7 @@ const Navbar = () => {
               <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-slate-500">
                 Portfolio
               </p>
-              <p className="text-[0.92rem] font-semibold tracking-[-0.03em] text-white sm:text-base sm:tracking-[-0.04em]">
+              <p className="text-[0.86rem] font-semibold tracking-[-0.03em] text-white sm:text-base sm:tracking-[-0.04em]">
                 Ali Wajdan
               </p>
             </div>

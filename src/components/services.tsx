@@ -84,7 +84,7 @@ export default function Services() {
     <section
       ref={sectionRef}
       id="services"
-      className="section-shell px-4 py-16 sm:px-8 lg:px-12 lg:py-28"
+      className="section-shell py-16 lg:py-28"
     >
       <div className="services-intro mx-auto flex w-full max-w-7xl flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-3xl">
@@ -103,7 +103,7 @@ export default function Services() {
           return (
             <article
               key={service.title}
-              className="service-card interactive-card glass-panel rounded-[2rem] p-6 sm:p-7"
+              className="service-card interactive-card glass-panel rounded-[2rem] p-5 sm:p-7"
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="rounded-2xl border border-cyan-300/14 bg-cyan-300/10 p-3 text-cyan-200">
@@ -114,10 +114,10 @@ export default function Services() {
                 </span>
               </div>
 
-              <h3 className="mt-6 text-[1.3rem] font-semibold tracking-[-0.035em] text-white sm:text-2xl sm:tracking-[-0.04em]">
+              <h3 className="mt-6 text-[1.15rem] font-semibold tracking-[-0.03em] text-white sm:text-2xl sm:tracking-[-0.04em]">
                 {service.title}
               </h3>
-              <p className="mt-4 text-[0.9rem] leading-6 text-slate-400 sm:text-sm sm:leading-7">
+              <p className="mt-4 text-[0.86rem] leading-6 text-slate-400 sm:text-sm sm:leading-7">
                 {service.description}
               </p>
 
@@ -137,12 +137,12 @@ export default function Services() {
       </div>
 
       <div className="services-cta mx-auto mt-12 max-w-7xl">
-        <div className="glass-panel flex flex-col items-start justify-between gap-6 rounded-[2rem] p-6 sm:p-8 lg:flex-row lg:items-center">
+        <div className="glass-panel flex flex-col items-start justify-between gap-6 rounded-[2rem] p-5 sm:p-8 lg:flex-row lg:items-center">
           <div className="max-w-2xl">
             <div className="inline-flex rounded-full border border-cyan-300/16 bg-cyan-300/10 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-cyan-100">
               Open for projects
             </div>
-            <h3 className="mt-5 text-3xl font-semibold tracking-[-0.05em] text-white">
+            <h3 className="mt-5 text-2xl font-semibold tracking-[-0.05em] text-white sm:text-3xl">
               Need a sharper interface, a cleaner frontend, or a better first impression?
             </h3>
           </div>

@@ -55,14 +55,14 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="section-shell px-4 pb-10 sm:px-8 lg:px-12 lg:pb-12"
+      className="section-shell pb-10 lg:pb-12"
     >
-      <div className="glass-panel mx-auto flex max-w-7xl flex-col gap-8 rounded-[2rem] px-5 py-8 sm:px-8 lg:flex-row lg:items-end lg:justify-between">
+      <div className="glass-panel mx-auto flex max-w-7xl flex-col gap-8 rounded-[2rem] px-4 py-7 sm:px-7 sm:py-8 lg:flex-row lg:items-end lg:justify-between">
         <div className="footer-block max-w-lg">
           <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-slate-500">
             Ali Wajdan
           </p>
-          <h3 className="mt-4 text-3xl font-semibold tracking-[-0.05em] text-white">
+          <h3 className="mt-4 text-2xl font-semibold tracking-[-0.05em] text-white sm:text-3xl">
             Designing and shipping frontend experiences with clarity and polish.
           </h3>
         </div>
@@ -89,7 +89,7 @@ export default function Footer() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="interactive-card inline-flex items-center gap-2 rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-3 text-sm text-slate-300"
+                  className="interactive-card inline-flex items-center gap-2 rounded-2xl border border-white/8 bg-white/[0.03] px-3 py-2.5 text-[0.86rem] text-slate-300 sm:px-4 sm:py-3 sm:text-sm"
                 >
                   <Icon size={16} />
                   {item.label}

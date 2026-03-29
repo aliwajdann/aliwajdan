@@ -73,7 +73,7 @@ export default function Testimonials() {
     <section
       ref={sectionRef}
       id="testimonials"
-      className="section-shell px-4 py-16 sm:px-8 lg:px-12 lg:py-28"
+      className="section-shell py-16 lg:py-28"
     >
       <div className="testimonials-intro mx-auto max-w-7xl">
         <span className="section-kicker">Testimonials</span>
@@ -86,7 +86,7 @@ export default function Testimonials() {
         {testimonials.map((item) => (
           <article
             key={item.name}
-            className="testimonial-card interactive-card glass-panel relative rounded-[2rem] p-6 sm:p-7"
+            className="testimonial-card interactive-card glass-panel relative rounded-[2rem] p-5 sm:p-7"
           >
             <Quote
               className="absolute right-6 top-6 text-cyan-300/18"
@@ -103,7 +103,7 @@ export default function Testimonials() {
               ))}
             </div>
 
-            <p className="mt-5 text-[0.9rem] leading-6 text-slate-300 sm:text-[0.96rem] sm:leading-7">
+            <p className="mt-5 text-[0.86rem] leading-6 text-slate-300 sm:text-[0.96rem] sm:leading-7">
               &quot;{item.content}&quot;
             </p>
 

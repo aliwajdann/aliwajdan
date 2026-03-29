@@ -74,7 +74,7 @@ export default function Projects() {
     <section
       ref={sectionRef}
       id="projects"
-      className="section-shell px-4 py-16 sm:px-8 lg:px-12 lg:py-28"
+      className="section-shell py-16 lg:py-28"
     >
       <div className="projects-intro mx-auto flex w-full max-w-7xl flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-3xl">
@@ -91,7 +91,7 @@ export default function Projects() {
             key={project.title}
             className="project-card interactive-card glass-panel group overflow-hidden rounded-[2rem]"
           >
-            <div className="relative h-64 overflow-hidden sm:h-72">
+            <div className="relative h-56 overflow-hidden sm:h-72">
               <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#050816] via-[#050816]/35 to-transparent" />
               <div className="absolute left-5 top-5 z-20 inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-slate-950/65 text-xs font-semibold text-cyan-100">
                 0{index + 1}
@@ -104,7 +104,7 @@ export default function Projects() {
               />
             </div>
 
-            <div className="relative z-10 p-6 sm:p-7">
+            <div className="relative z-10 p-5 sm:p-7">
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((tech) => (
                   <span
@@ -116,10 +116,10 @@ export default function Projects() {
                 ))}
               </div>
 
-              <h3 className="mt-6 text-[1.35rem] font-semibold tracking-[-0.035em] text-white transition duration-200 group-hover:text-cyan-200 sm:text-2xl sm:tracking-[-0.04em]">
+              <h3 className="mt-6 text-[1.2rem] font-semibold tracking-[-0.03em] text-white transition duration-200 group-hover:text-cyan-200 sm:text-2xl sm:tracking-[-0.04em]">
                 {project.title}
               </h3>
-              <p className="mt-4 text-[0.9rem] leading-6 text-slate-400 sm:text-[0.96rem] sm:leading-7">
+              <p className="mt-4 text-[0.86rem] leading-6 text-slate-400 sm:text-[0.96rem] sm:leading-7">
                 {project.description}
               </p>
 
@@ -147,13 +147,13 @@ export default function Projects() {
           </article>
         ))}
 
-        <aside className="project-card glass-panel flex rounded-[2rem] p-6 sm:p-7 xl:min-h-full">
+        <aside className="project-card glass-panel flex rounded-[2rem] p-5 sm:p-7 xl:min-h-full">
           <div className="flex flex-col justify-between">
             <div>
               <span className="inline-flex rounded-full border border-cyan-300/18 bg-cyan-300/10 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-cyan-100">
                 More Work
               </span>
-              <h3 className="mt-6 text-3xl font-semibold tracking-[-0.05em] text-white">
+              <h3 className="mt-6 text-2xl font-semibold tracking-[-0.05em] text-white sm:text-3xl">
                 More experiments, builds, and shipped interfaces on GitHub.
               </h3>
               <p className="mt-4 text-sm leading-7 text-slate-400">

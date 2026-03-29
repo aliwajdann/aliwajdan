@@ -122,7 +122,7 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className={`${inter.className} relative isolate flex min-h-screen items-center overflow-hidden bg-[#050816] px-4 pb-14 pt-24 text-white sm:px-8 lg:px-12`}
+      className={`${inter.className} relative isolate flex min-h-screen items-center overflow-hidden bg-[#050816] px-3 pb-14 pt-24 text-white sm:px-6 lg:px-10`}
     >
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.12),transparent_28%),radial-gradient(circle_at_80%_22%,rgba(96,165,250,0.18),transparent_24%),linear-gradient(180deg,#07101f_0%,#050816_55%,#04060f_100%)]" />
       <div className="hero-orb-primary absolute left-[-8rem] top-[12%] -z-10 hidden h-72 w-72 rounded-full bg-cyan-400/15 blur-[110px] md:block" />
@@ -137,18 +137,18 @@ export default function Hero() {
           </div>
 
           <div className="hero-heading mt-8 space-y-3 sm:space-y-4">
-            <h1 className="hero-heading-line text-balance text-[2.35rem] font-semibold leading-[0.96] tracking-[-0.055em] text-white sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
+            <h1 className="hero-heading-line text-balance text-[2rem] font-semibold leading-[0.98] tracking-[-0.05em] text-white sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
               Designing interfaces
             </h1>
-            <h1 className="hero-heading-line text-balance text-[2.35rem] font-semibold leading-[0.96] tracking-[-0.055em] text-white/92 sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
+            <h1 className="hero-heading-line text-balance text-[2rem] font-semibold leading-[0.98] tracking-[-0.05em] text-white/92 sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
               that feel sharp,
             </h1>
-            <h1 className="hero-heading-line bg-gradient-to-r from-cyan-300 via-blue-300 to-sky-500 bg-clip-text text-balance text-[2.35rem] font-semibold leading-[0.96] tracking-[-0.055em] text-transparent sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
+            <h1 className="hero-heading-line bg-gradient-to-r from-cyan-300 via-blue-300 to-sky-500 bg-clip-text text-balance text-[2rem] font-semibold leading-[0.98] tracking-[-0.05em] text-transparent sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
               fast, and premium.
             </h1>
           </div>
 
-          <p className="hero-copy mt-7 max-w-xl text-pretty text-[0.94rem] leading-7 text-slate-300 sm:text-lg sm:leading-8">
+          <p className="hero-copy mt-7 max-w-xl text-pretty text-[0.88rem] leading-6 text-slate-300 sm:text-lg sm:leading-8">
             I build polished frontend experiences with React, Next.js, and
             motion that feels deliberate. Clean systems, strong visual
             hierarchy, and smooth interactions are the baseline.
@@ -196,8 +196,8 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-visual relative mx-auto flex w-full max-w-[32rem] justify-center lg:justify-end">
-          <div className="relative aspect-[0.94] w-full max-w-[30rem] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-5 shadow-[0_24px_90px_rgba(3,7,18,0.65)] backdrop-blur-xl">
+        <div className="hero-visual relative mx-auto flex w-full max-w-[22rem] justify-center sm:max-w-[28rem] lg:max-w-[32rem] lg:justify-end">
+          <div className="relative aspect-[0.86] w-full max-w-[21.5rem] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-4 shadow-[0_24px_90px_rgba(3,7,18,0.65)] backdrop-blur-xl sm:aspect-[0.9] sm:max-w-[26rem] sm:p-5 lg:aspect-[0.94] lg:max-w-[30rem]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.18),transparent_34%),linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))]" />
             <div className="absolute left-1/2 top-1/2 h-[82%] w-[82%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-300/15" />
             <div className="hero-grid absolute left-1/2 top-1/2 h-[72%] w-[72%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10">
@@ -207,24 +207,24 @@ export default function Hero() {
               <div className="absolute top-1/2 h-px w-full -translate-y-1/2 bg-gradient-to-r from-transparent via-cyan-300/35 to-transparent" />
             </div>
 
-            <div className="relative flex h-full flex-col justify-between rounded-[1.6rem] border border-white/8 bg-[linear-gradient(180deg,rgba(7,14,28,0.76),rgba(7,14,28,0.32))] p-6 sm:p-7">
+            <div className="relative flex h-full flex-col justify-between rounded-[1.6rem] border border-white/8 bg-[linear-gradient(180deg,rgba(7,14,28,0.76),rgba(7,14,28,0.32))] p-4 sm:p-6 lg:p-7">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
+                  <p className="text-[0.62rem] uppercase tracking-[0.26em] text-slate-400 sm:text-xs sm:tracking-[0.3em]">
                     Selected Stack
                   </p>
-                  <p className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white">
+                  <p className="mt-2 text-[1.15rem] font-semibold leading-tight tracking-[-0.03em] text-white sm:mt-3 sm:text-2xl sm:tracking-[-0.04em]">
                     Modern frontend,
                     <br />
                     refined motion.
                   </p>
                 </div>
-                <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs font-medium text-cyan-100">
+                <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-2.5 py-1 text-[0.62rem] font-medium text-cyan-100 sm:px-3 sm:text-xs">
                   Available
                 </div>
               </div>
 
-              <div className="grid gap-3">
+              <div className="grid gap-2.5 sm:gap-3">
                 {[
                   "Responsive layouts with strong visual rhythm",
                   "Interactive React and Next.js experiences",
@@ -232,7 +232,7 @@ export default function Hero() {
                 ].map((item) => (
                   <div
                     key={item}
-                    className="rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-4 text-sm leading-6 text-slate-300"
+                    className="rounded-2xl border border-white/8 bg-white/[0.03] px-3 py-3 text-[0.8rem] leading-5 text-slate-300 sm:px-4 sm:py-4 sm:text-sm sm:leading-6"
                   >
                     {item}
                   </div>
@@ -241,14 +241,14 @@ export default function Hero() {
 
               <div className="flex items-end justify-between gap-4">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
+                  <p className="text-[0.62rem] uppercase tracking-[0.2em] text-slate-500 sm:text-xs sm:tracking-[0.24em]">
                     Focus
                   </p>
-                  <p className="mt-2 text-lg font-medium text-white">
+                  <p className="mt-2 text-[0.95rem] font-medium text-white sm:text-lg">
                     Premium UI systems with performance in mind.
                   </p>
                 </div>
-                <div className="h-20 w-20 rounded-full bg-[radial-gradient(circle,rgba(103,232,249,0.85)_0%,rgba(59,130,246,0.22)_42%,transparent_72%)] blur-sm" />
+                <div className="h-14 w-14 rounded-full bg-[radial-gradient(circle,rgba(103,232,249,0.85)_0%,rgba(59,130,246,0.22)_42%,transparent_72%)] blur-sm sm:h-20 sm:w-20" />
               </div>
             </div>
           </div>
