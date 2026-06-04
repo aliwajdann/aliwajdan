@@ -36,12 +36,20 @@ const projects = [
     image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=800",
   },
   {
-    title: "Creative Portfolio System",
+    title: "EMR-TEK Wellness Store",
     description:
-      "A high-performance, motion-driven platform designed for creative professionals. Focused on visual hierarchy, accessibility, and sub-second page loads.",
-    tech: ["Next.js", "GSAP", "Tailwind CSS"],
-    link: "#",
-    image: "https://cdn.velanoshop.store/banners//portfolio.png",
+      "A premium Shopify e-commerce experience for a wellness technology brand specializing in red light therapy devices. Built to showcase products, educate customers, and drive conversions through a seamless shopping journey.",
+    tech: ["Shopify", "Liquid", "JavaScript", "CSS"],
+    link: "https://emr-tek.com/",
+    image: "https://emr-tek.com/cdn/shop/files/logo.png",
+  },
+  {
+    title: "Pora & Co Digital Technology Store",
+    description:
+      "A modern Shopify storefront for a consumer electronics brand offering digital photo frames, portable monitors, cameras, and smart technology products. Designed with a clean shopping experience and mobile-first performance.",
+    tech: ["Shopify", "Liquid", "JavaScript", "CSS"],
+    link: "https://poraenco.nl/",
+    image: "https://poraenco.nl/cdn/shop/files/logo.png",
   },
 ];
 
@@ -155,9 +163,9 @@ export default function Projects() {
         <aside className="project-card glass-panel flex rounded-[2rem] p-5 sm:p-7 xl:min-h-full">
           <div className="flex flex-col justify-between">
             <div>
-              <span className="inline-flex rounded-full border border-cyan-300/18 bg-cyan-300/10 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-cyan-100">
-                More Work
-              </span>
+              {/* <span className="inline-flex rounded-full border border-cyan-300/18 bg-cyan-300/10 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-cyan-100"> */}
+              {/* More Work*/}
+              {/* </span> */}
               <h3 className="mt-6 text-2xl font-semibold tracking-[-0.05em] text-white sm:text-3xl">
                 Dozens of successful projects delivered.
               </h3>
