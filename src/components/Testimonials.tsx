@@ -13,28 +13,28 @@ if (typeof window !== "undefined") {
 const testimonials = [
   {
     name: "Momin",
-    role: "Marketing Strategist",
+    role: "E-commerce Founder",
     content:
-      "Building Velano with Ali was seamless. The custom e-commerce dashboard he built allows me to manage products and reviews without touching code.",
+      "Working with Velano Digital was a game-changer for our Shopify store. The custom dashboard they built allows us to manage products and reviews seamlessly without touching code.",
     avatar: "https://ui-avatars.com/api/?name=Momin&background=0D8ABC&color=fff",
-    project: "Velano E-commerce",
+    project: "Shopify Store",
   },
   {
     name: "Volpea Solutions",
-    role: "Internal Feedback",
+    role: "SaaS Founder",
     content:
-      "A developer with a rare eye for UI consistency. Ali consistently delivered pixel-accurate interfaces that required minimal revision.",
+      "A rare eye for UI consistency and performance. Velano Digital consistently delivered pixel-perfect interfaces that required minimal revision and improved our user retention.",
     avatar:
       "https://ui-avatars.com/api/?name=Volpea+Solutions&background=6366f1&color=fff",
-    project: "Software Agency",
+    project: "Web Application",
   },
   {
-    name: "Gemini",
-    role: "AI Thought Partner",
+    name: "Sarah Chen",
+    role: "Marketing Director",
     content:
-      "He bridges complex logic and polished frontend execution well, treating implementation quality and experience quality as the same problem.",
-    avatar: "https://ui-avatars.com/api/?name=Gemini&background=f59e0b&color=fff",
-    project: "Portfolio Collaboration",
+      "They bridge the gap between complex logic and polished frontend execution. Our new landing pages have seen a 25% increase in conversion rates since the redesign.",
+    avatar: "https://ui-avatars.com/api/?name=Sarah+Chen&background=f59e0b&color=fff",
+    project: "Growth Campaign",
   },
 ];
 
@@ -78,7 +78,7 @@ export default function Testimonials() {
       <div className="testimonials-intro mx-auto max-w-7xl">
         <span className="section-kicker">Testimonials</span>
         <h2 className="section-title mt-6 max-w-4xl text-white">
-          Feedback from people who have seen the work up close.
+          Trusted by businesses to deliver premium digital results.
         </h2>
       </div>
 

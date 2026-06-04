@@ -5,9 +5,10 @@ import Projects from '@/components/projects';
 import Contact from '@/components/contact';
 import Services from '@/components/services';
 import Testimonials from '@/components/Testimonials';
+import Process from '@/components/Process';
+import FAQ from '@/components/FAQ';
+import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
-
-
 
 export default function Home() {
   return (
@@ -16,9 +17,12 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <Projects />
       <Services />
+      <Projects />
+      <Process />
       <Testimonials />
+      <FAQ />
+      <CTA />
       <Contact />
       <Footer />
     </div>

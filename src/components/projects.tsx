@@ -12,21 +12,35 @@ if (typeof window !== "undefined") {
 
 const projects = [
   {
-    title: "Eco-Commerce Platform",
+    title: "SaaS Order Management Platform",
     description:
-      "A performance-focused storefront with a custom dashboard, cleaner buying flow, and a brand-led front end.",
-    tech: ["Next.js", "Firebase", "TypeScript"],
-    link: "https://www.velanoshop.store/",
-    github: "https://github.com/aliwajdann/nexwear",
-    image: "https://cdn.velanoshop.store/banners//velano.png",
+      "A centralized dashboard for streamlined operations, helping businesses manage orders, track fulfillment, and monitor customer activity in real-time.",
+    tech: ["Next.js", "TypeScript", "Firebase", "Tailwind CSS"],
+    link: "https://sell-track.vercel.app/",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
   },
   {
-    title: "Portfolio Website",
+    title: "Premium Shopify Fashion Store",
     description:
-      "A personal site built to present frontend work with a stronger visual rhythm, motion, and modern hierarchy.",
-    tech: ["Next.js", "Tailwind CSS", "GSAP"],
+      "A mobile-first, conversion-optimized Shopify experience for a fashion brand, featuring custom sections and a seamless shopping journey.",
+    tech: ["Shopify", "Liquid", "JavaScript", "CSS"],
+    link: "https://comfrt.com/",
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    title: "Custom E-commerce",
+    description:
+      "Luxury jewelry e-commerce with custom branding, advanced product filtering, and a premium customer experience across all devices.",
+    tech: ["Next.js", "Firebase", "JavaScript", "Tailwind"],
+    link: "https://www.velanoshop.store/",
+    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    title: "Creative Portfolio System",
+    description:
+      "A high-performance, motion-driven platform designed for creative professionals. Focused on visual hierarchy, accessibility, and sub-second page loads.",
+    tech: ["Next.js", "GSAP", "Tailwind CSS"],
     link: "#",
-    github: "https://github.com/aliwajdann/aliwajdan",
     image: "https://cdn.velanoshop.store/banners//portfolio.png",
   },
 ];
@@ -78,9 +92,9 @@ export default function Projects() {
     >
       <div className="projects-intro mx-auto flex w-full max-w-7xl flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-3xl">
-          <span className="section-kicker">Projects</span>
+          <span className="section-kicker">Our Work</span>
           <h2 className="section-title mt-6 text-white">
-            Selected work with interaction, clarity, and product thinking at the center.
+            Selected case studies focused on performance, clarity, and results.
           </h2>
         </div>
       </div>
@@ -130,17 +144,8 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-200 transition duration-200 hover:text-white"
                 >
-                  Live Site
+                  View Case Study
                   <ExternalLink size={16} />
-                </a>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-slate-300 transition duration-200 hover:text-white"
-                >
-                  Source
-                  <Github size={16} />
                 </a>
               </div>
             </div>
@@ -154,21 +159,18 @@ export default function Projects() {
                 More Work
               </span>
               <h3 className="mt-6 text-2xl font-semibold tracking-[-0.05em] text-white sm:text-3xl">
-                More experiments, builds, and shipped interfaces on GitHub.
+                Dozens of successful projects delivered.
               </h3>
               <p className="mt-4 text-sm leading-7 text-slate-400">
-                Open source, product experiments, and implementation details
-                live there.
+                From small business landing pages to complex e-commerce platforms, we have the experience to handle your next project.
               </p>
             </div>
 
             <a
-              href="https://github.com/aliwajdann"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
               className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-300 to-sky-400 px-5 py-3 text-sm font-semibold text-slate-950 transition duration-200 hover:scale-[1.02] active:scale-[0.98]"
             >
-              Visit GitHub
+              Start Your Project
               <ArrowUpRight size={16} />
             </a>
           </div>

@@ -60,10 +60,10 @@ export default function Footer() {
       <div className="glass-panel mx-auto flex max-w-7xl flex-col gap-8 rounded-[2rem] px-4 py-7 sm:px-7 sm:py-8 lg:flex-row lg:items-end lg:justify-between">
         <div className="footer-block max-w-lg">
           <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-slate-500">
-            Ali Wajdan
+            Velano Digital
           </p>
           <h3 className="mt-4 text-2xl font-semibold tracking-[-0.05em] text-white sm:text-3xl">
-            Designing and shipping frontend experiences with clarity and polish.
+            Building high-performance digital experiences that drive growth.
           </h3>
         </div>
 
@@ -98,7 +98,7 @@ export default function Footer() {
             })}
           </div>
 
-          <p className="text-sm text-slate-500">© 2026 Ali Wajdan</p>
+          <p className="text-sm text-slate-500">© 2026 Velano Digital</p>
         </div>
       </div>
     </footer>

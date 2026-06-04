@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowUpRight, Code2, Layers3, Palette, Zap } from "lucide-react";
+import { ArrowUpRight, Code2, Cpu, Globe, Layers, Layout, Palette, RefreshCw, ShieldCheck, ShoppingBag, Zap } from "lucide-react";
 import { shouldReduceMotion } from "@/app/lib/motion";
 
 if (typeof window !== "undefined") {
@@ -12,32 +12,68 @@ if (typeof window !== "undefined") {
 
 const services = [
   {
-    icon: Code2,
-    title: "Frontend Development",
+    icon: ShoppingBag,
+    title: "Shopify Store Development",
     description:
-      "Responsive React and Next.js builds with cleaner structure, stronger hierarchy, and production-ready implementation.",
-    features: ["Next.js", "React", "TypeScript", "Tailwind"],
+      "End-to-end Shopify store setup and development, built for scalability, performance, and high conversion rates.",
+    features: ["Store Setup", "App Integration", "Migration", "Payment Config"],
   },
+
   {
-    icon: Palette,
-    title: "UI Direction",
+    icon: Globe,
+    title: "Custom Website Development",
     description:
-      "Modern interfaces with deliberate spacing, typography systems, and visuals shaped around the product rather than trends.",
-    features: ["Design systems", "Responsive UI", "Visual polish", "Accessibility"],
+      "High-performance, unique websites built from the ground up using modern technologies like Next.js and React.",
+    features: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
   },
   {
     icon: Zap,
-    title: "Motion and Performance",
+    title: "E-Commerce Development",
     description:
-      "GSAP-powered transitions and interactive detail that stay smooth, light, and aligned with performance goals.",
-    features: ["GSAP", "Core Web Vitals", "Interaction states", "Optimization"],
+      "Beyond Shopify—custom headless e-commerce solutions for businesses with complex requirements and high traffic.",
+    features: ["Headless Commerce", "Custom Cart", "Third-party APIs", "Performance"],
   },
   {
-    icon: Layers3,
-    title: "Product Integration",
+    icon: Layout,
+    title: "Landing Page Design",
     description:
-      "Connecting frontend work to APIs, CMS flows, and dashboards while keeping the experience cohesive and maintainable.",
-    features: ["REST APIs", "Firebase", "Dashboards", "Content flows"],
+      "Strategic, conversion-focused landing pages designed to turn ad traffic into leads and customers.",
+    features: ["Lead Gen", "A/B Testing", "Copy Optimization", "Fast Load Times"],
+  },
+  {
+    icon: RefreshCw,
+    title: "Website Redesign",
+    description:
+      "Modernizing your digital presence with a fresh design and updated tech stack to align with current business goals.",
+    features: ["UI/UX Audit", "Tech Migration", "Performance Boost", "SEO Preservation"],
+  },
+  {
+    icon: Code2,
+    title: "Custom Web Applications",
+    description:
+      "Building robust, interactive web applications tailored to solve specific business problems and improve efficiency.",
+    features: ["User Auth", "Database Design", "Cloud Hosting", "Real-time Data"],
+  },
+  {
+    icon: Cpu,
+    title: "SaaS Development",
+    description:
+      "Scalable Software-as-a-Service platforms with multi-tenancy, subscription management, and modern user interfaces.",
+    features: ["Stripe Integration", "Multi-tenancy", "Scalable Infrastructure", "API First"],
+  },
+  {
+    icon: Layers,
+    title: "Admin Dashboards",
+    description:
+      "Custom internal tools and administrative dashboards to manage your business data, operations, and users.",
+    features: ["Data Visualization", "Role Management", "Internal Tools", "Reporting"],
+  },
+  {
+    icon: ShieldCheck,
+    title: "Maintenance & Support",
+    description:
+      "Ongoing technical support, security updates, and performance monitoring to keep your digital assets running smoothly.",
+    features: ["Security Patches", "Bug Fixes", "Cloud Monitoring", "Regular Updates"],
   },
 ];
 
@@ -90,13 +126,13 @@ export default function Services() {
         <div className="max-w-3xl">
           <span className="section-kicker">Services</span>
           <h2 className="section-title mt-6 text-white">
-            Focused frontend services built around product quality, not noise.
+            Digital solutions designed to drive growth and scale your business.
           </h2>
         </div>
 
       </div>
 
-      <div className="services-grid mx-auto mt-12 grid max-w-7xl gap-6 md:grid-cols-2">
+      <div className="services-grid mx-auto mt-12 grid max-w-7xl gap-6 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => {
           const Icon = service.icon;
 
@@ -143,7 +179,7 @@ export default function Services() {
               Open for projects
             </div>
             <h3 className="mt-5 text-2xl font-semibold tracking-[-0.05em] text-white sm:text-3xl">
-              Need a sharper interface, a cleaner frontend, or a better first impression?
+              Ready to take your business to the next level with a premium website?
             </h3>
           </div>
 
@@ -151,7 +187,7 @@ export default function Services() {
             href="#contact"
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-300 to-sky-400 px-5 py-3 text-sm font-semibold text-slate-950 transition duration-200 hover:scale-[1.02] active:scale-[0.98]"
           >
-            Let&apos;s Talk
+            Get a Free Consultation
             <ArrowUpRight size={16} />
           </a>
         </div>

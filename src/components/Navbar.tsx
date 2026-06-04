@@ -13,9 +13,10 @@ if (typeof window !== "undefined") {
 
 const navLinks = [
   { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Testimonials", href: "#testimonials" },
-  { name: "Contact", href: "#contact" },
+  { name: "Services", href: "#services" },
+  { name: "Work", href: "#projects" },
+  { name: "Process", href: "#process" },
+  { name: "FAQ", href: "#faq" },
 ];
 
 const Navbar = () => {
@@ -81,10 +82,10 @@ const Navbar = () => {
             </div>
             <div>
               <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-slate-500">
-                Portfolio
+                Agency
               </p>
               <p className="text-[0.86rem] font-semibold tracking-[-0.03em] text-white sm:text-base sm:tracking-[-0.04em]">
-                Ali Wajdan
+                Velano Digital
               </p>
             </div>
           </Link>
@@ -106,7 +107,7 @@ const Navbar = () => {
               href="#contact"
               className="inline-flex min-h-11 items-center gap-2 rounded-2xl border border-cyan-300/20 bg-gradient-to-r from-cyan-300/95 to-sky-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-[0_0_28px_rgba(56,189,248,0.24)] transition duration-200 hover:scale-[1.02] hover:shadow-[0_0_36px_rgba(56,189,248,0.35)] active:scale-[0.98]"
             >
-              Contact
+              Free Consultation
               <Send size={15} />
             </Link>
           </div>
@@ -138,7 +139,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className="mt-2 inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-300 to-sky-400 px-5 py-3 text-sm font-semibold text-slate-950 active:scale-[0.98]"
               >
-                Let&apos;s Talk
+                Free Consultation
                 <Send size={15} />
               </Link>
             </div>

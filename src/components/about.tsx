@@ -13,31 +13,31 @@ if (typeof window !== "undefined") {
 const cards = [
   {
     icon: Globe2,
-    title: "Global-ready builds",
-    copy: "Remote-friendly collaboration, responsive systems, and interfaces that hold up across devices and teams.",
+    title: "Global Collaboration",
+    copy: "We work with clients worldwide, providing remote-friendly collaboration and scalable digital systems that work across borders.",
   },
   {
     icon: Layers3,
-    title: "Structured frontends",
-    copy: "Component systems, scalable architecture, and visual consistency without sacrificing iteration speed.",
+    title: "Engineered for Scale",
+    copy: "Our builds aren't just pretty; they're built on scalable architectures that grow with your business and handle peak traffic.",
   },
   {
     icon: Cpu,
-    title: "Performance-led polish",
-    copy: "Intentional motion, accessible interactions, and fast-loading experiences designed to feel refined.",
+    title: "Performance First",
+    copy: "We prioritize speed and core web vitals, ensuring your users have a fast, frictionless experience that drives conversions.",
   },
 ];
 
 const stats = [
-  { value: "2+", label: "Years building" },
-  { value: "20+", label: "Interfaces shipped" },
-  { value: "90+", label: "Lighthouse focus" },
+  { value: "50+", label: "Projects delivered" },
+  { value: "98%", label: "Client satisfaction" },
+  { value: "24/7", label: "Reliable support" },
 ];
 
 const highlights = [
-  { icon: Smartphone, text: "Mobile-first interactions" },
-  { icon: Gauge, text: "Fast-loading sections" },
-  { icon: Sparkles, text: "Intentional visual polish" },
+  { icon: Smartphone, text: "Mobile-First Design" },
+  { icon: Gauge, text: "Speed Optimized" },
+  { icon: Sparkles, text: "Premium Aesthetics" },
 ];
 
 export default function About() {
@@ -97,9 +97,9 @@ export default function About() {
     >
       <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start">
         <div className="about-intro max-w-xl">
-          <span className="section-kicker">About</span>
+          <span className="section-kicker">About Velano Digital</span>
           <h2 className="section-title mt-6 text-white">
-            Building frontend systems that feel composed from the first scroll.
+            Helping businesses scale through engineering-led design.
           </h2>
         </div>
 
@@ -107,15 +107,16 @@ export default function About() {
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="about-copy section-copy">
-                I&apos;m a frontend developer focused on React and Next.js,
-                shaping interfaces with strong hierarchy, clean spacing, and
-                motion that supports the experience instead of distracting from
-                it.
+                Velano Digital is a results-driven agency specialized in
+                building high-performance SaaS platforms, Shopify stores, and custom web
+                applications. We bridge the gap between complex engineering and
+                polished visual design.
               </p>
               <p className="about-copy section-copy mt-5">
-                The work is design-sensitive and engineering-led: accessible
-                layouts, scalable components, and performance-minded detail at
-                every layer.
+                From internal business tools to scalable SaaS solutions, 
+                our approach is data-informed and design-sensitive. We build 
+                digital growth engines that are accessible, scalable, and optimized 
+                for business success.
               </p>
             </div>
             <div className="hidden rounded-3xl border border-cyan-300/12 bg-cyan-300/10 p-3 text-cyan-200 sm:block">

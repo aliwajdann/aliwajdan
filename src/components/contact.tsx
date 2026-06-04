@@ -124,9 +124,9 @@ export default function Contact() {
       className="section-shell pb-16 pt-16 lg:pb-20 lg:pt-28"
     >
       <div className="contact-intro mx-auto max-w-7xl">
-        <span className="section-kicker">Contact</span>
+        <span className="section-kicker">Get in Touch</span>
         <h2 className="section-title mt-6 max-w-4xl text-white">
-          Ready to build something sharp, responsive, and production-ready.
+          Ready to scale your business with a high-converting website?
         </h2>
       </div>
 
@@ -138,11 +138,10 @@ export default function Contact() {
                 <CheckCircle2 size={34} />
               </div>
               <h3 className="mt-6 text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
-                Message sent.
+                Inquiry received.
               </h3>
               <p className="mt-3 max-w-md text-sm leading-7 text-slate-400">
-                Your note reached the inbox. I&apos;ll get back to you as soon as
-                possible.
+                Thanks for reaching out! We&apos;ll review your project details and get back to you within 12 hours.
               </p>
             </div>
           ) : (
@@ -150,7 +149,7 @@ export default function Contact() {
               <div className="grid gap-5 md:grid-cols-2">
                 <label className="block text-left">
                   <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-                    Name
+                    Your Name
                   </span>
                   <input
                     required
@@ -160,12 +159,12 @@ export default function Contact() {
                       setFormData({ ...formData, name: e.target.value })
                     }
                     className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-3.5 py-3 text-[0.86rem] text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05] sm:px-4 sm:py-3.5 sm:text-sm"
-                    placeholder="Your name"
+                    placeholder="Full name"
                   />
                 </label>
                 <label className="block text-left">
                   <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-                    Email
+                    Business Email
                   </span>
                   <input
                     required
@@ -175,14 +174,14 @@ export default function Contact() {
                       setFormData({ ...formData, email: e.target.value })
                     }
                     className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-3.5 py-3 text-[0.86rem] text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05] sm:px-4 sm:py-3.5 sm:text-sm"
-                    placeholder="you@example.com"
+                    placeholder="you@company.com"
                   />
                 </label>
               </div>
 
               <label className="block text-left">
                 <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-                  Subject
+                  Project Type
                 </span>
                 <input
                   required
@@ -192,13 +191,13 @@ export default function Contact() {
                     setFormData({ ...formData, subject: e.target.value })
                   }
                   className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-3.5 py-3 text-[0.86rem] text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05] sm:px-4 sm:py-3.5 sm:text-sm"
-                  placeholder="Project inquiry"
+                  placeholder="e.g. Shopify Redesign, Custom App"
                 />
               </label>
 
               <label className="block text-left">
                 <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-                  Message
+                  Project Details
                 </span>
                 <textarea
                   required
@@ -208,7 +207,7 @@ export default function Contact() {
                     setFormData({ ...formData, message: e.target.value })
                   }
                   className="w-full resize-none rounded-2xl border border-white/10 bg-white/[0.04] px-3.5 py-3 text-[0.86rem] text-white outline-none transition duration-200 placeholder:text-slate-500 focus:border-cyan-300/30 focus:bg-cyan-300/[0.05] sm:px-4 sm:py-3.5 sm:text-sm"
-                  placeholder="Tell me about the product, goals, and timeline."
+                  placeholder="Tell us about your goals, current challenges, and estimated budget."
                 />
               </label>
 
@@ -220,7 +219,7 @@ export default function Contact() {
                 disabled={isLoading}
                 className="inline-flex min-h-13 w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-300 to-sky-400 px-5 py-3 text-sm font-semibold text-slate-950 transition duration-200 hover:scale-[1.01] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-70"
               >
-                {isLoading ? "Sending..." : "Send Message"}
+                {isLoading ? "Sending..." : "Get a Free Consultation"}
                 <Send size={16} />
               </button>
             </form>

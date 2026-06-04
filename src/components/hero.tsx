@@ -13,9 +13,9 @@ const inter = Inter({
 });
 
 const METRICS = [
-  { value: "React", label: "UI systems" },
-  { value: "Next.js", label: "App architecture" },
-  { value: "GSAP", label: "Motion design" },
+  { value: "SaaS", label: "Scalable platforms" },
+  { value: "Shopify", label: "E-commerce stores" },
+  { value: "Custom Apps", label: "Internal tools" },
 ];
 
 export default function Hero() {
@@ -133,29 +133,29 @@ export default function Hero() {
         <div className="max-w-2xl">
           <div className="hero-kicker inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-cyan-200/80 backdrop-blur-md">
             <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(103,232,249,0.9)]" />
-            Frontend Developer
+            Digital Agency
           </div>
 
           <div className="hero-heading mt-8 space-y-3 sm:space-y-4">
             <h1 className="hero-heading-line text-balance text-[2rem] font-semibold leading-[0.98] tracking-[-0.05em] text-white sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
-              Designing interfaces
+              Scaling brands with
             </h1>
             <h1 className="hero-heading-line text-balance text-[2rem] font-semibold leading-[0.98] tracking-[-0.05em] text-white/92 sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
-              that feel sharp,
+              premium digital
             </h1>
             <h1 className="hero-heading-line bg-gradient-to-r from-cyan-300 via-blue-300 to-sky-500 bg-clip-text text-balance text-[2rem] font-semibold leading-[0.98] tracking-[-0.05em] text-transparent sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
-              fast, and premium.
+              experiences.
             </h1>
           </div>
 
           <p className="hero-copy mt-7 max-w-xl text-pretty text-[0.88rem] leading-6 text-slate-300 sm:text-lg sm:leading-8">
-            I build polished frontend experiences with React, Next.js, and
-            motion that feels deliberate. Clean systems, strong visual
-            hierarchy, and smooth interactions are the baseline.
+            We design and build high-performance SaaS platforms, Shopify stores, 
+            and custom web applications. From business dashboards to internal tools, 
+            we deliver premium digital solutions that drive real results.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-2.5">
-            {["Mobile-first performance", "Visual hierarchy", "Conversion-focused UI"].map((pill) => (
+            {["High-converting design", "Shopify Experts", "Modern Tech Stack"].map((pill) => (
               <span
                 key={pill}
                 className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-100/90"
@@ -167,18 +167,18 @@ export default function Hero() {
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link
-              href="#projects"
+              href="#contact"
               className="hero-cta inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 px-5 py-2.5 text-[0.82rem] font-semibold text-slate-950 shadow-[0_0_24px_rgba(56,189,248,0.24)] transition duration-200 hover:scale-[1.02] hover:shadow-[0_0_36px_rgba(56,189,248,0.34)] active:scale-[0.98] sm:min-h-13 sm:px-6 sm:py-3 sm:text-sm"
             >
-              View Projects
+              Get a Free Consultation
               <ArrowUpRight size={17} />
             </Link>
 
             <a
-              href="#contact"
+              href="#projects"
               className="hero-cta inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl border border-white/12 bg-white/[0.04] px-5 py-2.5 text-[0.82rem] font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur-md transition duration-200 hover:scale-[1.02] hover:border-cyan-300/35 hover:bg-cyan-300/10 hover:text-cyan-100 active:scale-[0.98] sm:min-h-13 sm:px-6 sm:py-3 sm:text-sm"
             >
-              Contact Me
+              View Our Work
               <Mail size={16} />
             </a>
           </div>
@@ -211,28 +211,28 @@ export default function Hero() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-[0.62rem] uppercase tracking-[0.26em] text-slate-400 sm:text-xs sm:tracking-[0.3em]">
-                    Selected Stack
+                    Expert Solutions
                   </p>
                   <p className="mt-2 text-[1.15rem] font-semibold leading-tight tracking-[-0.03em] text-white sm:mt-3 sm:text-2xl sm:tracking-[-0.04em]">
-                    Modern frontend,
+                    SaaS, Dashboards,
                     <br />
-                    refined motion.
+                    & Custom Apps.
                   </p>
                 </div>
                 <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-2.5 py-1 text-[0.62rem] font-medium text-cyan-100 sm:px-3 sm:text-xs">
-                  Available
+                  Booking projects
                 </div>
               </div>
 
               <div className="grid gap-2.5 sm:gap-3">
                 {[
-                  "Responsive layouts with strong visual rhythm",
-                  "Interactive React and Next.js experiences",
-                  "GSAP-led motion with lightweight polish",
+                  "SaaS platforms with scalable architecture",
+                  "High-converting Shopify fashion & jewelry stores",
+                  "Custom dashboards and internal business tools",
                 ].map((item) => (
                   <div
                     key={item}
-                    className="rounded-2xl border border-white/8 bg-white/[0.03] px-3 py-3 text-[0.8rem] leading-5 text-slate-300 sm:px-4 sm:py-4 sm:text-sm sm:leading-6"
+                    className="rounded-2xl border border-white/8 bg-white/[0.03] px-3 py-3 text-[0.8rem] font-medium leading-5 text-slate-300 sm:px-4 sm:py-4 sm:text-sm sm:leading-6"
                   >
                     {item}
                   </div>
@@ -242,10 +242,10 @@ export default function Hero() {
               <div className="flex items-end justify-between gap-4">
                 <div>
                   <p className="text-[0.62rem] uppercase tracking-[0.2em] text-slate-500 sm:text-xs sm:tracking-[0.24em]">
-                    Focus
+                    Our Focus
                   </p>
                   <p className="mt-2 text-[0.95rem] font-medium text-white sm:text-lg">
-                    Premium UI systems with performance in mind.
+                    Results-driven digital products.
                   </p>
                 </div>
                 <div className="h-14 w-14 rounded-full bg-[radial-gradient(circle,rgba(103,232,249,0.85)_0%,rgba(59,130,246,0.22)_42%,transparent_72%)] blur-sm sm:h-20 sm:w-20" />
